@@ -1,0 +1,1397 @@
+/**
+ * Site-wide constants and configuration
+ */
+
+// Site metadata
+export const SITE_NAME = 'NicheFinders AI';
+export const SITE_DESCRIPTION = 'Proven AI automation infrastructure for home & building service companies, automotive, nonprofits, and professional services. 3-5x ROI in 90 days.';
+export const SITE_URL = 'https://nichefinders.ai';
+export const SITE_AUTHOR = 'NicheFinders AI Team';
+
+// Contact information
+export const CONTACT_EMAIL = 'hello@nichefinders.ai';
+export const CONTACT_PHONE = '(555) 123-4567'; // Replace with actual
+export const CONTACT_ADDRESS = 'Tampa, Florida'; // Replace with actual if needed
+export const CALENDAR_LINK = 'https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM';
+
+// Social media
+export const SOCIAL_LINKS = {
+  linkedin: 'https://linkedin.com/company/nichefinders-ai',
+  facebook: 'https://facebook.com/nichefindersai',
+  twitter: 'https://twitter.com/nichefindersai',
+  instagram: 'https://instagram.com/nichefindersai',
+};
+
+// TypeScript types
+export interface FloridaCity {
+  name: string;
+  slug: string;
+  region: string;
+  counties: string[];
+  population: string;
+  businessCount: string;
+  industries: string[];
+}
+
+export interface Industry {
+  name: string;
+  slug: string;
+  icon: string;
+  description: string;
+  challenges: string[];
+  solutions: string[];
+  businessCount?: string;
+  painPoints?: string[];
+  aiSolutions?: string[];
+  typicalResults?: Array<{ metric: string; improvement: string }>;
+  useCases?: Array<{ title: string; description: string; stages: number[] }>;
+}
+
+export interface Service {
+  name: string;
+  title: string;
+  slug: string;
+  icon: string;
+  description: string;
+  details: string;
+  deliverables: string[];
+  idealFor?: string[];
+  keyFeatures?: string[];
+  process?: Array<{ step: string; description: string }>;
+}
+
+// Target Florida cities
+export const FLORIDA_CITIES: FloridaCity[] = [
+  {
+    name: 'Tampa',
+    slug: 'tampa',
+    region: 'Central Florida',
+    counties: ['Hillsborough', 'Pinellas', 'Pasco'],
+    population: '400,000+',
+    businessCount: '150,000+',
+    industries: ['Tech', 'Home & Building Services', 'Healthcare', 'Professional Services'],
+  },
+  {
+    name: 'Jacksonville',
+    slug: 'jacksonville',
+    region: 'Northeast Florida',
+    counties: ['Duval', 'St. Johns', 'Clay'],
+    population: '950,000+',
+    businessCount: '75,000+',
+    industries: ['Logistics', 'Home & Building Services', 'Financial Services', 'Healthcare'],
+  },
+  {
+    name: 'Miami',
+    slug: 'miami',
+    region: 'South Florida',
+    counties: ['Miami-Dade', 'Broward'],
+    population: '450,000+',
+    businessCount: '200,000+',
+    industries: ['Hospitality', 'Real Estate', 'Professional Services', 'Automotive'],
+  },
+  {
+    name: 'Orlando',
+    slug: 'orlando',
+    region: 'Central Florida',
+    counties: ['Orange', 'Seminole', 'Osceola'],
+    population: '310,000+',
+    businessCount: '125,000+',
+    industries: ['Tourism', 'Home & Building Services', 'Hospitality', 'Healthcare'],
+  },
+  {
+    name: 'Fort Lauderdale',
+    slug: 'fort-lauderdale',
+    region: 'South Florida',
+    counties: ['Broward'],
+    population: '185,000+',
+    businessCount: '90,000+',
+    industries: ['Marine', 'Professional Services', 'Healthcare', 'Real Estate'],
+  },
+  {
+    name: 'West Palm Beach',
+    slug: 'west-palm-beach',
+    region: 'South Florida',
+    counties: ['Palm Beach'],
+    population: '115,000+',
+    businessCount: '60,000+',
+    industries: ['Professional Services', 'Wealth Management', 'Healthcare', 'Real Estate'],
+  },
+  {
+    name: 'Tallahassee',
+    slug: 'tallahassee',
+    region: 'North Florida',
+    counties: ['Leon'],
+    population: '195,000+',
+    businessCount: '45,000+',
+    industries: ['Government', 'Education', 'Nonprofits', 'Professional Services'],
+  },
+  {
+    name: 'Naples',
+    slug: 'naples',
+    region: 'Southwest Florida',
+    counties: ['Collier'],
+    population: '23,000+',
+    businessCount: '18,000+',
+    industries: ['Luxury Services', 'Real Estate', 'Healthcare', 'Professional Services'],
+  },
+  {
+    name: 'Daytona',
+    slug: 'daytona',
+    region: 'Northeast Florida',
+    counties: ['Volusia'],
+    population: '73,000+',
+    businessCount: '30,000+',
+    industries: ['Automotive', 'Tourism', 'Home & Building Services', 'Healthcare'],
+  },
+  {
+    name: 'Sarasota',
+    slug: 'sarasota',
+    region: 'Southwest Florida',
+    counties: ['Sarasota'],
+    population: '58,000+',
+    businessCount: '28,000+',
+    industries: ['Professional Services', 'Healthcare', 'Real Estate', 'Arts & Culture'],
+  },
+];
+
+// Industry verticals
+export const INDUSTRIES: Industry[] = [
+  {
+    name: 'Home & Building Service Companies',
+    slug: 'home-services',
+    icon: '🏠',
+    description: 'HVAC, Plumbing, Electrical, Roofing, General Contractors, Commercial Painting',
+    challenges: ['Missed calls', 'Slow follow-up', 'Seasonal fluctuations', 'Emergency response'],
+    solutions: ['24/7 AI voice agents', 'Automated scheduling', 'Lead nurturing', 'Review generation'],
+  },
+  {
+    name: 'Automotive Dealers & Services',
+    slug: 'automotive',
+    icon: '🚗',
+    description: 'Car dealerships, auto repair shops, detailing services',
+    challenges: ['Test drive follow-up', 'Service reminders', 'Inventory management', 'Lead qualification'],
+    solutions: ['Automated follow-ups', 'Service scheduling', 'CRM integration', 'Inventory alerts'],
+  },
+  {
+    name: 'Nonprofits & Ministries',
+    slug: 'nonprofits',
+    icon: '⛪',
+    description: 'Churches, charities, community organizations',
+    challenges: ['Donor engagement', 'Volunteer coordination', 'Limited resources', 'Event management'],
+    solutions: ['Donor communication', 'Event automation', 'Volunteer scheduling', 'Giving campaigns'],
+  },
+  {
+    name: 'Professional Services',
+    slug: 'professional-services',
+    icon: '💼',
+    description: 'Legal, accounting, consulting, healthcare practices',
+    challenges: ['Client communication', 'Appointment scheduling', 'Document management', 'Billing'],
+    solutions: ['Client portals', 'Automated reminders', 'Document automation', 'Proposal generation'],
+  },
+];
+
+// Services (4 Pillars)
+export const SERVICES: Service[] = [
+  {
+    name: 'Consult',
+    title: 'AI Consulting Services',
+    slug: 'ai-consulting',
+    icon: '🔍',
+    description: 'Discover where AI creates the biggest impact in your business',
+    details: 'We map your workflows, uncover automation opportunities, and design a custom strategy.',
+    deliverables: ['Workflow audit', 'Opportunity matrix', '90-day roadmap', 'ROI forecast'],
+  },
+  {
+    name: 'Build',
+    title: 'Custom AI Development',
+    slug: 'custom-ai-development',
+    icon: '⚙️',
+    description: 'Custom AI tools built around how you actually work',
+    details: 'AI agents, workflows, CRM integrations that save time and increase revenue.',
+    deliverables: ['Voice & chat agents', 'Workflow automation', 'CRM integration', 'Custom dashboards'],
+  },
+  {
+    name: 'Grow',
+    title: 'AI Powered Marketing & Growth',
+    slug: 'ai-powered-marketing',
+    icon: '📈',
+    description: 'Scale faster with AI-powered growth systems',
+    details: 'Intelligent marketing campaigns, automated lead gen, data-driven insights.',
+    deliverables: ['Lead generation', 'Email/SMS automation', 'Ad optimization', 'Analytics dashboards'],
+  },
+  {
+    name: 'Educate',
+    title: 'AI Education & Training',
+    slug: 'ai-education-training',
+    icon: '🎓',
+    description: 'Empower your team to leverage AI confidently',
+    details: 'AI adoption training, workflow optimization, ongoing coaching for your staff.',
+    deliverables: ['Team training', 'Best practices', 'Certification programs', 'Ongoing support'],
+  },
+];
+
+// 6-Stage Customer Journey System
+export const SIX_STAGES = [
+  {
+    number: 1,
+    name: 'Lead Generation & Initial Capture',
+    slug: 'lead-generation',
+    icon: '📞',
+    problem: 'Businesses struggle with manual lead capture, low-quality leads, and inefficient qualification',
+    solutions: [
+      {
+        name: 'Automated Multi-Source Lead Collection',
+        description: 'Pulls leads from ads, social media, website forms, chatbots automatically',
+        tech: 'n8n workflows, API integrations',
+        features: ['Multi-channel integration', 'Real-time capture', 'Duplicate detection'],
+      },
+      {
+        name: 'AI-Driven Lead Capture & Qualification',
+        description: 'Instantly captures and assesses using intelligent forms and chatbots',
+        tech: 'AI agents, qualification logic',
+        features: ['Smart forms', 'AI chatbots', 'Auto-qualification'],
+      },
+      {
+        name: 'Intelligent Lead Scoring System',
+        description: 'Ranks leads as Hot, Warm, Cold based on behavior and data',
+        tech: 'Predictive analytics, behavior tracking',
+        features: ['Behavior scoring', 'Predictive models', 'Priority routing'],
+      },
+      {
+        name: 'Seamless CRM Data Syncing',
+        description: 'Real-time access to lead interactions and status across platforms',
+        tech: 'Bi-directional API sync',
+        features: ['Real-time sync', 'Cross-platform data', 'Automatic updates'],
+      },
+    ],
+    metrics: [
+      { value: '98%', label: 'Lead capture rate' },
+      { value: '<60s', label: 'Response time' },
+      { value: '85%', label: 'Qualification accuracy' },
+    ],
+    realWorldExample: 'Precision Plumbing went from 60% to 98% lead capture rate by implementing automated multi-channel lead collection. Response time dropped from 4+ hours to under 60 seconds, resulting in 67% revenue increase in 90 days.',
+  },
+  {
+    number: 2,
+    name: 'Lead Nurturing & Follow-Up',
+    slug: 'lead-nurturing',
+    icon: '💬',
+    problem: 'Inconsistent follow-ups lead to lost opportunities and poor conversion rates',
+    solutions: [
+      {
+        name: 'Behavior-Based Automated Follow-Up',
+        description: 'Triggers follow-ups based on lead actions and engagement patterns',
+        tech: 'Behavioral triggers, workflow automation',
+        features: ['Behavior tracking', 'Trigger automation', 'Smart timing'],
+      },
+      {
+        name: 'AI-Powered Personalized Email & SMS',
+        description: 'Tailored messaging based on lead profile and behavior',
+        tech: 'AI content generation, personalization engine',
+        features: ['Dynamic content', 'Personalization', 'A/B testing'],
+      },
+      {
+        name: 'Multi-Channel Nurture Sequences',
+        description: 'Coordinated campaigns across email, SMS, and voice',
+        tech: 'Omnichannel orchestration',
+        features: ['Channel coordination', 'Sequence management', 'Performance tracking'],
+      },
+    ],
+    metrics: [
+      { value: '3.2x', label: 'Engagement rate' },
+      { value: '78%', label: 'Response rate' },
+      { value: '45%', label: 'Faster conversion' },
+    ],
+    realWorldExample: 'Sunshine Auto Group increased qualified lead conversion from 18% to 41% using behavior-based nurture campaigns. Their sales team now spends time only on hot leads, resulting in $340K monthly revenue increase.',
+  },
+  {
+    number: 3,
+    name: 'Appointment Scheduling & Qualification',
+    slug: 'appointment-scheduling',
+    icon: '📅',
+    problem: 'High no-shows, scheduling conflicts, and unqualified appointments waste time',
+    solutions: [
+      {
+        name: 'AI Self-Scheduling System',
+        description: 'Customers book directly based on real-time availability',
+        tech: 'Calendar integration, smart scheduling',
+        features: ['Real-time availability', 'Auto-booking', 'Conflict prevention'],
+      },
+      {
+        name: 'Pre-Appointment Qualification Surveys',
+        description: 'Automated questions ensure appointment quality before booking',
+        tech: 'Dynamic forms, scoring algorithms',
+        features: ['Dynamic questions', 'Quality scoring', 'Pre-qualification'],
+      },
+      {
+        name: 'Automated Reminders & Confirmations',
+        description: 'Reduces no-shows with multi-channel reminder sequences',
+        tech: 'SMS, email, voice reminders',
+        features: ['Multi-channel alerts', 'Timed sequences', 'Confirmation tracking'],
+      },
+    ],
+    metrics: [
+      { value: '92%', label: 'Show-up rate' },
+      { value: '3.5x', label: 'Booking conversion' },
+      { value: '85%', label: 'Calendar utilization' },
+    ],
+    realWorldExample: 'Elite HVAC Solutions reduced no-shows from 32% to 8% with automated reminders and qualification. Their calendar utilization jumped to 85%, allowing them to handle 287 more maintenance contracts annually.',
+  },
+  {
+    number: 4,
+    name: 'Sales Process & Conversion Optimization',
+    slug: 'sales-optimization',
+    icon: '💰',
+    problem: 'Disorganized pipelines, slow proposals, and dropped leads hurt revenue',
+    solutions: [
+      {
+        name: 'AI-Powered Pipeline Management',
+        description: 'Automatic stage progression and deal health scoring',
+        tech: 'CRM automation, predictive analytics',
+        features: ['Auto stage progression', 'Deal scoring', 'Priority alerts'],
+      },
+      {
+        name: 'Instant Proposal & Quote Generation',
+        description: 'Templates with dynamic pricing based on customer data',
+        tech: 'Document automation, pricing engine',
+        features: ['Template library', 'Dynamic pricing', 'One-click generation'],
+      },
+      {
+        name: 'Predictive Sales Forecasting',
+        description: 'Data-driven insights on deal probability and revenue projection',
+        tech: 'Machine learning models',
+        features: ['Win probability', 'Revenue forecasting', 'Trend analysis'],
+      },
+    ],
+    metrics: [
+      { value: '38%', label: 'Win rate increase' },
+      { value: '5.2 days', label: 'Avg sales cycle' },
+      { value: '+42%', label: 'Deal size growth' },
+    ],
+    realWorldExample: 'Summit Roofing reduced quote delivery time from 3-5 days to under 2 hours using AI quote generation. Their close rate jumped from 22% to 38%, adding $680K in annual revenue with the same crew size.',
+  },
+  {
+    number: 5,
+    name: 'Project Management & Execution',
+    slug: 'project-management',
+    icon: '📋',
+    problem: 'Disorganized workflows, project delays, and lack of visibility slow delivery',
+    solutions: [
+      {
+        name: 'Automated Task Assignment & Routing',
+        description: 'Jobs automatically assigned based on skills, availability, location',
+        tech: 'Workflow orchestration, routing algorithms',
+        features: ['Smart routing', 'Skill matching', 'Load balancing'],
+      },
+      {
+        name: 'Real-Time Project Dashboards',
+        description: 'Live visibility into all active projects and status updates',
+        tech: 'Data aggregation, dashboard tools',
+        features: ['Live updates', 'Performance metrics', 'Resource tracking'],
+      },
+      {
+        name: 'Client Communication Automation',
+        description: 'Automatic status updates keep clients informed without manual work',
+        tech: 'Event-triggered messaging',
+        features: ['Auto-updates', 'Milestone notifications', 'Two-way communication'],
+      },
+    ],
+    metrics: [
+      { value: '91%', label: 'On-time delivery' },
+      { value: '4.7/5', label: 'Client satisfaction' },
+      { value: '+40%', label: 'Capacity increase' },
+    ],
+    realWorldExample: 'Coastal Construction Group improved on-time project completion from 67% to 91% with AI project management. Client satisfaction scores rose from 3.2 to 4.7, and they increased capacity by 40% without adding staff.',
+  },
+  {
+    number: 6,
+    name: 'Retention, Upselling & Post-Project',
+    slug: 'retention-upselling',
+    icon: '🔄',
+    problem: 'Businesses lose repeat opportunities and miss upsell potential after project completion',
+    solutions: [
+      {
+        name: 'Automated Follow-Up & Check-Ins',
+        description: 'Scheduled touchpoints to maintain relationships and identify needs',
+        tech: 'Timed workflows, engagement tracking',
+        features: ['Scheduled check-ins', 'Engagement scoring', 'Relationship nurturing'],
+      },
+      {
+        name: 'AI-Powered Review & Referral Campaigns',
+        description: 'Automated requests for reviews and referrals at optimal times',
+        tech: 'Timing optimization, personalized requests',
+        features: ['Optimal timing', 'Personalized requests', 'Multi-platform reviews'],
+      },
+      {
+        name: 'Intelligent Upsell & Cross-Sell',
+        description: 'Product recommendations based on customer history and behavior',
+        tech: 'Recommendation engine',
+        features: ['Smart recommendations', 'Purchase history analysis', 'Behavior patterns'],
+      },
+      {
+        name: 'Customer Feedback Analysis',
+        description: 'AI analyzes feedback to identify improvement opportunities',
+        tech: 'Sentiment analysis, NLP',
+        features: ['Sentiment tracking', 'Trend identification', 'Actionable insights'],
+      },
+    ],
+    metrics: [
+      { value: '+57%', label: 'Repeat rate' },
+      { value: '3.2x', label: 'Customer LTV' },
+      { value: '24%', label: 'Referral rate' },
+    ],
+    realWorldExample: 'Premier Accounting Partners increased client retention from 61% to 84% with automated follow-ups and feedback analysis. Annual fundraising grew 38%, and they handle 45 more clients without additional staff.',
+  },
+];
+
+// Statistics and metrics
+export const STATS = {
+  yearsExperience: 15,
+  businessesServed: 50,
+  hoursSaved: 5000,
+  averageROI: 4.27,
+  clientRetention: 0.93,
+  avgTimeSaved: 20, // hours per week
+  avgRevenueIncrease: 0.35, // 35%
+};
+
+// Pain points (for Problem Agitation section)
+export const PAIN_POINTS = [
+  {
+    stat: '40%',
+    problem: 'Leads falling through cracks',
+    impact: '$12K-$96K lost revenue monthly',
+  },
+  {
+    stat: '15+',
+    problem: 'Hours per week on repetitive tasks',
+    impact: 'That\'s 780 hours annually wasted',
+  },
+  {
+    stat: '78%',
+    problem: 'Of home service leads go unanswered in first hour',
+    impact: 'They call your competitor instead',
+  },
+];
+
+// Testimonials
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: 'Mike Thompson',
+    title: 'Owner',
+    company: 'Fox Valley Plumbing',
+    industry: 'Home & Building Services',
+    location: 'Tampa, FL',
+    quote: 'We went from missing 40% of calls to capturing every single lead. Revenue increased 67% in 90 days.',
+    result: '67% revenue increase',
+    metric: '+67% Revenue',
+    avatar: '/testimonials/mike-thompson.jpg',
+    video: '/testimonials/fox-valley-video.mp4',
+  },
+  // Add more testimonials as you get them
+];
+
+// Keywords (for SEO)
+export const PRIMARY_KEYWORDS = [
+  'AI automation for home & building service businesses',
+  'business automation Florida',
+  'AI voice agents',
+  'workflow automation',
+  'home & building service automation',
+];
+
+export const CITY_KEYWORDS_TEMPLATE = {
+  primary: '[city] AI automation',
+  secondary: 'business automation consultant [city]',
+  tertiary: 'workflow automation services [city]',
+};
+
+// Case Studies - Detailed success stories
+export interface CaseStudy {
+  id: string;
+  slug: string;
+  featured: boolean;
+  client: {
+    name: string;
+    industry: string;
+    location: string;
+    size: string;
+    yearsFounded: string;
+  };
+  challenge: string;
+  solution: string;
+  implementation: {
+    duration: string;
+    stages: number[];
+    services: string[];
+  };
+  results: Array<{
+    metric: string;
+    value: string;
+    timeframe: string;
+  }>;
+  testimonial: {
+    quote: string;
+    name: string;
+    title: string;
+  };
+  metrics: {
+    beforeAfter: Array<{
+      metric: string;
+      before: string;
+      after: string;
+      improvement: string;
+    }>;
+  };
+  tags: string[];
+  image?: string;
+  publishedDate: string;
+}
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: '1',
+    slug: 'precision-plumbing-tampa',
+    featured: true,
+    client: {
+      name: 'Precision Plumbing & Drain',
+      industry: 'Home & Building Services - Plumbing',
+      location: 'Tampa, FL',
+      size: '15 employees',
+      yearsFounded: '12 years',
+    },
+    challenge:
+      'Precision Plumbing was losing 40% of incoming leads due to slow response times. With only 2 office staff handling calls during business hours, after-hours calls went to voicemail and were rarely followed up. Their average lead response time was 4+ hours, and they had no system for tracking or nurturing leads who weren\'t ready to book immediately.',
+    solution:
+      'Implemented our 6-Stage System with focus on Stages 1-3: automated lead capture across phone, web forms, and social media; instant AI-powered responses within 60 seconds; intelligent qualification and routing to appropriate technicians; automated follow-up sequences for quotes and scheduling.',
+    implementation: {
+      duration: '6 weeks',
+      stages: [1, 2, 3, 4],
+      services: ['Custom AI Development', 'AI-Powered Marketing'],
+    },
+    results: [
+      {
+        metric: 'Lead Response Time',
+        value: '60 seconds',
+        timeframe: 'Down from 4+ hours',
+      },
+      {
+        metric: 'Lead Capture Rate',
+        value: '98%',
+        timeframe: 'Up from 60%',
+      },
+      {
+        metric: 'Revenue Increase',
+        value: '67%',
+        timeframe: 'Within 90 days',
+      },
+      {
+        metric: 'Jobs Booked',
+        value: '+143',
+        timeframe: 'Additional monthly jobs',
+      },
+    ],
+    testimonial: {
+      quote:
+        'We went from missing 40% of calls to capturing every single lead. The AI responds instantly while our team focuses on the work. Revenue is up 67% in just 90 days, and we\'re finally growing without drowning in admin work.',
+      name: 'Mike Rodriguez',
+      title: 'Owner',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Lead Response Time',
+          before: '4-6 hours',
+          after: '<60 seconds',
+          improvement: '99% faster',
+        },
+        {
+          metric: 'Lead Capture Rate',
+          before: '60%',
+          after: '98%',
+          improvement: '+38%',
+        },
+        {
+          metric: 'Monthly Revenue',
+          before: '$85,000',
+          after: '$142,000',
+          improvement: '+67%',
+        },
+        {
+          metric: 'Jobs Booked/Month',
+          before: '120',
+          after: '263',
+          improvement: '+119%',
+        },
+      ],
+    },
+    tags: ['Home & Building Services', 'Lead Generation', 'Tampa', 'ROI 400%+'],
+    publishedDate: '2024-11-15',
+  },
+  {
+    id: '2',
+    slug: 'sunshine-auto-jacksonville',
+    featured: true,
+    client: {
+      name: 'Sunshine Auto Group',
+      industry: 'Automotive - Dealership',
+      location: 'Jacksonville, FL',
+      size: '45 employees, 3 locations',
+      yearsFounded: '8 years',
+    },
+    challenge:
+      'Sunshine Auto Group had strong foot traffic but struggled with digital leads. Their sales team spent 60% of their time on unqualified leads, and follow-up on test drive requests was inconsistent. They had no automated system for nurturing leads who were "just looking," resulting in lost sales to competitors who stayed in touch.',
+    solution:
+      'Deployed comprehensive 6-Stage automation focused on lead qualification, intelligent routing, and nurture campaigns. AI handles initial contact, qualifies budget and timeline, schedules test drives, and runs automated follow-up sequences based on customer behavior and readiness signals.',
+    implementation: {
+      duration: '8 weeks',
+      stages: [1, 2, 3, 4, 5],
+      services: ['Custom AI Development', 'AI-Powered Marketing', 'AI Education & Training'],
+    },
+    results: [
+      {
+        metric: 'Qualified Lead Conversion',
+        value: '41%',
+        timeframe: 'Up from 18%',
+      },
+      {
+        metric: 'Sales Team Efficiency',
+        value: '+156%',
+        timeframe: 'More time on hot leads',
+      },
+      {
+        metric: 'Test Drives Booked',
+        value: '+89',
+        timeframe: 'Additional per month',
+      },
+      {
+        metric: 'Revenue Increase',
+        value: '$340K/month',
+        timeframe: 'Net additional revenue',
+      },
+    ],
+    testimonial: {
+      quote:
+        'The AI qualification system is a game-changer. Our sales team now spends their time with people ready to buy, not tire-kickers. We\'re closing 41% of qualified leads versus 18% before, and monthly revenue is up over $340K.',
+      name: 'Jennifer Martinez',
+      title: 'General Manager',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Lead Qualification Time',
+          before: '25 min per lead',
+          after: '90 seconds',
+          improvement: '94% faster',
+        },
+        {
+          metric: 'Conversion Rate (Qualified)',
+          before: '18%',
+          after: '41%',
+          improvement: '+128%',
+        },
+        {
+          metric: 'Monthly Vehicle Sales',
+          before: '47',
+          after: '78',
+          improvement: '+66%',
+        },
+        {
+          metric: 'Sales Team Productivity',
+          before: '3.9 cars/salesperson',
+          after: '8.7 cars/salesperson',
+          improvement: '+123%',
+        },
+      ],
+    },
+    tags: ['Automotive', 'Lead Qualification', 'Jacksonville', 'Sales Automation'],
+    publishedDate: '2024-10-22',
+  },
+  {
+    id: '3',
+    slug: 'florida-community-foundation',
+    featured: false,
+    client: {
+      name: 'Florida Community Foundation',
+      industry: 'Nonprofit',
+      location: 'Miami, FL',
+      size: '8 staff, 200+ volunteers',
+      yearsFounded: '15 years',
+    },
+    challenge:
+      'The foundation relied heavily on manual outreach for donor engagement and event management. With a small team, they couldn\'t keep up with timely donor acknowledgments, event RSVPs, or volunteer coordination. Donation follow-up was inconsistent, and they had no way to segment donors for targeted campaigns.',
+    solution:
+      'Implemented AI-powered donor management and event coordination system. Automated thank-you messages, donation receipts, event reminders, volunteer scheduling, and personalized outreach campaigns based on donor history and interests. AI handles routine communications while staff focuses on major donor relationships.',
+    implementation: {
+      duration: '5 weeks',
+      stages: [1, 2, 3, 5, 6],
+      services: ['Custom AI Development', 'AI-Powered Marketing'],
+    },
+    results: [
+      {
+        metric: 'Donor Retention',
+        value: '84%',
+        timeframe: 'Up from 61%',
+      },
+      {
+        metric: 'Event Attendance',
+        value: '+52%',
+        timeframe: 'More attendees per event',
+      },
+      {
+        metric: 'Volunteer Hours',
+        value: '+2,400 hours/year',
+        timeframe: 'Better coordination',
+      },
+      {
+        metric: 'Fundraising Increase',
+        value: '38%',
+        timeframe: 'Year-over-year growth',
+      },
+    ],
+    testimonial: {
+      quote:
+        'With a tiny team, we can now run campaigns that feel personal to each donor. Retention jumped from 61% to 84%, and our annual fundraising is up 38%. The AI handles the routine stuff flawlessly, so we can focus on building deep relationships.',
+      name: 'Dr. Patricia Williams',
+      title: 'Executive Director',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Thank You Response Time',
+          before: '3-5 days',
+          after: '2 minutes',
+          improvement: '99% faster',
+        },
+        {
+          metric: 'Donor Retention Rate',
+          before: '61%',
+          after: '84%',
+          improvement: '+38%',
+        },
+        {
+          metric: 'Annual Fundraising',
+          before: '$420,000',
+          after: '$580,000',
+          improvement: '+38%',
+        },
+        {
+          metric: 'Staff Time on Admin',
+          before: '25 hrs/week',
+          after: '6 hrs/week',
+          improvement: '-76%',
+        },
+      ],
+    },
+    tags: ['Nonprofit', 'Donor Management', 'Miami', 'Event Automation'],
+    publishedDate: '2024-09-18',
+  },
+  {
+    id: '4',
+    slug: 'mitchell-law-group-orlando',
+    featured: false,
+    client: {
+      name: 'Mitchell Law Group',
+      industry: 'Professional Services - Law',
+      location: 'Orlando, FL',
+      size: '12 attorneys, 8 support staff',
+      yearsFounded: '20 years',
+    },
+    challenge:
+      'The firm was drowning in client intake calls, spending hours on unqualified leads and missing billable time. Initial consultations took 45 minutes per prospect, most of whom weren\'t a good fit. Case updates and client communication consumed paralegal time, and document collection for new cases was slow and error-prone.',
+    solution:
+      'Built intelligent intake system with AI-powered qualification, automated scheduling, document collection workflows, and client communication portal. AI pre-qualifies leads based on case type and budget, collects necessary information before consultations, and handles routine client updates automatically.',
+    implementation: {
+      duration: '7 weeks',
+      stages: [1, 2, 3, 4],
+      services: ['AI Consulting', 'Custom AI Development'],
+    },
+    results: [
+      {
+        metric: 'Qualified Consultation Rate',
+        value: '78%',
+        timeframe: 'Up from 34%',
+      },
+      {
+        metric: 'Billable Hours Recovered',
+        value: '+240 hours/month',
+        timeframe: 'Attorneys\' time saved',
+      },
+      {
+        metric: 'Client Onboarding Time',
+        value: '2 days',
+        timeframe: 'Down from 12 days',
+      },
+      {
+        metric: 'Revenue Increase',
+        value: '29%',
+        timeframe: 'More billable work',
+      },
+    ],
+    testimonial: {
+      quote:
+        'We got our weekends back. The AI handles intake brilliantly—by the time prospects reach us, they\'re pre-qualified and all docs are collected. Our attorneys gained 240+ billable hours per month, and revenue is up 29%.',
+      name: 'Robert Mitchell',
+      title: 'Managing Partner',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Intake Qualification Time',
+          before: '45 min per lead',
+          after: '5 min per lead',
+          improvement: '89% faster',
+        },
+        {
+          metric: 'Qualified Lead Rate',
+          before: '34%',
+          after: '78%',
+          improvement: '+129%',
+        },
+        {
+          metric: 'Monthly Billable Hours',
+          before: '1,680',
+          after: '1,920',
+          improvement: '+14%',
+        },
+        {
+          metric: 'Average Case Value',
+          before: '$8,500',
+          after: '$12,100',
+          improvement: '+42%',
+        },
+      ],
+    },
+    tags: ['Professional Services', 'Legal', 'Orlando', 'Client Intake'],
+    publishedDate: '2024-08-12',
+  },
+  {
+    id: '5',
+    slug: 'elite-hvac-fort-lauderdale',
+    featured: false,
+    client: {
+      name: 'Elite HVAC Solutions',
+      industry: 'Home & Building Services - HVAC',
+      location: 'Fort Lauderdale, FL',
+      size: '22 technicians',
+      yearsFounded: '9 years',
+    },
+    challenge:
+      'Elite HVAC had seasonal demand spikes they couldn\'t handle efficiently. During Florida summers, they missed 50%+ of calls, had poor service reminder follow-through, and struggled with technician scheduling. No system for preventive maintenance contracts meant they were always chasing emergency work instead of predictable recurring revenue.',
+    solution:
+      'Deployed comprehensive automation covering lead capture, intelligent routing based on technician availability and location, automated service reminders, maintenance contract management, and customer feedback collection. System integrates with their existing CRM and handles peak season demand surges automatically.',
+    implementation: {
+      duration: '9 weeks',
+      stages: [1, 2, 3, 4, 5, 6],
+      services: ['Custom AI Development', 'AI-Powered Marketing', 'AI Education & Training'],
+    },
+    results: [
+      {
+        metric: 'Call Capture Rate',
+        value: '99%',
+        timeframe: 'Even during peak season',
+      },
+      {
+        metric: 'Maintenance Contracts',
+        value: '+287',
+        timeframe: 'Recurring revenue boost',
+      },
+      {
+        metric: 'Customer Retention',
+        value: '91%',
+        timeframe: 'Up from 68%',
+      },
+      {
+        metric: 'Annual Revenue Increase',
+        value: '$580K',
+        timeframe: 'From efficiency + contracts',
+      },
+    ],
+    testimonial: {
+      quote:
+        'Summer used to be chaos—phones ringing off the hook, customers slipping through. Now the AI handles it all. We went from 68% to 91% retention, added 287 maintenance contracts, and revenue jumped $580K annually. Best investment we ever made.',
+      name: 'Carlos Mendez',
+      title: 'Owner',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Peak Season Call Capture',
+          before: '47%',
+          after: '99%',
+          improvement: '+111%',
+        },
+        {
+          metric: 'Maintenance Contracts',
+          before: '142',
+          after: '429',
+          improvement: '+202%',
+        },
+        {
+          metric: 'Customer Retention',
+          before: '68%',
+          after: '91%',
+          improvement: '+34%',
+        },
+        {
+          metric: 'Recurring Revenue',
+          before: '$190K/year',
+          after: '$520K/year',
+          improvement: '+174%',
+        },
+      ],
+    },
+    tags: ['Home & Building Services', 'HVAC', 'Fort Lauderdale', 'Seasonal Demand'],
+    publishedDate: '2024-07-25',
+  },
+  {
+    id: '6',
+    slug: 'premier-accounting-tampa',
+    featured: false,
+    client: {
+      name: 'Premier Accounting Partners',
+      industry: 'Professional Services - Accounting',
+      location: 'Tampa, FL',
+      size: '6 CPAs, 4 staff',
+      yearsFounded: '14 years',
+    },
+    challenge:
+      'Tax season overwhelmed the small team with client questions, document requests, and appointment scheduling. CPAs spent 40% of their time on administrative tasks instead of high-value tax strategy work. Client onboarding took weeks, and there was no automated way to collect necessary documents or answer common questions.',
+    solution:
+      'Implemented AI-powered client portal with automated document collection, intelligent Q&A system for common tax questions, appointment scheduling, and proactive communication for deadlines and document needs. AI triages client requests and handles routine queries, escalating complex issues to CPAs.',
+    implementation: {
+      duration: '6 weeks',
+      stages: [1, 2, 3, 4, 6],
+      services: ['Custom AI Development', 'AI Education & Training'],
+    },
+    results: [
+      {
+        metric: 'Admin Time Reduction',
+        value: '76%',
+        timeframe: 'CPAs focused on strategy',
+      },
+      {
+        metric: 'Client Onboarding Time',
+        value: '3 days',
+        timeframe: 'Down from 18 days',
+      },
+      {
+        metric: 'Client Capacity Increase',
+        value: '+45 clients',
+        timeframe: 'Without adding staff',
+      },
+      {
+        metric: 'Revenue Per CPA',
+        value: '+$82K',
+        timeframe: 'Annual increase',
+      },
+    ],
+    testimonial: {
+      quote:
+        'Tax season went from nightmare to manageable. The AI handles 90% of client questions and document collection automatically. We took on 45 more clients without hiring, and each CPA is generating $82K more annually. It\'s transformed our practice.',
+      name: 'Lisa Chen',
+      title: 'Managing Partner',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Document Collection Time',
+          before: '12 days average',
+          after: '2 days average',
+          improvement: '83% faster',
+        },
+        {
+          metric: 'Client Question Response',
+          before: '24-48 hours',
+          after: '<5 minutes',
+          improvement: '99% faster',
+        },
+        {
+          metric: 'Clients Per CPA',
+          before: '85',
+          after: '130',
+          improvement: '+53%',
+        },
+        {
+          metric: 'Annual Revenue',
+          before: '$1.2M',
+          after: '$1.7M',
+          improvement: '+42%',
+        },
+      ],
+    },
+    tags: ['Professional Services', 'Accounting', 'Tampa', 'Tax Season'],
+    publishedDate: '2024-06-30',
+  },
+  {
+    id: '7',
+    slug: 'summit-roofing-solutions',
+    featured: false,
+    client: {
+      name: 'Summit Roofing Solutions',
+      industry: 'Home & Building Services - Roofing',
+      location: 'Tampa, FL',
+      size: '15 employees, $2.3M annual revenue',
+      yearsFounded: '2015',
+    },
+    challenge:
+      'Summit Roofing was struggling with quote follow-up and seasonal demand fluctuations. 58% of inspection leads went cold within 72 hours due to slow quote delivery. During storm season they were overwhelmed; during slow months they had idle crews. Manual job scheduling led to inefficient routing and wasted drive time.',
+    solution:
+      'We implemented our 6-Stage System focusing on automated quote generation, smart lead nurturing, and predictive scheduling. The AI analyzes inspection photos to generate instant quotes, follows up with homeowners automatically, and optimizes crew routing based on weather patterns and material availability.',
+    implementation: {
+      duration: '7 weeks',
+      stages: [1, 2, 3, 4],
+      services: [
+        'AI-powered inspection analysis',
+        'Automated quote generation',
+        'Smart lead nurturing sequences',
+        'Predictive crew scheduling',
+        'Dynamic routing optimization',
+        'Seasonal demand forecasting',
+      ],
+    },
+    results: [
+      {
+        metric: 'Quote Delivery Time',
+        value: '< 2 hours',
+        timeframe: 'down from 3-5 days',
+      },
+      {
+        metric: 'Quote-to-Close Rate',
+        value: '38%',
+        timeframe: 'up from 22%',
+      },
+      {
+        metric: 'Jobs Completed',
+        value: '+127 annually',
+        timeframe: 'same crew size',
+      },
+      {
+        metric: 'Annual Revenue Increase',
+        value: '$680K',
+        timeframe: 'first 12 months',
+      },
+    ],
+    testimonial: {
+      quote:
+        'The instant quote system is a game changer. Homeowners get professional quotes with pricing while our estimator is still on their roof. Our close rate jumped from 22% to 38% because we strike while the iron is hot. The routing optimization alone saves us 8-10 hours of drive time per week.',
+      name: 'Marcus Rodriguez',
+      title: 'Owner & Founder',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Quote Delivery Speed',
+          before: '3-5 days',
+          after: '< 2 hours',
+          improvement: '95% faster',
+        },
+        {
+          metric: 'Lead-to-Close Rate',
+          before: '22%',
+          after: '38%',
+          improvement: '+73%',
+        },
+        {
+          metric: 'Jobs Per Month',
+          before: '42',
+          after: '52',
+          improvement: '+24%',
+        },
+        {
+          metric: 'Drive Time Waste',
+          before: '18 hrs/week',
+          after: '8 hrs/week',
+          improvement: '56% reduction',
+        },
+      ],
+    },
+    tags: ['Home & Building Services', 'Roofing', 'Tampa', 'Quote Automation'],
+    publishedDate: '2024-08-22',
+  },
+  {
+    id: '8',
+    slug: 'coastal-construction-group',
+    featured: true,
+    client: {
+      name: 'Coastal Construction Group',
+      industry: 'Home & Building Services - General Contracting',
+      location: 'Jacksonville, FL',
+      size: '32 employees, $5.8M annual revenue',
+      yearsFounded: '2009',
+    },
+    challenge:
+      'Coastal was losing $40K+ monthly to project delays, change order disputes, and subcontractor miscommunication. Their PM team spent 15+ hours weekly on status updates and client calls. Material orders were often delayed or incorrect. Client satisfaction scores were 3.2/5 due to poor communication and timeline slippage.',
+    solution:
+      'We built a comprehensive AI project management system with automated client updates, smart subcontractor coordination, and predictive timeline management. The system monitors every job phase, sends proactive updates to clients, coordinates sub schedules, and flags potential delays before they happen.',
+    implementation: {
+      duration: '9 weeks',
+      stages: [1, 2, 3, 4, 5],
+      services: [
+        'AI project timeline management',
+        'Automated client communication portal',
+        'Subcontractor coordination system',
+        'Material order optimization',
+        'Change order documentation AI',
+        'Predictive delay detection',
+        'Client satisfaction tracking',
+      ],
+    },
+    results: [
+      {
+        metric: 'On-Time Project Completion',
+        value: '91%',
+        timeframe: 'up from 67%',
+      },
+      {
+        metric: 'Client Satisfaction Score',
+        value: '4.7/5',
+        timeframe: 'up from 3.2/5',
+      },
+      {
+        metric: 'PM Admin Time Saved',
+        value: '18 hours/week',
+        timeframe: 'per project manager',
+      },
+      {
+        metric: 'Project Capacity',
+        value: '+40%',
+        timeframe: 'same team size',
+      },
+    ],
+    testimonial: {
+      quote:
+        'This system transformed how we run projects. Clients get daily updates automatically, subs know exactly when they\'re needed, and we catch delays 2-3 weeks before they become problems. We went from managing 12 projects at once to 17, with higher quality and happier clients. Our Google reviews went from 4.1 to 4.8 stars.',
+      name: 'David Patterson',
+      title: 'President & COO',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Projects On-Time',
+          before: '67%',
+          after: '91%',
+          improvement: '+36% improvement',
+        },
+        {
+          metric: 'Client Communication Time',
+          before: '15 hrs/week per PM',
+          after: '3 hrs/week per PM',
+          improvement: '80% reduction',
+        },
+        {
+          metric: 'Change Order Disputes',
+          before: '18% of projects',
+          after: '3% of projects',
+          improvement: '83% reduction',
+        },
+        {
+          metric: 'Project Capacity',
+          before: '12 concurrent',
+          after: '17 concurrent',
+          improvement: '+42%',
+        },
+      ],
+    },
+    tags: ['Home & Building Services', 'General Contracting', 'Jacksonville', 'Project Management'],
+    publishedDate: '2024-09-14',
+  },
+  {
+    id: '9',
+    slug: 'precision-electric-services',
+    featured: false,
+    client: {
+      name: 'Precision Electric Services',
+      industry: 'Home & Building Services - Electrical',
+      location: 'Miami, FL',
+      size: '22 employees, $3.1M annual revenue',
+      yearsFounded: '2012',
+    },
+    challenge:
+      'Precision Electric was drowning in emergency service calls but missing opportunities for high-value commercial work. Their dispatch system was chaotic—technicians often arrived without proper parts or job details. Service quotes took 2-3 days to send, causing 40% quote abandonment. Recurring maintenance clients weren\'t being contacted proactively, leading to $180K in lost annual revenue.',
+    solution:
+      'We implemented intelligent dispatch with AI-powered job matching, instant service quoting, and automated maintenance reminders. The system analyzes service history to predict needed parts, routes technicians efficiently, and sends quotes within minutes. A proactive client portal now handles maintenance scheduling automatically.',
+    implementation: {
+      duration: '6 weeks',
+      stages: [1, 2, 3, 4],
+      services: [
+        'Smart dispatch & routing system',
+        'Instant service quote generation',
+        'Parts prediction & inventory management',
+        'Automated maintenance scheduling',
+        'Client communication portal',
+        'Emergency vs. scheduled call prioritization',
+      ],
+    },
+    results: [
+      {
+        metric: 'First-Call Resolution',
+        value: '87%',
+        timeframe: 'up from 62%',
+      },
+      {
+        metric: 'Quote Response Time',
+        value: '< 15 minutes',
+        timeframe: 'down from 2-3 days',
+      },
+      {
+        metric: 'Recurring Revenue Increase',
+        value: '$240K annually',
+        timeframe: 'from maintenance contracts',
+      },
+      {
+        metric: 'Truck Rolls Per Day',
+        value: '+3.5',
+        timeframe: 'same team size',
+      },
+    ],
+    testimonial: {
+      quote:
+        'Our techs used to make 2-3 trips per job because they didn\'t have the right parts. Now the AI tells them exactly what to bring based on the service history. Quotes go out in minutes instead of days, and our maintenance contracts are 100% automated. We\'re doing $240K more in recurring revenue without hiring anyone.',
+      name: 'Carlos Mendez',
+      title: 'Owner & Master Electrician',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Quote Abandonment Rate',
+          before: '40%',
+          after: '12%',
+          improvement: '70% reduction',
+        },
+        {
+          metric: 'First-Call Resolution',
+          before: '62%',
+          after: '87%',
+          improvement: '+40%',
+        },
+        {
+          metric: 'Maintenance Contract Renewals',
+          before: '58%',
+          after: '91%',
+          improvement: '+57%',
+        },
+        {
+          metric: 'Calls Per Technician/Day',
+          before: '4.2',
+          after: '5.9',
+          improvement: '+40%',
+        },
+      ],
+    },
+    tags: ['Home & Building Services', 'Electrical', 'Miami', 'Dispatch Automation'],
+    publishedDate: '2024-10-08',
+  },
+  {
+    id: '10',
+    slug: 'gulf-coast-commercial-painting',
+    featured: false,
+    client: {
+      name: 'Gulf Coast Commercial Painting',
+      industry: 'Home & Building Services - Commercial Painting',
+      location: 'Sarasota, FL',
+      size: '28 employees, $4.2M annual revenue',
+      yearsFounded: '2011',
+    },
+    challenge:
+      'Gulf Coast was struggling with bid accuracy and project estimating. Their manual takeoff process took 6-8 hours per bid, limiting them to 3-4 bids weekly. They won only 18% of bids because quotes were often too high (to cover uncertainty) or too low (leading to losses). Paint and material waste ran 15-20% over budget due to poor quantity estimates.',
+    solution:
+      'We developed an AI-powered estimating system that analyzes blueprints and site photos to generate accurate material quantities and labor hours. The system learns from completed job data to improve accuracy, automates bid document generation, and creates detailed scope-of-work packages. Integrated inventory management prevents over-ordering and waste.',
+    implementation: {
+      duration: '8 weeks',
+      stages: [1, 2, 3, 4, 6],
+      services: [
+        'AI blueprint analysis & takeoff',
+        'Automated bid generation',
+        'Material quantity optimization',
+        'Labor hour prediction',
+        'Scope-of-work automation',
+        'Inventory & waste tracking',
+        'Bid win-rate analytics',
+      ],
+    },
+    results: [
+      {
+        metric: 'Bid Preparation Time',
+        value: '45 minutes',
+        timeframe: 'down from 6-8 hours',
+      },
+      {
+        metric: 'Bid Win Rate',
+        value: '34%',
+        timeframe: 'up from 18%',
+      },
+      {
+        metric: 'Material Waste',
+        value: '4%',
+        timeframe: 'down from 18%',
+      },
+      {
+        metric: 'Annual Profit Margin',
+        value: '+8.2%',
+        timeframe: 'better accuracy = less losses',
+      },
+    ],
+    testimonial: {
+      quote:
+        'We went from bidding 3-4 jobs a week to 12-15, and our win rate nearly doubled. The AI analyzes square footage, surface types, and prep work more accurately than our senior estimators. Material waste dropped from 18% to 4%, saving us $85K annually. We can now bid larger commercial projects with confidence.',
+      name: 'Jennifer Hartwell',
+      title: 'VP of Operations',
+    },
+    metrics: {
+      beforeAfter: [
+        {
+          metric: 'Bids Per Week',
+          before: '3-4',
+          after: '12-15',
+          improvement: '+275%',
+        },
+        {
+          metric: 'Bid Win Rate',
+          before: '18%',
+          after: '34%',
+          improvement: '+89%',
+        },
+        {
+          metric: 'Material Waste',
+          before: '18%',
+          after: '4%',
+          improvement: '78% reduction',
+        },
+        {
+          metric: 'Estimating Cost Per Bid',
+          before: '$240',
+          after: '$35',
+          improvement: '85% reduction',
+        },
+      ],
+    },
+    tags: ['Home & Building Services', 'Commercial Painting', 'Sarasota', 'Estimating AI'],
+    publishedDate: '2024-11-19',
+  },
+];
+
+// Statistics for SocialProof component
+export const STATISTICS = [
+  { value: '50+', label: 'Clients Served', icon: '👥', target: 50, prefix: '', suffix: '+' },
+  { value: '400%', label: 'Average ROI', icon: '📈', target: 400, prefix: '', suffix: '%' },
+  { value: '24/7', label: 'Automation Running', icon: '🤖', target: 24, prefix: '', suffix: '/7' },
+  { value: '95%', label: 'Client Satisfaction', icon: '⭐', target: 95, prefix: '', suffix: '%' },
+];
+
+// Tech stack for TechStack component
+export const TECH_STACK = [
+  { name: 'OpenAI GPT-4', logo: '🤖', icon: '🤖', category: 'AI Models' },
+  { name: 'Anthropic Claude', logo: '🧠', icon: '🧠', category: 'AI Models' },
+  { name: 'Google Gemini', logo: '⚡', icon: '⚡', category: 'AI Models' },
+  { name: 'Make.com', logo: '🔗', icon: '🔗', category: 'Automation' },
+  { name: 'Zapier', logo: '⚙️', icon: '⚙️', category: 'Automation' },
+  { name: 'n8n', logo: '🔄', icon: '🔄', category: 'Automation' },
+  { name: 'Airtable', logo: '📊', icon: '📊', category: 'Database' },
+  { name: 'HubSpot', logo: '📈', icon: '📈', category: 'CRM' },
+  { name: 'Salesforce', logo: '☁️', icon: '☁️', category: 'CRM' },
+  { name: 'Twilio', logo: '📱', icon: '📱', category: 'Communication' },
+  { name: 'SendGrid', logo: '📧', icon: '📧', category: 'Communication' },
+  { name: 'Stripe', logo: '💳', icon: '💳', category: 'Payment' },
+];
