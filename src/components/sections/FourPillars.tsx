@@ -27,13 +27,17 @@ export default function FourPillars() {
 
     // Horizontal scroll animation
     const cards = cardsContainer.querySelectorAll('.pillar-card');
-    const totalWidth = cardsContainer.scrollWidth - window.innerWidth;
+
+    // Calculate total scroll distance needed
+    const cardWidth = cards[0]?.getBoundingClientRect().width || 600;
+    const gap = 32; // space-x-8 = 32px
+    const totalScrollWidth = (cardWidth + gap) * cards.length;
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: scrollContainer,
         start: 'top top',
-        end: () => `+=${totalWidth * 2}`,
+        end: () => `+=${totalScrollWidth * 2.5}`,
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -44,21 +48,6 @@ export default function FourPillars() {
     tl.to(cardsContainer, {
       x: () => -(cardsContainer.scrollWidth - window.innerWidth),
       ease: 'none',
-    });
-
-    // Fade in cards as they come into view
-    cards.forEach((card) => {
-      gsap.from(card, {
-        opacity: 0,
-        scale: 0.9,
-        scrollTrigger: {
-          trigger: card,
-          containerAnimation: tl,
-          start: 'left center',
-          end: 'center center',
-          scrub: 1,
-        },
-      });
     });
 
     return () => {
@@ -89,7 +78,7 @@ export default function FourPillars() {
         <div className="pb-20">
           <div
             ref={cardsContainerRef}
-            className="flex space-x-8 pl-6 md:pl-[10vw] pr-6 md:pr-[10vw]"
+            className="flex space-x-8 pl-[5vw] md:pl-[20vw] pr-[5vw] md:pr-[20vw]"
             style={{ width: 'max-content' }}
           >
             {SERVICES.map((service, index) => (
