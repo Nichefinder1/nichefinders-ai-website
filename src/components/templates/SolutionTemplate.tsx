@@ -42,34 +42,70 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
   return (
     <main>
       {/* Hero */}
-      <Section background="gradient" padding>
-        <Container size="lg">
-          <div
-            ref={heroRef}
-            className="text-center max-w-4xl mx-auto text-white py-20"
-          >
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient pt-32 pb-20">
+        {/* Animated Background */}
+        <div className="absolute inset-0 z-0">
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-primary/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-navy-deep/30 rounded-full blur-3xl animate-pulse delay-1000" />
+
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                backgroundSize: '50px 50px',
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Content */}
+        <Container size="lg" className="relative z-10 text-center">
+          <div ref={heroRef} className="max-w-4xl mx-auto">
+            {/* Icon */}
             <div className="text-7xl mb-6">{service.icon}</div>
-            <Badge variant="secondary" size="md" className="mb-6 bg-white/20 text-white">
+
+            {/* Badge */}
+            <Badge variant="secondary" size="md" className="mb-6">
               SOLUTION
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-black mb-6">
-              {service.name}
+
+            {/* Headline with Gradient */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+              <span className="block text-gradient">{service.name}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Button
+                href={CALENDAR_LINK}
+                variant="primary"
+                size="lg"
+                className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
+                external
+              >
+                Book Your Free Discovery Call
+              </Button>
+              <Button
+                href="/6-stage-system"
+                variant="secondary"
+                size="lg"
+                className="min-w-[280px] text-lg font-bold py-4 px-8"
+              >
+                Explore Our 6-Stage System
+              </Button>
+            </div>
+
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
               {service.description}
             </p>
-            <Button
-              href={CALENDAR_LINK}
-              external
-              variant="primary"
-              size="lg"
-              className="bg-white text-navy-deep hover:bg-gray-100"
-            >
-              Get Started
-            </Button>
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* Ideal For */}
       <Section background="white" padding>
