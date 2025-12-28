@@ -480,7 +480,7 @@ export const TESTIMONIALS = [
     id: 1,
     name: 'Mike Thompson',
     title: 'Owner',
-    company: 'Fox Valley Plumbing',
+    company: 'Precision Plumbing & Drain',
     industry: 'Home & Building Services',
     location: 'Tampa, FL',
     quote: 'We went from missing 40% of calls to capturing every single lead. Revenue increased 67% in 90 days.',
