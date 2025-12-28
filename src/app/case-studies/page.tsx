@@ -48,16 +48,36 @@ export default function CaseStudiesPage() {
   return (
     <main>
       {/* Hero */}
-      <Section background="gradient" padding>
-        <Container size="lg">
-          <div className="text-center max-w-4xl mx-auto text-white py-20">
-            <Badge variant="secondary" size="md" className="mb-6 bg-white/20 text-white">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient pt-32 pb-20">
+        {/* Animated Background */}
+        <div className="absolute inset-0 z-0">
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-primary/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-navy-deep/30 rounded-full blur-3xl animate-pulse delay-1000" />
+
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                backgroundSize: '50px 50px',
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Content */}
+        <Container size="lg" className="relative z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            <Badge variant="secondary" size="md" className="mb-6">
               PROVEN RESULTS
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-black mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
               Real Businesses, Real Results
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-8">
               See how Florida businesses across industries are transforming
               with our AI automation solutions. Every case study shows real
               metrics, real timelines, and real ROI.
@@ -70,8 +90,8 @@ export default function CaseStudiesPage() {
                 { label: 'Avg ROI', value: '400%' },
                 { label: 'Avg Timeline', value: '6-9 weeks' },
               ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-black text-white mb-2">
+                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <div className="text-4xl font-black text-cyan-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-sm text-white/80">{stat.label}</div>
@@ -80,7 +100,7 @@ export default function CaseStudiesPage() {
             </div>
           </div>
         </Container>
-      </Section>
+      </section>
 
       {/* Filters */}
       <Section background="white" padding>
