@@ -42,7 +42,7 @@ export default function AboutPage() {
               ABOUT NICHEFINDERS AI
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              We're Building the Future of Florida Business
+              We're Building the Future of Business
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
               One automated lead at a time. One satisfied client at a time. One
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                We believe every Florida business deserves access to
+                We believe every business deserves access to
                 world-class AI automation—not just Fortune 500 companies.
               </p>
               <p className="text-lg text-gray-700 mb-6">

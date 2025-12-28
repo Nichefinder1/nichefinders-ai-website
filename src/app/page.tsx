@@ -12,21 +12,23 @@ import InlineCalendarCTA from '@/components/ui/InlineCalendarCTA';
 import Container from '@/components/ui/Container';
 
 export const metadata = {
-  title: 'NicheFinders AI | Florida\'s #1 AI Automation Agency',
+  title: 'NicheFinders AI | #1 AI Automation Agency',
   description:
-    'Transform your Florida business with AI automation that actually works. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services.',
+    'Transform your business with AI automation that actually works. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services.',
   keywords: [
+    'AI automation',
+    'business automation',
+    'AI consulting',
+    'automated lead generation',
+    'AI for home services',
+    'business process automation',
     'AI automation Florida',
     'business automation Tampa',
-    'AI consulting Jacksonville',
-    'automated lead generation Miami',
-    'AI for home services Orlando',
-    'business process automation Fort Lauderdale',
   ].join(', '),
   openGraph: {
     title: 'NicheFinders AI | Transform Your Business with AI Automation',
     description:
-      'Stop losing revenue to manual processes. Our proven 6-Stage System delivers 400% average ROI for Florida businesses.',
+      'Stop losing revenue to manual processes. Our proven 6-Stage System delivers 400% average ROI for businesses nationwide.',
     type: 'website',
     url: 'https://nichefinders.ai',
     images: [
@@ -34,13 +36,13 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'NicheFinders AI - Florida AI Automation Agency',
+        alt: 'NicheFinders AI - AI Automation Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NicheFinders AI | Florida\'s #1 AI Automation Agency',
+    title: 'NicheFinders AI | #1 AI Automation Agency',
     description:
       'Transform your business with AI automation. 400% average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
     images: ['/og-image.png'],
@@ -70,7 +72,7 @@ export default function HomePage() {
         <InlineCalendarCTA
           variant="primary"
           headline="Stop wondering if AI can work for your industry"
-          subheadline="We've helped 50+ Florida businesses just like yours. Book a free call and we'll show you exactly how."
+          subheadline="We've helped 50+ businesses just like yours. Book a call and we'll show you exactly how."
           buttonText="See How It Works for Your Business"
         />
       </Container>

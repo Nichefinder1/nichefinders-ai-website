@@ -78,7 +78,7 @@ export default function SocialProof() {
             Real Businesses, Real Results
           </h2>
           <p className="text-xl text-gray-600">
-            Don't take our word for it. See what Florida business owners are
+            Don't take our word for it. See what business owners are
             saying about their AI transformation.
           </p>
         </div>
@@ -236,7 +236,7 @@ export default function SocialProof() {
             {
               icon: '',
               title: 'Industry Leaders',
-              description: 'Working with top businesses across 4 major Florida industries',
+              description: 'Working with top businesses across 4 major industries nationwide',
             },
             {
               icon: '',
@@ -246,7 +246,7 @@ export default function SocialProof() {
             {
               icon: '',
               title: '24/7 Support',
-              description: 'Dedicated Florida-based team always ready to help',
+              description: 'Dedicated team always ready to help, wherever you are',
             },
           ].map((indicator, index) => (
             <div key={index} className="text-center">

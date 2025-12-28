@@ -31,11 +31,11 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://nichefinders.ai'),
   title: {
-    default: 'NicheFinders AI | Florida\'s #1 AI Automation Agency',
+    default: 'NicheFinders AI | #1 AI Automation Agency',
     template: '%s | NicheFinders AI',
   },
   description:
-    'Transform your Florida business with AI automation that actually works. Proven 6-Stage System delivering 400% average ROI for home services, automotive, nonprofits, and professional services.',
+    'Transform your business with AI automation that actually works. Proven 6-Stage System delivering 400% average ROI for home services, automotive, nonprofits, and professional services. Serving clients nationwide.',
   keywords: [
     'AI automation',
     'business automation',

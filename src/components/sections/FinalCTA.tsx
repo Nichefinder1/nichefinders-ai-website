@@ -145,7 +145,7 @@ export default function FinalCTA() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Florida-based team</span>
+              <span>Nationwide service</span>
             </div>
             <div className="flex items-center space-x-2">
               <svg

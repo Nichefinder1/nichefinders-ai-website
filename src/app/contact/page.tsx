@@ -240,7 +240,7 @@ export default function ContactPage() {
               {
                 question: 'Do you work with businesses outside Florida?',
                 answer:
-                  'We focus exclusively on Florida businesses to deliver the best local expertise and support. We serve all major FL cities.',
+                  'While Florida is our primary market, we serve clients nationwide. Our proven systems work for businesses in any location.',
               },
               {
                 question: "What's your pricing model?",

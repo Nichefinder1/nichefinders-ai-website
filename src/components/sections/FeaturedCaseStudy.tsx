@@ -69,7 +69,7 @@ export default function FeaturedCaseStudy() {
             See What's Possible
           </h2>
           <p className="text-xl text-gray-300">
-            Real results from a real Florida business. This is what happens
+            Real results from a real business. This is what happens
             when you implement the 6-Stage System.
           </p>
         </div>
@@ -173,7 +173,7 @@ export default function FeaturedCaseStudy() {
         {/* More Case Studies Link */}
         <div className="mt-12 text-center">
           <p className="text-gray-300 mb-4">
-            Want to see more success stories from Florida businesses?
+            Want to see more success stories?
           </p>
           <Button
             href="/case-studies"
