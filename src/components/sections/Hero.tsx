@@ -151,13 +151,26 @@ export default function Hero() {
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight"
           >
             <span className="block">Transform Your Business</span>
             <span className="block text-gradient">
               With AI That Actually Works
             </span>
           </h1>
+
+          {/* Primary CTA */}
+          <div className="mb-10">
+            <Button
+              href={CALENDAR_LINK}
+              variant="primary"
+              size="lg"
+              className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg"
+              external
+            >
+              Book Your Free Discovery Call
+            </Button>
+          </div>
 
           {/* Subheadline */}
           <p
