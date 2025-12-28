@@ -50,7 +50,7 @@ const nextConfig = {
 
   // Experimental features for better performance
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled - conflicts with Tailwind CSS
     optimizePackageImports: ['gsap', 'framer-motion'],
   },
 };
