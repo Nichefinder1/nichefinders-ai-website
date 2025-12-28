@@ -88,36 +88,36 @@ export default function FourPillars() {
                 className="pillar-card flex-shrink-0 w-[80vw] md:w-[450px] p-6 md:p-8 bg-white"
               >
                 {/* Pillar Number */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="text-8xl font-black text-cyan-primary/20">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-7xl font-black text-cyan-primary/20">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-                  <div className="text-5xl">{service.icon}</div>
+                  <div className="text-4xl">{service.icon}</div>
                 </div>
 
                 {/* Content */}
-                <div className="mb-8">
-                  <h3 className="text-3xl font-black text-navy-deep mb-4">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-black text-navy-deep mb-3">
                     {service.name}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-6">
+                  <p className="text-base text-gray-600 mb-4">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Key Features */}
-                <div className="space-y-4 mb-8">
-                  <h4 className="font-bold text-navy-deep uppercase text-sm tracking-wide">
+                <div className="space-y-3 mb-6">
+                  <h4 className="font-bold text-navy-deep uppercase text-xs tracking-wide">
                     What You Get:
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {service.deliverables.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start space-x-3 text-gray-700"
+                        className="flex items-start space-x-2 text-gray-700 text-sm"
                       >
                         <svg
-                          className="w-5 h-5 text-cyan-primary flex-shrink-0 mt-0.5"
+                          className="w-4 h-4 text-cyan-primary flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -134,11 +134,11 @@ export default function FourPillars() {
                 </div>
 
                 {/* Details */}
-                <div className="mb-8 p-6 bg-gray-50 rounded-lg">
-                  <h4 className="font-bold text-navy-deep mb-3 text-sm uppercase tracking-wide">
+                <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-bold text-navy-deep mb-2 text-xs uppercase tracking-wide">
                     What You Get:
                   </h4>
-                  <p className="text-gray-700">{service.details}</p>
+                  <p className="text-gray-700 text-sm">{service.details}</p>
                 </div>
 
                 {/* CTA */}
@@ -158,11 +158,11 @@ export default function FourPillars() {
               variant="gradient-border"
               className="pillar-card flex-shrink-0 w-[80vw] md:w-[450px] p-6 md:p-8 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
             >
-              <div className="text-6xl mb-6">🚀</div>
-              <h3 className="text-3xl font-black mb-4">
+              <div className="text-5xl mb-4">🚀</div>
+              <h3 className="text-2xl font-black mb-3">
                 Ready to Transform Your Business?
               </h3>
-              <p className="text-xl mb-8 text-white/90 max-w-md">
+              <p className="text-base mb-6 text-white/90 max-w-md">
                 Let's build a custom AI strategy that combines all four pillars
                 for maximum impact.
               </p>
