@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 import Badge from '@/components/ui/Badge';
+import Icon from '@/components/ui/Icon';
 import { CALENDAR_LINK } from '@/lib/constants';
 
 if (typeof window !== 'undefined') {
@@ -137,14 +138,17 @@ export default function Hero() {
             ref={badgesRef}
             className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 px-4"
           >
-            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5">
-              Florida's #1 AI Automation Agency
+            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5 flex items-center gap-1.5">
+              <Icon name="star" className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>Florida's #1 AI Automation Agency</span>
             </Badge>
-            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5">
-              400% Average ROI
+            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5 flex items-center gap-1.5">
+              <Icon name="trending-up" className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>400% Average ROI</span>
             </Badge>
-            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5">
-              50+ Businesses Transformed
+            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5 flex items-center gap-1.5">
+              <Icon name="users" className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>50+ Businesses Transformed</span>
             </Badge>
           </div>
 

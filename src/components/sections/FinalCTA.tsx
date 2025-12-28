@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
 import { CALENDAR_LINK } from '@/lib/constants';
 
 if (typeof window !== 'undefined') {
@@ -99,18 +100,20 @@ export default function FinalCTA() {
               href={CALENDAR_LINK}
               variant="primary"
               size="lg"
-              className="min-w-[280px] shadow-2xl shadow-black/30 bg-white text-navy-deep hover:bg-gray-100"
+              className="min-w-[280px] shadow-2xl shadow-black/30 bg-white text-navy-deep hover:bg-gray-100 flex items-center justify-center gap-2"
               external
             >
-              Book Your Free Discovery Call
+              <span>Book Your Free Discovery Call</span>
+              <Icon name="arrow-right" className="w-5 h-5" />
             </Button>
             <Button
               href="/6-stage-system"
               variant="secondary"
               size="lg"
-              className="min-w-[280px] bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20"
+              className="min-w-[280px] bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 flex items-center justify-center gap-2"
             >
-              Learn About Our System
+              <span>Learn About Our System</span>
+              <Icon name="arrow-right" className="w-5 h-5" />
             </Button>
           </div>
 
