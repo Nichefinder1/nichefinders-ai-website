@@ -23,6 +23,13 @@ export const SOCIAL_LINKS = {
 };
 
 // TypeScript types
+export interface LocalBusinessExample {
+  business: string;
+  type: string;
+  automation: string;
+  impact: string;
+}
+
 export interface FloridaCity {
   name: string;
   slug: string;
@@ -31,6 +38,8 @@ export interface FloridaCity {
   population: string;
   businessCount: string;
   industries: string[];
+  landmarks?: string[];
+  localBusinessExamples?: LocalBusinessExample[];
 }
 
 export interface Industry {
@@ -70,6 +79,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '400,000+',
     businessCount: '150,000+',
     industries: ['Tech', 'Home & Building Services', 'Healthcare', 'Professional Services'],
+    landmarks: ['Ybor City', 'Channelside', 'Tampa Riverwalk', 'Hyde Park', 'Westshore'],
+    localBusinessExamples: [
+      {
+        business: "Columbia Restaurant in Ybor City",
+        type: "Historic Restaurant (since 1905)",
+        automation: "Automate catering orders and large party reservations for Florida's oldest restaurant",
+        impact: "Handle 200+ weekly catering inquiries without adding staff"
+      },
+      {
+        business: "Busch Gardens Tampa Bay",
+        type: "Major Theme Park",
+        automation: "Streamline group booking process and corporate event coordination",
+        impact: "Process thousands of group inquiries during peak season with zero wait time"
+      },
+      {
+        business: "Tampa General Hospital",
+        type: "Major Healthcare Facility",
+        automation: "Automate patient appointment follow-ups and non-emergency intake",
+        impact: "Ensure 100% follow-up rate on post-discharge care instructions"
+      },
+      {
+        business: "Amalie Arena",
+        type: "Sports & Entertainment Venue",
+        automation: "Automate Lightning ticket holder communication and event vendor coordination",
+        impact: "Manage 20,000+ season ticket holder communications seamlessly"
+      }
+    ]
   },
   {
     name: 'Jacksonville',
@@ -79,6 +115,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '950,000+',
     businessCount: '75,000+',
     industries: ['Logistics', 'Home & Building Services', 'Financial Services', 'Healthcare'],
+    landmarks: ['Jacksonville Beach', 'Southbank Riverwalk', 'San Marco', 'Riverside', 'The Landing'],
+    localBusinessExamples: [
+      {
+        business: "TIAA Bank Field",
+        type: "NFL Stadium",
+        automation: "Automate Jaguars season ticket holder communications and game day vendor coordination",
+        impact: "Manage 70,000+ attendee communications for every home game"
+      },
+      {
+        business: "Mayo Clinic Jacksonville",
+        type: "World-Class Medical Center",
+        automation: "Streamline patient appointment reminders and specialist referral follow-ups",
+        impact: "Zero missed appointments through automated 24/7 confirmation system"
+      },
+      {
+        business: "Jacksonville Port Authority (JAXPORT)",
+        type: "Major Seaport",
+        automation: "Automate cargo tracking updates and shipping company communications",
+        impact: "Handle thousands of daily logistics inquiries instantly"
+      },
+      {
+        business: "TPC Sawgrass (THE PLAYERS Championship)",
+        type: "Premier Golf Course",
+        automation: "Automate tee time bookings and tournament hospitality coordination",
+        impact: "Process 500+ daily booking requests during tournament season"
+      }
+    ]
   },
   {
     name: 'Miami',
@@ -88,6 +151,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '450,000+',
     businessCount: '200,000+',
     industries: ['Hospitality', 'Real Estate', 'Professional Services', 'Automotive'],
+    landmarks: ['Brickell', 'Wynwood', 'South Beach', 'Coconut Grove', 'Coral Gables'],
+    localBusinessExamples: [
+      {
+        business: "Joe's Stone Crab",
+        type: "Iconic Restaurant",
+        automation: "Automate their legendary reservation waitlist and manage 500+ daily requests during season",
+        impact: "Reduce wait time frustration and capture every reservation opportunity"
+      },
+      {
+        business: "Vizcaya Museum & Gardens",
+        type: "Historic Landmark",
+        automation: "Streamline event bookings, wedding inquiries, and group tour coordination",
+        impact: "Handle 100+ daily tour inquiries with instant responses 24/7"
+      },
+      {
+        business: "Miami Beach Convention Center",
+        type: "Major Venue",
+        automation: "Automate vendor coordination, exhibitor onboarding, and attendee communication",
+        impact: "Save 40+ hours per event on manual coordination tasks"
+      },
+      {
+        business: "Bayside Marketplace",
+        type: "Tourist Destination",
+        automation: "Individual retailers could automate inventory alerts and customer follow-up",
+        impact: "Never miss a sale during peak tourist season"
+      }
+    ]
   },
   {
     name: 'Orlando',
@@ -97,6 +187,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '310,000+',
     businessCount: '125,000+',
     industries: ['Tourism', 'Home & Building Services', 'Hospitality', 'Healthcare'],
+    landmarks: ['Universal CityWalk', 'International Drive', 'Dr. Phillips Center', 'Lake Eola', 'Disney Springs'],
+    localBusinessExamples: [
+      {
+        business: "Universal CityWalk Restaurants",
+        type: "Major Dining Destination",
+        automation: "Automate reservation management for dozens of restaurants serving millions of tourists",
+        impact: "Handle 10,000+ daily reservation requests across multiple venues"
+      },
+      {
+        business: "Orange County Convention Center",
+        type: "Massive Convention Venue",
+        automation: "Streamline exhibitor onboarding and attendee communication for 200+ annual events",
+        impact: "Save 100+ hours per major convention on manual coordination"
+      },
+      {
+        business: "Dr. Phillips Center for the Performing Arts",
+        type: "Premier Arts Venue",
+        automation: "Automate ticketing inquiries and group sales for Broadway tours and concerts",
+        impact: "Process 1,000+ weekly ticket inquiries instantly"
+      },
+      {
+        business: "AdventHealth Orlando",
+        type: "Major Hospital System",
+        automation: "Automate patient pre-registration and post-care follow-up communications",
+        impact: "Ensure every patient receives timely follow-up care instructions"
+      }
+    ]
   },
   {
     name: 'Fort Lauderdale',
@@ -106,6 +223,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '185,000+',
     businessCount: '90,000+',
     industries: ['Marine', 'Professional Services', 'Healthcare', 'Real Estate'],
+    landmarks: ['Las Olas Boulevard', 'Fort Lauderdale Beach', 'The Intracoastal', 'Riverwalk', 'Port Everglades'],
+    localBusinessExamples: [
+      {
+        business: "The Riverside Hotel",
+        type: "Historic Las Olas Hotel",
+        automation: "Automate concierge service and guest communication for this 1936 landmark",
+        impact: "Provide 24/7 instant guest services without adding night staff"
+      },
+      {
+        business: "Lauderdale Marina",
+        type: "Major Yacht Marina",
+        automation: "Streamline boat slip reservations and yacht service coordination",
+        impact: "Manage 300+ boat slips and service requests with zero phone tag"
+      },
+      {
+        business: "Fort Lauderdale-Hollywood International Airport",
+        type: "Major Airport",
+        automation: "Ground transportation companies could automate ride confirmations and flight tracking",
+        impact: "Never miss a pickup with automated flight delay notifications"
+      },
+      {
+        business: "Galleria at Fort Lauderdale",
+        type: "Premier Shopping Mall",
+        automation: "Individual retailers could automate customer loyalty programs and inventory alerts",
+        impact: "Increase repeat purchases by 40% with automated follow-up"
+      }
+    ]
   },
   {
     name: 'West Palm Beach',
@@ -115,6 +259,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '115,000+',
     businessCount: '60,000+',
     industries: ['Professional Services', 'Wealth Management', 'Healthcare', 'Real Estate'],
+    landmarks: ['CityPlace', 'Clematis Street', 'The Waterfront', 'Worth Avenue (nearby)', 'Palm Beach Gardens'],
+    localBusinessExamples: [
+      {
+        business: "The Kravis Center for the Performing Arts",
+        type: "Premier Arts Venue",
+        automation: "Automate season ticket holder communications and gala event coordination",
+        impact: "Manage 2,500+ season subscribers with personalized automated updates"
+      },
+      {
+        business: "Palm Beach International Airport (PBI)",
+        type: "Regional Airport",
+        automation: "Private jet FBOs could automate flight manifest and catering coordination",
+        impact: "Handle high-net-worth client requests with white-glove automated service"
+      },
+      {
+        business: "The Gardens Mall",
+        type: "Upscale Shopping Center",
+        automation: "Luxury retailers could automate VIP customer outreach and private shopping appointments",
+        impact: "Increase high-ticket sales with personalized follow-up"
+      },
+      {
+        business: "Jupiter Medical Center",
+        type: "Healthcare Facility",
+        automation: "Automate specialist referrals and wellness program enrollment",
+        impact: "Ensure zero dropped referrals with automated coordination"
+      }
+    ]
   },
   {
     name: 'Tallahassee',
@@ -124,6 +295,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '195,000+',
     businessCount: '45,000+',
     industries: ['Government', 'Education', 'Nonprofits', 'Professional Services'],
+    landmarks: ['Florida State Capitol', 'FSU Campus', 'Collegetown', 'Gaines Street', 'Midtown'],
+    localBusinessExamples: [
+      {
+        business: "Florida State University",
+        type: "Major University",
+        automation: "Academic departments could automate student advising appointments and program inquiries",
+        impact: "Handle 40,000+ student inquiries per semester without expanding staff"
+      },
+      {
+        business: "Tallahassee Memorial HealthCare",
+        type: "Regional Medical Center",
+        automation: "Automate patient appointment reminders and health screening follow-ups",
+        impact: "Reduce no-shows by 60% with automated confirmation system"
+      },
+      {
+        business: "Florida Department of State",
+        type: "Government Agency",
+        automation: "Automate business registration inquiries and document request processing",
+        impact: "Process thousands of daily citizen inquiries instantly"
+      },
+      {
+        business: "Museum of Florida History",
+        type: "Cultural Institution",
+        automation: "Streamline school tour bookings and educational program enrollment",
+        impact: "Coordinate 200+ annual school groups with zero scheduling conflicts"
+      }
+    ]
   },
   {
     name: 'Naples',
@@ -133,6 +331,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '23,000+',
     businessCount: '18,000+',
     industries: ['Luxury Services', 'Real Estate', 'Healthcare', 'Professional Services'],
+    landmarks: ['Fifth Avenue South', 'Third Street South', 'Naples Pier', 'Waterside Shops', 'Port Royal'],
+    localBusinessExamples: [
+      {
+        business: "The Ritz-Carlton Naples",
+        type: "Luxury Resort",
+        automation: "Automate golf tee time reservations and spa appointment coordination",
+        impact: "Provide white-glove service 24/7 without overnight concierge staff"
+      },
+      {
+        business: "Waterside Shops",
+        type: "High-End Shopping",
+        automation: "Luxury boutiques could automate VIP client notifications for new arrivals",
+        impact: "Increase sales per client with personalized automated outreach"
+      },
+      {
+        business: "Naples Community Hospital (NCH)",
+        type: "Healthcare System",
+        automation: "Automate physician referrals and wellness program enrollment",
+        impact: "Ensure every patient gets timely specialist appointments"
+      },
+      {
+        business: "Naples Sailing & Yacht Club",
+        type: "Exclusive Club",
+        automation: "Streamline member event RSVPs and sailing lesson bookings",
+        impact: "Manage exclusive events for 1,000+ members seamlessly"
+      }
+    ]
   },
   {
     name: 'Daytona',
@@ -142,6 +367,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '73,000+',
     businessCount: '30,000+',
     industries: ['Automotive', 'Tourism', 'Home & Building Services', 'Healthcare'],
+    landmarks: ['Daytona International Speedway', 'Daytona Beach', 'Main Street Pier', 'Boardwalk', 'Bike Week'],
+    localBusinessExamples: [
+      {
+        business: "Daytona International Speedway",
+        type: "Legendary Racing Venue",
+        automation: "Automate Daytona 500 ticket holder communications and race weekend logistics",
+        impact: "Manage 100,000+ race fans with instant updates on schedule changes"
+      },
+      {
+        business: "Bike Week Event Vendors",
+        type: "Annual Mega-Event",
+        automation: "Local hotels and restaurants could automate booking confirmations for 500,000+ visitors",
+        impact: "Never lose a booking during the world's largest motorcycle event"
+      },
+      {
+        business: "Halifax Health Medical Center",
+        type: "Regional Hospital",
+        automation: "Automate emergency department follow-ups and appointment scheduling",
+        impact: "Ensure 100% post-ER care compliance with automated reminders"
+      },
+      {
+        business: "Ocean Center Convention Facility",
+        type: "Event Venue",
+        automation: "Streamline exhibitor coordination and attendee communication for 150+ annual events",
+        impact: "Save 50+ hours per major event on manual logistics"
+      }
+    ]
   },
   {
     name: 'Sarasota',
@@ -151,6 +403,33 @@ export const FLORIDA_CITIES: FloridaCity[] = [
     population: '58,000+',
     businessCount: '28,000+',
     industries: ['Professional Services', 'Healthcare', 'Real Estate', 'Arts & Culture'],
+    landmarks: ['St. Armands Circle', 'Siesta Key Beach', 'Ringling Museum', 'Main Street', 'Lido Beach'],
+    localBusinessExamples: [
+      {
+        business: "The Ringling Museum",
+        type: "World-Class Art Museum",
+        automation: "Automate tour reservations and educational program enrollment",
+        impact: "Handle 400,000+ annual visitors with seamless booking experience"
+      },
+      {
+        business: "Sarasota Memorial Hospital",
+        type: "Major Healthcare System",
+        automation: "Streamline patient pre-admission and post-discharge communications",
+        impact: "Reduce readmissions by 30% with automated care coordination"
+      },
+      {
+        business: "St. Armands Circle Boutiques",
+        type: "Upscale Shopping District",
+        automation: "Retailers could automate customer loyalty programs and VIP notifications",
+        impact: "Increase repeat customer visits by 50% with targeted outreach"
+      },
+      {
+        business: "Van Wezel Performing Arts Hall",
+        type: "Premier Theatre Venue",
+        automation: "Automate season ticket renewals and group sales coordination",
+        impact: "Manage 5,000+ season subscribers with personalized communications"
+      }
+    ]
   },
 ];
 
