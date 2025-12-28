@@ -36,7 +36,7 @@ export default function FourPillars() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: scrollContainer,
-        start: 'top top',
+        start: 'center center',
         end: () => `+=${totalScrollWidth * 2.5}`,
         scrub: 1,
         pin: true,
@@ -75,10 +75,10 @@ export default function FourPillars() {
         </Container>
 
         {/* Horizontal Scroll Cards */}
-        <div className="pb-20">
+        <div className="py-20 min-h-screen flex items-center">
           <div
             ref={cardsContainerRef}
-            className="flex space-x-8 pl-[5vw] md:pl-[20vw] pr-[5vw] md:pr-[20vw]"
+            className="flex space-x-8 pl-[10vw] md:pl-[calc(50vw-250px)] pr-[10vw] md:pr-[calc(50vw-250px)]"
             style={{ width: 'max-content' }}
           >
             {SERVICES.map((service, index) => (
