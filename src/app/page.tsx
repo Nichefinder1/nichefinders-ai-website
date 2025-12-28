@@ -12,10 +12,11 @@ import InlineCalendarCTA from '@/components/ui/InlineCalendarCTA';
 import Container from '@/components/ui/Container';
 
 export const metadata = {
-  title: 'NicheFinders AI | #1 AI Automation Agency',
+  title: 'NicheFinders AI | Revenue-Generating AI Automation',
   description:
-    'Transform your business with AI automation that actually works. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services.',
+    'Transform your business with revenue-generating AI. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services.',
   keywords: [
+    'revenue-generating AI',
     'AI automation',
     'business automation',
     'AI consulting',
@@ -26,7 +27,7 @@ export const metadata = {
     'business automation Tampa',
   ].join(', '),
   openGraph: {
-    title: 'NicheFinders AI | Transform Your Business with AI Automation',
+    title: 'NicheFinders AI | Transform Your Business with Revenue-Generating AI',
     description:
       'Stop losing revenue to manual processes. Our proven 6-Stage System delivers 400% average ROI for businesses nationwide.',
     type: 'website',
@@ -36,15 +37,15 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'NicheFinders AI - AI Automation Agency',
+        alt: 'NicheFinders AI - Revenue-Generating AI Automation',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NicheFinders AI | #1 AI Automation Agency',
+    title: 'NicheFinders AI | Revenue-Generating AI Automation',
     description:
-      'Transform your business with AI automation. 400% average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
+      'Transform your business with revenue-generating AI. 400% average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
     images: ['/og-image.png'],
   },
 };

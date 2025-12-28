@@ -159,7 +159,7 @@ export default function Hero() {
           >
             <span className="block">Transform Your Business</span>
             <span className="block text-gradient">
-              With AI That Actually Works
+              With Revenue-Generating AI
             </span>
           </h1>
 
