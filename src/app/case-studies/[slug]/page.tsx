@@ -15,15 +15,31 @@ type Props = {
 export default function CaseStudyPage({ params }: Props) {
   // Scroll to top on mount
   useEffect(() => {
-    // Scroll immediately
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // Force scroll to top immediately
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
-    // Also scroll after a short delay to ensure it works
-    const timeoutId = setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }, 100);
+    // Multiple fallback attempts to ensure it works
+    const timeouts = [
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 50),
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 150),
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 300),
+    ];
 
-    return () => clearTimeout(timeoutId);
+    return () => timeouts.forEach((t) => clearTimeout(t));
   }, [params.slug]);
 
   const study = CASE_STUDIES.find((s) => s.slug === params.slug);
