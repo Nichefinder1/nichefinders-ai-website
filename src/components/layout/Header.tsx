@@ -75,6 +75,7 @@ export default function Header() {
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
               <button
+                onClick={() => setActiveMegaMenu(activeMegaMenu === 'solutions' ? null : 'solutions')}
                 className={cn(
                   'nav-link flex items-center space-x-1',
                   isScrolled ? 'text-navy-deep' : 'text-white'
@@ -101,7 +102,8 @@ export default function Header() {
 
               {/* Solutions Dropdown */}
               {activeMegaMenu === 'solutions' && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                <div className="absolute top-full left-0 mt-0 pt-2 w-80">
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
                   <div className="p-4">
                     <p className="text-sm text-gray-600 mb-4">
                       End-to-end AI solutions for every stage of your journey
@@ -154,6 +156,7 @@ export default function Header() {
                       </div>
                     </Link>
                   </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -165,6 +168,7 @@ export default function Header() {
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
               <button
+                onClick={() => setActiveMegaMenu(activeMegaMenu === 'industries' ? null : 'industries')}
                 className={cn(
                   'nav-link flex items-center space-x-1',
                   isScrolled ? 'text-navy-deep' : 'text-white'
@@ -191,7 +195,8 @@ export default function Header() {
 
               {/* Industries Dropdown */}
               {activeMegaMenu === 'industries' && (
-                <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                <div className="absolute top-full left-0 mt-0 pt-2 w-96">
+                  <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
                   <div className="p-4">
                     <p className="text-sm text-gray-600 mb-4">
                       Specialized AI solutions for your industry
@@ -249,6 +254,7 @@ export default function Header() {
                         </svg>
                       </Link>
                     </div>
+                  </div>
                   </div>
                 </div>
               )}
