@@ -477,7 +477,7 @@ export const SERVICES: Service[] = [
     title: 'AI Consulting Services',
     slug: 'ai-consulting',
     icon: '',
-    headline: 'Discover Where AI Drives the Most Revenue in Your Business',
+    headline: 'Discover Where AI Drives Maximum Revenue for Your Business',
     description: 'Get a custom AI roadmap built around your workflows, not generic templates',
     details: 'We map your workflows, uncover automation opportunities, and design a custom strategy that drives measurable ROI.',
     deliverables: [
@@ -596,7 +596,7 @@ export const SERVICES: Service[] = [
     title: 'AI Education & Training',
     slug: 'ai-education-training',
     icon: '',
-    headline: 'Transform Your Team Into AI Experts',
+    headline: 'Transform Your Team Into Confident AI Experts',
     description: 'Hands-on training that drives adoption and continuous improvement',
     details:
       'Hands-on training, workflow optimization workshops, and ongoing coaching that turns your team into AI power users who drive continuous improvement.',
