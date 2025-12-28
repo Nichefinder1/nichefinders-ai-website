@@ -155,11 +155,11 @@ export default function Hero() {
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight"
           >
-            <span className="block">Transform Your Business</span>
+            <span className="block">Transform Your Business With</span>
             <span className="block text-gradient">
-              With Revenue-Generating AI
+              Revenue-Generating AI
             </span>
           </h1>
 
