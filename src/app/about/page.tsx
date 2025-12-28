@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
@@ -104,9 +105,22 @@ export default function AboutPage() {
       {/* Why We're Different */}
       <Section background="gray" padding>
         <Container size="lg">
-          <h2 className="text-4xl font-black text-navy-deep mb-12 text-center">
-            Why We're Different
-          </h2>
+          <div className="text-center mb-12">
+            {/* Logo Badge */}
+            <div className="flex justify-center mb-4">
+              <div className="relative w-12 h-12 opacity-30">
+                <Image
+                  src="/logo.svg"
+                  alt="NicheFinders AI"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            <h2 className="text-4xl font-black text-navy-deep">
+              Why We're Different
+            </h2>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[

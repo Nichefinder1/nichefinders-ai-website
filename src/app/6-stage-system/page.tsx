@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
@@ -280,6 +281,17 @@ export default function SixStageSystemPage() {
       <Section background="navy" padding>
         <Container size="lg">
           <div className="text-center max-w-3xl mx-auto text-white mb-12">
+            {/* Subtle Logo Watermark */}
+            <div className="flex justify-center mb-6">
+              <div className="relative w-16 h-16 opacity-40">
+                <Image
+                  src="/logo.svg"
+                  alt="NicheFinders AI"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-black mb-6">
               How It All Works Together
             </h2>
