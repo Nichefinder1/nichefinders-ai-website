@@ -12,19 +12,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-6">
-              <div className="relative w-12 h-12">
+            <Link href="/" className="flex items-center space-x-3 mb-6 group">
+              <div className="relative w-16 h-16 transition-all duration-300 group-hover:scale-110">
                 <Image
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="NicheFinders AI"
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold">NicheFinders AI</span>
+              <span className="text-2xl font-black">NicheFinders AI</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Transforming Florida businesses with AI automation. From lead
+              Transforming businesses with AI automation. From lead
               generation to customer retention, we build intelligent systems
               that drive growth and efficiency.
             </p>

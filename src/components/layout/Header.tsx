@@ -47,9 +47,9 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-110">
+            <div className="relative w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="NicheFinders AI"
                 fill
                 className="object-contain"
@@ -58,8 +58,8 @@ export default function Header() {
             </div>
             <span
               className={cn(
-                'text-xl font-bold transition-colors duration-300',
-                isScrolled ? 'text-navy-deep' : 'text-white'
+                'text-xl md:text-2xl font-black transition-all duration-300',
+                isScrolled ? 'text-navy-deep' : 'text-white drop-shadow-md'
               )}
             >
               NicheFinders AI
