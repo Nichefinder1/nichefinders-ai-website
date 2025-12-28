@@ -196,7 +196,7 @@ export default function ROICalculator() {
                 Ready to Capture This Revenue?
               </h4>
               <p className="text-white/90 mb-6">
-                Book a free discovery call and we'll show you exactly how to
+                Book a discovery call and we'll show you exactly how to
                 implement AI automation in your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

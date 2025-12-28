@@ -198,7 +198,7 @@ export default function CaseStudyPage({ params }: Props) {
               Ready to Achieve Similar Results?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Book a free discovery call to learn how our 6-Stage System can
+              Book a discovery call to learn how our 6-Stage System can
               transform your business like it did for {study.client.name}.
             </p>
             <Button
@@ -208,7 +208,7 @@ export default function CaseStudyPage({ params }: Props) {
               className="shadow-2xl shadow-cyan-primary/50"
               external
             >
-              Book Your Free Discovery Call
+              Book Your Discovery Call
             </Button>
           </div>
         </Container>

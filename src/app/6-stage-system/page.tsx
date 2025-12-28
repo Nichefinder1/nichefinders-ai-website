@@ -356,13 +356,13 @@ export default function SixStageSystemPage() {
                 Ready to Implement the 6-Stage System?
               </h2>
               <p className="text-xl text-gray-700 mb-8">
-                Book a free discovery call and we'll show you exactly how each
+                Book a discovery call and we'll show you exactly how each
                 stage can transform your business.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                 <Button href={CALENDAR_LINK} external variant="primary" size="lg">
-                  Book Your Free Discovery Call
+                  Book Your Discovery Call
                 </Button>
                 <Button href="/case-studies" variant="secondary" size="lg">
                   See Success Stories

@@ -69,7 +69,7 @@ export default function FinalCTA() {
             {[
               {
                 icon: '',
-                text: 'Free Discovery Call',
+                text: 'Discovery Call',
                 subtext: 'No pressure, just insights',
               },
               {
@@ -103,7 +103,7 @@ export default function FinalCTA() {
               className="min-w-[280px] shadow-2xl shadow-black/30 bg-white text-navy-deep hover:bg-gray-100 flex items-center justify-center gap-2"
               external
             >
-              <span>Book Your Free Discovery Call</span>
+              <span>Book Your Discovery Call</span>
               <Icon name="arrow-right" className="w-5 h-5" />
             </Button>
             <Button

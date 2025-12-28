@@ -89,7 +89,7 @@ export default function HomePage() {
         <InlineCalendarCTA
           variant="secondary"
           headline="Want results like this for your business?"
-          subheadline="Book your free discovery call. We'll analyze your processes and show you exactly where AI can deliver ROI."
+          subheadline="Book your discovery call. We'll analyze your processes and show you exactly where AI can deliver ROI."
           buttonText="Get Your Custom AI Strategy"
         />
       </Container>

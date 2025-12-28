@@ -182,11 +182,11 @@ export default function ResourcesPage() {
               Ready to Implement AI?
             </h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Stop reading and start growing. Book a free discovery call to see
+              Stop reading and start growing. Book a discovery call to see
               exactly how AI automation can transform your business.
             </p>
             <Button href={CALENDAR_LINK} external variant="primary" size="lg">
-              Book Free Discovery Call
+              Book Discovery Call
             </Button>
           </Card>
         </Container>

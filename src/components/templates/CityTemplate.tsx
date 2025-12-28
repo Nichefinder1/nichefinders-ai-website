@@ -91,7 +91,7 @@ export default function CityTemplate({ city }: CityTemplateProps) {
                 className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
                 external
               >
-                Book Your Free Discovery Call
+                Book Your Discovery Call
               </Button>
               <Button
                 href="/6-stage-system"
@@ -331,7 +331,7 @@ export default function CityTemplate({ city }: CityTemplateProps) {
               Ready to Transform Your {city.name} Business?
             </h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Book a free discovery call with our team. We'll show you exactly
+              Book a discovery call with our team. We'll show you exactly
               how AI automation can work for your {city.name} business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

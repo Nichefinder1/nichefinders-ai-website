@@ -333,7 +333,7 @@ export default function CaseStudiesPage() {
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               These results are real. The businesses are real. The ROI is real.
-              Book a free discovery call to see how we can transform your
+              Book a discovery call to see how we can transform your
               business too.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -344,7 +344,7 @@ export default function CaseStudiesPage() {
                 size="lg"
                 className="bg-white text-navy-deep hover:bg-gray-100"
               >
-                Book Free Discovery Call
+                Book Discovery Call
               </Button>
               <Button
                 href="/6-stage-system"

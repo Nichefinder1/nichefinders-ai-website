@@ -87,7 +87,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
                 className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
                 external
               >
-                Book Your Free Discovery Call
+                Book Your Discovery Call
               </Button>
               <Button
                 href="/6-stage-system"
@@ -221,12 +221,12 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Book a free discovery call to discuss your needs and see if{' '}
+              Book a discovery call to discuss your needs and see if{' '}
               {service.name} is right for your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button href={CALENDAR_LINK} external variant="primary" size="lg">
-                Book Free Discovery Call
+                Book Discovery Call
               </Button>
               <Button href="/case-studies" variant="secondary" size="lg">
                 View Success Stories

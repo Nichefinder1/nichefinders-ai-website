@@ -15,7 +15,7 @@ interface InlineCalendarCTAProps {
 export default function InlineCalendarCTA({
   variant = 'primary',
   headline = 'Ready to see this in action?',
-  subheadline = 'Book a free discovery call and get a custom strategy for your business.',
+  subheadline = 'Book a discovery call and get a custom strategy for your business.',
   buttonText = 'Book Your Free Call Now',
   className,
 }: InlineCalendarCTAProps) {

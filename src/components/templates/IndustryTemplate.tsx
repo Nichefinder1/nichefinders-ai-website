@@ -89,7 +89,7 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
                 className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
                 external
               >
-                Book Your Free Discovery Call
+                Book Your Discovery Call
               </Button>
               <Button
                 href="/6-stage-system"

@@ -5,9 +5,9 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 
 export const metadata = {
-  title: 'Contact Us | Book Your Free AI Automation Discovery Call',
+  title: 'Contact Us | Book Your AI Automation Discovery Call',
   description:
-    'Book a free discovery call with NicheFinders AI. Get a custom AI automation strategy for your Florida business. No pressure, just insights. Tampa, Jacksonville, Miami, Orlando.',
+    'Book a discovery call with NicheFinders AI. Get a custom AI automation strategy for your Florida business. Expert consultation for Tampa, Jacksonville, Miami, Orlando businesses.',
 };
 
 export default function ContactPage() {
@@ -41,7 +41,7 @@ export default function ContactPage() {
               LET'S TALK
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              Book Your Free Discovery Call
+              Book Your Discovery Call
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-8">
               No sales pitch. Just an honest conversation about your business
@@ -52,7 +52,7 @@ export default function ContactPage() {
               {[
                 { icon: '', label: '30-Minute Call' },
                 { icon: '', label: 'Custom Strategy' },
-                { icon: '', label: '100% Free' },
+                { icon: '', label: 'Expert Consultation' },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -277,7 +277,7 @@ export default function ContactPage() {
               Ready to Stop Losing Revenue?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Book your free discovery call now. You'll get a custom AI
+              Book your discovery call now. You'll get a custom AI
               roadmap even if we never work together.
             </p>
             <div className="flex items-center justify-center space-x-4 text-sm">
@@ -321,7 +321,7 @@ export default function ContactPage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>100% free</span>
+                <span>Expert insights</span>
               </div>
             </div>
           </div>

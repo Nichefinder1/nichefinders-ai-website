@@ -328,7 +328,7 @@ export default function ROICalculatorPage() {
                     Ready to Capture This Revenue?
                   </h4>
                   <p className="text-white/90 mb-6">
-                    Book a free discovery call and we'll show you exactly how to
+                    Book a discovery call and we'll show you exactly how to
                     implement AI automation in your business.
                   </p>
                   <Button
@@ -338,7 +338,7 @@ export default function ROICalculatorPage() {
                     className="bg-white text-navy-deep hover:bg-gray-100 w-full"
                     external
                   >
-                    Book Your Free Discovery Call
+                    Book Your Discovery Call
                   </Button>
                 </Card>
               </div>

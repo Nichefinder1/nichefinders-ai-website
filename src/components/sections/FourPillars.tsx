@@ -172,7 +172,7 @@ export default function FourPillars() {
                 size="md"
                 className="bg-white text-navy-deep hover:bg-gray-100 text-sm"
               >
-                Book Your Free Discovery Call
+                Book Your Discovery Call
               </Button>
             </Card>
           </div>
