@@ -61,6 +61,7 @@ export interface Service {
   title: string;
   slug: string;
   icon: string;
+  headline: string;
   description: string;
   details: string;
   deliverables: string[];
@@ -476,36 +477,159 @@ export const SERVICES: Service[] = [
     title: 'AI Consulting Services',
     slug: 'ai-consulting',
     icon: '',
-    description: 'Discover where AI creates the biggest impact in your business',
-    details: 'We map your workflows, uncover automation opportunities, and design a custom strategy.',
-    deliverables: ['Workflow audit', 'Opportunity matrix', '90-day roadmap', 'ROI forecast'],
+    headline: 'Discover Exactly Where AI Drives Revenue in Your Business',
+    description: 'Get a custom AI roadmap built around your workflows, not generic templates',
+    details: 'We map your workflows, uncover automation opportunities, and design a custom strategy that drives measurable ROI.',
+    deliverables: [
+      'Complete Workflow Audit & Process Mapping',
+      'AI Opportunity Matrix with Prioritization',
+      '90-Day AI Implementation Roadmap',
+      'ROI Forecast & Budget Planning',
+      'Technology Stack Recommendations',
+      'Risk Assessment & Mitigation Strategy',
+    ],
+    process: [
+      {
+        step: 'Discovery & Current State Analysis',
+        description:
+          'We start with a deep-dive session to understand your business model, current workflows, pain points, and growth goals. We document every process that touches customers or revenue.',
+      },
+      {
+        step: 'Workflow Mapping & Bottleneck Identification',
+        description:
+          'Our team maps your entire customer journey and internal operations, identifying where time is wasted, leads are lost, and revenue opportunities are missed.',
+      },
+      {
+        step: 'AI Opportunity Assessment & Prioritization',
+        description:
+          'We evaluate each workflow for automation potential, ranking opportunities by impact, cost, and implementation complexity. You get a clear picture of what to automate first.',
+      },
+      {
+        step: 'Custom Strategy & 90-Day Roadmap Delivery',
+        description:
+          'You receive a comprehensive roadmap with specific AI solutions, expected ROI, timeline, budget, and success metrics. Everything you need to make an informed decision and get executive buy-in.',
+      },
+    ],
   },
   {
     name: 'Build',
     title: 'Custom AI Development',
     slug: 'custom-ai-development',
     icon: '',
-    description: 'Custom AI tools built around how you actually work',
-    details: 'AI agents, workflows, CRM integrations that save time and increase revenue.',
-    deliverables: ['Voice & chat agents', 'Workflow automation', 'CRM integration', 'Custom dashboards'],
+    headline: 'Build AI Systems That Work the Way You Do',
+    description: 'Custom automation that integrates seamlessly—no process overhauls, just results',
+    details:
+      'We build AI agents, automated workflows, and CRM integrations that save hours daily and increase revenue without changing how your team works.',
+    deliverables: [
+      'AI Voice & Chat Agents for Customer Service',
+      'Automated Workflow & Process Automation',
+      'Bi-Directional CRM Integration',
+      'Custom Analytics Dashboards',
+      'Lead Qualification & Routing Systems',
+      'Automated Follow-Up & Nurture Sequences',
+    ],
+    process: [
+      {
+        step: 'Requirements Gathering & Technical Design',
+        description:
+          'We collaborate with your team to define exact requirements, map integration points, and design the technical architecture. You approve everything before we write a single line of code.',
+      },
+      {
+        step: 'Development & Iterative Testing',
+        description:
+          'Our developers build your custom AI solution using proven frameworks like n8n, Make, and custom APIs. You get weekly demos and can request changes throughout development.',
+      },
+      {
+        step: 'Integration & Data Migration',
+        description:
+          'We connect your new AI systems to existing tools (CRM, calendar, email, SMS platforms) and migrate historical data so nothing is lost and everything works seamlessly.',
+      },
+      {
+        step: 'Deployment, Training & Ongoing Optimization',
+        description:
+          'We launch your AI system, train your team, and monitor performance for 30 days. We optimize based on real-world results and ensure you hit your ROI targets.',
+      },
+    ],
   },
   {
     name: 'Grow',
     title: 'AI Powered Marketing & Growth',
     slug: 'ai-powered-marketing',
     icon: '',
-    description: 'Scale faster with AI-powered growth systems',
-    details: 'Intelligent marketing campaigns, automated lead gen, data-driven insights.',
-    deliverables: ['Lead generation', 'Email/SMS automation', 'Ad optimization', 'Analytics dashboards'],
+    headline: 'Scale Revenue Without Scaling Your Team',
+    description: 'AI-powered marketing that converts more leads, faster—automatically',
+    details:
+      'Intelligent marketing campaigns, automated lead generation, and data-driven insights that convert more leads without hiring more people.',
+    deliverables: [
+      'Automated Lead Generation Systems',
+      'AI-Powered Email & SMS Campaigns',
+      'Multi-Channel Ad Optimization',
+      'Predictive Analytics Dashboards',
+      'Conversion Rate Optimization',
+      'Automated Retargeting & Nurture Campaigns',
+    ],
+    process: [
+      {
+        step: 'Growth Audit & Conversion Analysis',
+        description:
+          'We analyze your current marketing funnel, conversion rates, customer acquisition cost (CAC), and lifetime value (LTV) to identify the biggest growth opportunities.',
+      },
+      {
+        step: 'Campaign Strategy & AI System Design',
+        description:
+          'We design multi-channel campaigns powered by AI: automated lead gen, personalized email/SMS sequences, smart retargeting, and predictive analytics to maximize ROI.',
+      },
+      {
+        step: 'Implementation & Campaign Launch',
+        description:
+          'We build and launch your AI-powered marketing systems, integrating with your existing tools and setting up advanced tracking so you see exactly what is working.',
+      },
+      {
+        step: 'Optimization & Scaling',
+        description:
+          'We continuously analyze performance data, A/B test messaging, optimize targeting, and scale what works. You get weekly reports showing revenue impact and ROI.',
+      },
+    ],
   },
   {
     name: 'Educate',
     title: 'AI Education & Training',
     slug: 'ai-education-training',
     icon: '',
-    description: 'Empower your team to leverage AI confidently',
-    details: 'AI adoption training, workflow optimization, ongoing coaching for your staff.',
-    deliverables: ['Team training', 'Best practices', 'Certification programs', 'Ongoing support'],
+    headline: 'Turn Your Team Into AI Power Users',
+    description: 'Hands-on training that drives adoption and continuous improvement',
+    details:
+      'Hands-on training, workflow optimization workshops, and ongoing coaching that turns your team into AI power users who drive continuous improvement.',
+    deliverables: [
+      'Custom Team Training Programs',
+      'AI Best Practices & Playbooks',
+      'Workflow Optimization Workshops',
+      'AI Certification for Your Staff',
+      'Ongoing Coaching & Support',
+      'Internal AI Champions Development',
+    ],
+    process: [
+      {
+        step: 'Team Assessment & Learning Path Design',
+        description:
+          'We evaluate your team current AI knowledge, identify skill gaps, and design a custom training program tailored to your business needs and team roles.',
+      },
+      {
+        step: 'Hands-On Training & Workshops',
+        description:
+          'Your team participates in interactive workshops where they learn to use AI tools, build automations, and optimize workflows. Real projects, not theory.',
+      },
+      {
+        step: 'Implementation Support & Certification',
+        description:
+          'We provide ongoing support as your team applies what they learned. Team members who complete the program receive AI proficiency certification.',
+      },
+      {
+        step: 'Continuous Learning & AI Champions Program',
+        description:
+          'We identify and develop internal AI champions who drive adoption across your organization. Monthly coaching sessions keep your team up-to-date with the latest AI capabilities.',
+      },
+    ],
   },
 ];
 
