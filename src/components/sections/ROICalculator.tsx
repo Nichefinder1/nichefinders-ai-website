@@ -192,7 +192,6 @@ export default function ROICalculator() {
 
             {/* CTA */}
             <Card variant="elevated" className="p-6 bg-gradient-to-br from-cyan-primary to-navy-deep text-white text-center">
-              <div className="text-5xl mb-4">🚀</div>
               <h4 className="text-2xl font-black mb-3">
                 Ready to Capture This Revenue?
               </h4>

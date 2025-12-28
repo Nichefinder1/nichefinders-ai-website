@@ -159,7 +159,7 @@ export const INDUSTRIES: Industry[] = [
   {
     name: 'Home & Building Service Companies',
     slug: 'home-services',
-    icon: '🏠',
+    icon: '',
     description: 'HVAC, Plumbing, Electrical, Roofing, General Contractors, Commercial Painting',
     challenges: ['Missed calls', 'Slow follow-up', 'Seasonal fluctuations', 'Emergency response'],
     solutions: ['24/7 AI voice agents', 'Automated scheduling', 'Lead nurturing', 'Review generation'],
@@ -167,7 +167,7 @@ export const INDUSTRIES: Industry[] = [
   {
     name: 'Automotive Dealers & Services',
     slug: 'automotive',
-    icon: '🚗',
+    icon: '',
     description: 'Car dealerships, auto repair shops, detailing services',
     challenges: ['Test drive follow-up', 'Service reminders', 'Inventory management', 'Lead qualification'],
     solutions: ['Automated follow-ups', 'Service scheduling', 'CRM integration', 'Inventory alerts'],
@@ -175,7 +175,7 @@ export const INDUSTRIES: Industry[] = [
   {
     name: 'Nonprofits & Ministries',
     slug: 'nonprofits',
-    icon: '⛪',
+    icon: '',
     description: 'Churches, charities, community organizations',
     challenges: ['Donor engagement', 'Volunteer coordination', 'Limited resources', 'Event management'],
     solutions: ['Donor communication', 'Event automation', 'Volunteer scheduling', 'Giving campaigns'],
@@ -183,7 +183,7 @@ export const INDUSTRIES: Industry[] = [
   {
     name: 'Professional Services',
     slug: 'professional-services',
-    icon: '💼',
+    icon: '',
     description: 'Legal, accounting, consulting, healthcare practices',
     challenges: ['Client communication', 'Appointment scheduling', 'Document management', 'Billing'],
     solutions: ['Client portals', 'Automated reminders', 'Document automation', 'Proposal generation'],
@@ -196,7 +196,7 @@ export const SERVICES: Service[] = [
     name: 'Consult',
     title: 'AI Consulting Services',
     slug: 'ai-consulting',
-    icon: '🔍',
+    icon: '',
     description: 'Discover where AI creates the biggest impact in your business',
     details: 'We map your workflows, uncover automation opportunities, and design a custom strategy.',
     deliverables: ['Workflow audit', 'Opportunity matrix', '90-day roadmap', 'ROI forecast'],
@@ -205,7 +205,7 @@ export const SERVICES: Service[] = [
     name: 'Build',
     title: 'Custom AI Development',
     slug: 'custom-ai-development',
-    icon: '⚙️',
+    icon: '',
     description: 'Custom AI tools built around how you actually work',
     details: 'AI agents, workflows, CRM integrations that save time and increase revenue.',
     deliverables: ['Voice & chat agents', 'Workflow automation', 'CRM integration', 'Custom dashboards'],
@@ -214,7 +214,7 @@ export const SERVICES: Service[] = [
     name: 'Grow',
     title: 'AI Powered Marketing & Growth',
     slug: 'ai-powered-marketing',
-    icon: '📈',
+    icon: '',
     description: 'Scale faster with AI-powered growth systems',
     details: 'Intelligent marketing campaigns, automated lead gen, data-driven insights.',
     deliverables: ['Lead generation', 'Email/SMS automation', 'Ad optimization', 'Analytics dashboards'],
@@ -223,7 +223,7 @@ export const SERVICES: Service[] = [
     name: 'Educate',
     title: 'AI Education & Training',
     slug: 'ai-education-training',
-    icon: '🎓',
+    icon: '',
     description: 'Empower your team to leverage AI confidently',
     details: 'AI adoption training, workflow optimization, ongoing coaching for your staff.',
     deliverables: ['Team training', 'Best practices', 'Certification programs', 'Ongoing support'],
@@ -236,7 +236,7 @@ export const SIX_STAGES = [
     number: 1,
     name: 'Lead Generation & Initial Capture',
     slug: 'lead-generation',
-    icon: '📞',
+    icon: '',
     problem: 'Businesses struggle with manual lead capture, low-quality leads, and inefficient qualification',
     solutions: [
       {
@@ -275,7 +275,7 @@ export const SIX_STAGES = [
     number: 2,
     name: 'Lead Nurturing & Follow-Up',
     slug: 'lead-nurturing',
-    icon: '💬',
+    icon: '',
     problem: 'Inconsistent follow-ups lead to lost opportunities and poor conversion rates',
     solutions: [
       {
@@ -308,7 +308,7 @@ export const SIX_STAGES = [
     number: 3,
     name: 'Appointment Scheduling & Qualification',
     slug: 'appointment-scheduling',
-    icon: '📅',
+    icon: '',
     problem: 'High no-shows, scheduling conflicts, and unqualified appointments waste time',
     solutions: [
       {
@@ -341,7 +341,7 @@ export const SIX_STAGES = [
     number: 4,
     name: 'Sales Process & Conversion Optimization',
     slug: 'sales-optimization',
-    icon: '💰',
+    icon: '',
     problem: 'Disorganized pipelines, slow proposals, and dropped leads hurt revenue',
     solutions: [
       {
@@ -374,7 +374,7 @@ export const SIX_STAGES = [
     number: 5,
     name: 'Project Management & Execution',
     slug: 'project-management',
-    icon: '📋',
+    icon: '',
     problem: 'Disorganized workflows, project delays, and lack of visibility slow delivery',
     solutions: [
       {
@@ -407,7 +407,7 @@ export const SIX_STAGES = [
     number: 6,
     name: 'Retention, Upselling & Post-Project',
     slug: 'retention-upselling',
-    icon: '🔄',
+    icon: '',
     problem: 'Businesses lose repeat opportunities and miss upsell potential after project completion',
     solutions: [
       {
@@ -1374,24 +1374,24 @@ export const CASE_STUDIES: CaseStudy[] = [
 
 // Statistics for SocialProof component
 export const STATISTICS = [
-  { value: '50+', label: 'Clients Served', icon: '👥', target: 50, prefix: '', suffix: '+' },
-  { value: '400%', label: 'Average ROI', icon: '📈', target: 400, prefix: '', suffix: '%' },
-  { value: '24/7', label: 'Automation Running', icon: '🤖', target: 24, prefix: '', suffix: '/7' },
-  { value: '95%', label: 'Client Satisfaction', icon: '⭐', target: 95, prefix: '', suffix: '%' },
+  { value: '50+', label: 'Clients Served', icon: '', target: 50, prefix: '', suffix: '+' },
+  { value: '400%', label: 'Average ROI', icon: '', target: 400, prefix: '', suffix: '%' },
+  { value: '24/7', label: 'Automation Running', icon: '', target: 24, prefix: '', suffix: '/7' },
+  { value: '95%', label: 'Client Satisfaction', icon: '', target: 95, prefix: '', suffix: '%' },
 ];
 
 // Tech stack for TechStack component
 export const TECH_STACK = [
-  { name: 'OpenAI GPT-4', logo: '🤖', icon: '🤖', category: 'AI Models' },
-  { name: 'Anthropic Claude', logo: '🧠', icon: '🧠', category: 'AI Models' },
-  { name: 'Google Gemini', logo: '⚡', icon: '⚡', category: 'AI Models' },
-  { name: 'Make.com', logo: '🔗', icon: '🔗', category: 'Automation' },
-  { name: 'Zapier', logo: '⚙️', icon: '⚙️', category: 'Automation' },
-  { name: 'n8n', logo: '🔄', icon: '🔄', category: 'Automation' },
-  { name: 'Airtable', logo: '📊', icon: '📊', category: 'Database' },
-  { name: 'HubSpot', logo: '📈', icon: '📈', category: 'CRM' },
-  { name: 'Salesforce', logo: '☁️', icon: '☁️', category: 'CRM' },
-  { name: 'Twilio', logo: '📱', icon: '📱', category: 'Communication' },
-  { name: 'SendGrid', logo: '📧', icon: '📧', category: 'Communication' },
-  { name: 'Stripe', logo: '💳', icon: '💳', category: 'Payment' },
+  { name: 'OpenAI GPT-4', logo: '', icon: '', category: 'AI Models' },
+  { name: 'Anthropic Claude', logo: '', icon: '', category: 'AI Models' },
+  { name: 'Google Gemini', logo: '', icon: '', category: 'AI Models' },
+  { name: 'Make.com', logo: '', icon: '', category: 'Automation' },
+  { name: 'Zapier', logo: '', icon: '', category: 'Automation' },
+  { name: 'n8n', logo: '', icon: '', category: 'Automation' },
+  { name: 'Airtable', logo: '', icon: '', category: 'Database' },
+  { name: 'HubSpot', logo: '', icon: '', category: 'CRM' },
+  { name: 'Salesforce', logo: '', icon: '', category: 'CRM' },
+  { name: 'Twilio', logo: '', icon: '', category: 'Communication' },
+  { name: 'SendGrid', logo: '', icon: '', category: 'Communication' },
+  { name: 'Stripe', logo: '', icon: '', category: 'Payment' },
 ];

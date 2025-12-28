@@ -183,19 +183,19 @@ export default function SixStageTeaser() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: '🔄',
+              icon: '',
               title: 'Complete Coverage',
               description:
                 'Every customer touchpoint is automated—no gaps, no missed opportunities.',
             },
             {
-              icon: '📊',
+              icon: '',
               title: 'Data-Driven',
               description:
                 'Real-time analytics show exactly where your AI is working hardest.',
             },
             {
-              icon: '⚡',
+              icon: '',
               title: 'Lightning Fast',
               description:
                 'Respond to leads in under 60 seconds, 24/7, with zero manual work.',

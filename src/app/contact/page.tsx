@@ -49,9 +49,9 @@ export default function ContactPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: '⏱️', label: '30-Minute Call' },
-                { icon: '💡', label: 'Custom Strategy' },
-                { icon: '🎁', label: '100% Free' },
+                { icon: '', label: '30-Minute Call' },
+                { icon: '', label: 'Custom Strategy' },
+                { icon: '', label: '100% Free' },
               ].map((item, index) => (
                 <div
                   key={index}

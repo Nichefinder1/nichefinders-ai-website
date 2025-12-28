@@ -102,25 +102,25 @@ export default function TechStack() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
-                icon: '🤖',
+                icon: '',
                 title: 'AI & LLMs',
                 description: 'Claude, GPT-4, Custom Models',
                 count: '5+ platforms',
               },
               {
-                icon: '🔧',
+                icon: '',
                 title: 'Automation',
                 description: 'n8n, Make, Zapier',
                 count: '1000+ integrations',
               },
               {
-                icon: '💬',
+                icon: '',
                 title: 'Communication',
                 description: 'Twilio, WhatsApp, Email',
                 count: 'Omnichannel',
               },
               {
-                icon: '📊',
+                icon: '',
                 title: 'Analytics',
                 description: 'Real-time dashboards & insights',
                 count: 'Full visibility',

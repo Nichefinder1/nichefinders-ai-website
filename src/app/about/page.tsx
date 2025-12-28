@@ -111,37 +111,37 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '🎯',
+                icon: '',
                 title: 'Florida-First Focus',
                 description:
                   'We live here. We work here. We understand Florida markets, seasonality, and customer behavior. Not some outsourced team halfway around the world.',
               },
               {
-                icon: '🔧',
+                icon: '',
                 title: 'No Cookie-Cutter Solutions',
                 description:
                   'Every business gets a custom-built system tailored to their industry, size, and goals. We don\'t force you into our favorite tools—we build what works for you.',
               },
               {
-                icon: '📊',
+                icon: '',
                 title: 'Proven 6-Stage Framework',
                 description:
                   'Our proprietary system covers lead capture, qualification, nurturing, conversion, service delivery, and retention. Complete coverage, zero gaps.',
               },
               {
-                icon: '⚡',
+                icon: '',
                 title: 'Implementation Speed',
                 description:
                   'Most agencies take months. We deliver results in 6-9 weeks. Fast implementation, faster ROI, real business impact.',
               },
               {
-                icon: '🤝',
+                icon: '',
                 title: 'Partnership Approach',
                 description:
                   'We are not vendors who disappear after launch. We stay involved, optimize continuously, and ensure you are getting maximum value.',
               },
               {
-                icon: '💡',
+                icon: '',
                 title: 'Education Included',
                 description:
                   'We train your team to understand and manage the AI systems. No black boxes, no dependence. You own the knowledge.',
@@ -174,22 +174,22 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: '🔧',
+                icon: '',
                 name: 'Home & Building Services',
                 description: 'Plumbing, HVAC, Roofing, Electrical, Contractors, Painting',
               },
               {
-                icon: '🚗',
+                icon: '',
                 name: 'Automotive',
                 description: 'Dealerships, Repair Shops, Detailing',
               },
               {
-                icon: '❤️',
+                icon: '',
                 name: 'Nonprofits',
                 description: 'Foundations, Community Organizations',
               },
               {
-                icon: '⚖️',
+                icon: '',
                 name: 'Professional Services',
                 description: 'Law Firms, Accounting, Consulting',
               },

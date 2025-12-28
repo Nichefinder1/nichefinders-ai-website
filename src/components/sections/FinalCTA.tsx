@@ -49,7 +49,7 @@ export default function FinalCTA() {
         >
           {/* Badge */}
           <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm text-white font-bold text-sm rounded-full mb-6">
-            🎯 READY TO TRANSFORM YOUR BUSINESS?
+            READY TO TRANSFORM YOUR BUSINESS?
           </div>
 
           {/* Headline */}
@@ -67,17 +67,17 @@ export default function FinalCTA() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
               {
-                icon: '⚡',
+                icon: '',
                 text: 'Free Discovery Call',
                 subtext: 'No pressure, just insights',
               },
               {
-                icon: '🎯',
+                icon: '',
                 text: 'Custom AI Strategy',
                 subtext: 'Built for your business',
               },
               {
-                icon: '📊',
+                icon: '',
                 text: 'ROI Projection',
                 subtext: 'See your potential gains',
               },

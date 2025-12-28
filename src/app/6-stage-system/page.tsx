@@ -62,9 +62,9 @@ export default function SixStageSystemPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
-                { icon: '🔄', label: 'Complete Coverage', value: '100%' },
-                { icon: '📊', label: 'Data-Driven', value: 'Real-Time' },
-                { icon: '⚡', label: 'Response Time', value: '<60s' },
+                { icon: '', label: 'Complete Coverage', value: '100%' },
+                { icon: '', label: 'Data-Driven', value: 'Real-Time' },
+                { icon: '', label: 'Response Time', value: '<60s' },
               ].map((stat, index) => (
                 <div
                   key={index}
@@ -292,37 +292,37 @@ export default function SixStageSystemPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: '🔄',
+                icon: '',
                 title: 'Seamless Integration',
                 description:
                   'All 6 stages work together as one unified system, sharing data and insights.',
               },
               {
-                icon: '📊',
+                icon: '',
                 title: 'Real-Time Analytics',
                 description:
                   'Dashboard shows exactly where each lead is in the journey and what actions to take.',
               },
               {
-                icon: '🎯',
+                icon: '',
                 title: 'Personalized Automation',
                 description:
                   'AI adapts messaging and timing based on customer behavior and preferences.',
               },
               {
-                icon: '⚡',
+                icon: '',
                 title: 'Instant Response',
                 description:
                   'From lead capture to follow-up, responses happen in under 60 seconds.',
               },
               {
-                icon: '🔒',
+                icon: '',
                 title: 'Enterprise Security',
                 description:
                   'Bank-level encryption and GDPR-compliant data handling throughout.',
               },
               {
-                icon: '📈',
+                icon: '',
                 title: 'Continuous Improvement',
                 description:
                   'AI learns from every interaction, constantly optimizing performance.',
@@ -352,7 +352,6 @@ export default function SixStageSystemPage() {
             className="p-12 bg-gradient-to-br from-cyan-50 to-blue-50 text-center"
           >
             <div className="max-w-3xl mx-auto">
-              <div className="text-6xl mb-6">🚀</div>
               <h2 className="text-4xl font-black text-navy-deep mb-4">
                 Ready to Implement the 6-Stage System?
               </h2>

@@ -81,25 +81,25 @@ export default function ProblemAgitation() {
 
   const problems = [
     {
-      icon: '📞',
+      icon: '',
       title: 'Missed Opportunities',
       description:
         '78% of leads never get a response. Every unanswered call is money left on the table.',
     },
     {
-      icon: '⏰',
+      icon: '',
       title: 'Manual Follow-Up Hell',
       description:
         'Your team spends hours doing repetitive tasks instead of closing high-value deals.',
     },
     {
-      icon: '📊',
+      icon: '',
       title: 'Inconsistent Customer Experience',
       description:
         'Response times vary wildly. Some customers wait days while others get instant replies.',
     },
     {
-      icon: '💸',
+      icon: '',
       title: 'Revenue Leaking Everywhere',
       description:
         'Without automation, you are bleeding money on wasted time, lost leads, and inefficiency.',
@@ -108,25 +108,25 @@ export default function ProblemAgitation() {
 
   const solutions = [
     {
-      icon: '⚡',
+      icon: '',
       title: 'Instant Lead Capture',
       description:
         'AI responds within 60 seconds, 24/7. Never lose a hot lead to slow response times again.',
     },
     {
-      icon: '🤖',
+      icon: '',
       title: 'Automated Follow-Up',
       description:
         'Smart sequences nurture every lead with personalized messages—no manual work required.',
     },
     {
-      icon: '🎯',
+      icon: '',
       title: 'Consistent Excellence',
       description:
         'Every customer gets VIP treatment with instant, accurate responses at any hour.',
     },
     {
-      icon: '📈',
+      icon: '',
       title: '400% ROI on Average',
       description:
         'Our clients see massive returns by automating what used to take hours of manual labor.',

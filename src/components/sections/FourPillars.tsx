@@ -158,7 +158,6 @@ export default function FourPillars() {
               variant="gradient-border"
               className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
             >
-              <div className="text-4xl mb-3">🚀</div>
               <h3 className="text-xl font-black mb-2">
                 Ready to Transform Your Business?
               </h3>

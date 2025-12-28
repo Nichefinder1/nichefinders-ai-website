@@ -232,17 +232,17 @@ export default function SocialProof() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              icon: '🏆',
+              icon: '',
               title: 'Industry Leaders',
               description: 'Working with top businesses across 4 major Florida industries',
             },
             {
-              icon: '🔒',
+              icon: '',
               title: 'Enterprise Security',
               description: 'Bank-level encryption and GDPR-compliant data handling',
             },
             {
-              icon: '📞',
+              icon: '',
               title: '24/7 Support',
               description: 'Dedicated Florida-based team always ready to help',
             },

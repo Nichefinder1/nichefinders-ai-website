@@ -84,11 +84,6 @@ export default function FeaturedCaseStudy() {
             {/* Left: Image/Visual */}
             <div className="relative h-64 lg:h-auto bg-gradient-to-br from-cyan-primary/20 to-navy-deep/20 flex items-center justify-center p-12">
               <div className="text-center">
-                <div className="text-8xl mb-6">
-                  {featured.client.industry.includes('Home') ? '🏠' :
-                   featured.client.industry.includes('Automotive') ? '🚗' :
-                   featured.client.industry.includes('Nonprofit') ? '⛪' : '💼'}
-                </div>
                 <Badge variant="primary" size="lg">
                   {featured.client.industry}
                 </Badge>
