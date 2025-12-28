@@ -159,8 +159,8 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Primary CTA */}
-          <div className="mb-8">
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Button
               href={CALENDAR_LINK}
               variant="primary"
@@ -169,6 +169,14 @@ export default function Hero() {
               external
             >
               Book Your Free Discovery Call
+            </Button>
+            <Button
+              href="/6-stage-system"
+              variant="secondary"
+              size="lg"
+              className="min-w-[280px] text-lg font-bold py-4 px-8"
+            >
+              Explore Our 6-Stage System
             </Button>
           </div>
 
