@@ -160,12 +160,12 @@ export default function Hero() {
           </h1>
 
           {/* Primary CTA */}
-          <div className="mb-10">
+          <div className="mb-8">
             <Button
               href={CALENDAR_LINK}
               variant="primary"
               size="lg"
-              className="min-w-[320px] sm:min-w-[380px] shadow-2xl shadow-cyan-primary/50 text-xl sm:text-2xl font-bold py-6 px-10"
+              className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
               external
             >
               Book Your Free Discovery Call
@@ -175,45 +175,21 @@ export default function Hero() {
           {/* Subheadline */}
           <p
             ref={subheadlineRef}
-            className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto"
           >
             Stop losing revenue to manual processes. Our proven 6-Stage System
             automates lead capture, follow-up, and conversion—so you close more
             deals while working less.
           </p>
 
-          {/* CTAs */}
-          <div
-            ref={ctaRef}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Button
-              href={CALENDAR_LINK}
-              variant="primary"
-              size="lg"
-              className="min-w-[240px] shadow-2xl shadow-cyan-primary/50"
-              external
-            >
-              Book Your Free Discovery Call
-            </Button>
-            <Button
-              href="/6-stage-system"
-              variant="secondary"
-              size="lg"
-              className="min-w-[240px] bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20"
-            >
-              Explore Our 6-Stage System
-            </Button>
-          </div>
-
           {/* Stats */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div ref={ctaRef} className="mt-8 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { value: '78%', label: 'Of leads go unanswered' },
               { value: '400%', label: 'Average ROI for clients' },
               { value: '<5min', label: 'Response time with AI' },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center relative z-20">
                 <div className="text-4xl md:text-5xl font-black text-cyan-primary mb-2">
                   {stat.value}
                 </div>
@@ -227,7 +203,7 @@ export default function Hero() {
       </Container>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden md:block">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
         </div>
