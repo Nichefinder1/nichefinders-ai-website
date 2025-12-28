@@ -36,7 +36,7 @@ export default function FourPillars() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: scrollContainer,
-        start: 'top -70%',
+        start: 'top -65%',
         end: () => `+=${totalScrollWidth * 2.5}`,
         scrub: 1,
         pin: true,
