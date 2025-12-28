@@ -114,7 +114,7 @@ export default function SixStageTeaser() {
 
                       {/* CTA Link */}
                       <a
-                        href="/6-stage-system"
+                        href={`/6-stage-system#stage-${stage.number}`}
                         className="text-xs text-cyan-primary font-semibold underline decoration-1 underline-offset-2 hover:text-cyan-light transition-colors flex items-center gap-1 mt-3"
                       >
                         See How It Works
@@ -154,7 +154,7 @@ export default function SixStageTeaser() {
                       {stage.name}
                     </h3>
                     <a
-                      href="/6-stage-system"
+                      href={`/6-stage-system#stage-${stage.number}`}
                       className="text-xs text-cyan-primary font-semibold underline decoration-1 underline-offset-2 hover:text-cyan-light transition-colors flex items-center gap-1"
                     >
                       See How It Works
