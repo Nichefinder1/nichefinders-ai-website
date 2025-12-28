@@ -5,8 +5,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
-import Badge from '@/components/ui/Badge';
-import Icon from '@/components/ui/Icon';
 import { CALENDAR_LINK } from '@/lib/constants';
 
 if (typeof window !== 'undefined') {
@@ -18,7 +16,6 @@ export default function Hero() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subheadlineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  const badgesRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,10 +23,9 @@ export default function Hero() {
     const headline = headlineRef.current;
     const subheadline = subheadlineRef.current;
     const cta = ctaRef.current;
-    const badges = badgesRef.current;
     const background = backgroundRef.current;
 
-    if (!hero || !headline || !subheadline || !cta || !badges || !background)
+    if (!hero || !headline || !subheadline || !cta || !background)
       return;
 
     // Initial animation timeline
@@ -60,16 +56,6 @@ export default function Hero() {
           stagger: 0.15,
         },
         '-=0.4'
-      )
-      .from(
-        badges.children,
-        {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.5,
-          stagger: 0.1,
-        },
-        '-=0.3'
       );
 
     // Parallax scroll effect on background
@@ -85,7 +71,7 @@ export default function Hero() {
     });
 
     // Fade out hero content on scroll
-    gsap.to([headline, subheadline, cta, badges], {
+    gsap.to([headline, subheadline, cta], {
       opacity: 0,
       y: -50,
       ease: 'none',
@@ -133,25 +119,6 @@ export default function Hero() {
       {/* Content */}
       <Container size="lg" className="relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Trust Badges */}
-          <div
-            ref={badgesRef}
-            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 px-4"
-          >
-            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5 flex items-center gap-1.5">
-              <Icon name="star" className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span>Florida's #1 AI Automation Agency</span>
-            </Badge>
-            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5 flex items-center gap-1.5">
-              <Icon name="trending-up" className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span>400% Average ROI</span>
-            </Badge>
-            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5 flex items-center gap-1.5">
-              <Icon name="users" className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span>50+ Businesses Transformed</span>
-            </Badge>
-          </div>
-
           {/* Headline */}
           <h1
             ref={headlineRef}
