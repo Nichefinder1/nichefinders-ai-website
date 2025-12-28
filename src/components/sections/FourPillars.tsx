@@ -37,7 +37,7 @@ export default function FourPillars() {
       scrollTrigger: {
         trigger: scrollContainer,
         start: 'top -55%',
-        end: () => `+=${totalScrollWidth * 2.5}`,
+        end: () => `+=${totalScrollWidth * 1.2}`,
         scrub: 1,
         pin: true,
         anticipatePin: 1,
