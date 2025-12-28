@@ -104,7 +104,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-24"
     >
       {/* Animated Background */}
       <div
@@ -135,7 +135,7 @@ export default function Hero() {
           {/* Trust Badges */}
           <div
             ref={badgesRef}
-            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 px-4 mt-4"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 px-4"
           >
             <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[11px] sm:text-sm px-3 py-1.5">
               🚀 Florida's #1 AI Automation Agency
