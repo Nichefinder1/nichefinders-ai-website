@@ -10,7 +10,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import type { Industry } from '@/lib/constants';
-import { SIX_STAGES, CALENDAR_LINK } from '@/lib/constants';
+import { FLORIDA_CITIES, SIX_STAGES, CALENDAR_LINK } from '@/lib/constants';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -68,11 +68,6 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
           <div ref={heroRef} className="max-w-4xl mx-auto">
             {/* Icon */}
             <div className="text-7xl mb-6">{industry.icon}</div>
-
-            {/* Badge */}
-            <Badge variant="secondary" size="md" className="mb-6">
-              {industry.businessCount}
-            </Badge>
 
             {/* Headline with Gradient */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
@@ -283,6 +278,35 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
             >
               Explore Our 6-Stage System
             </Button>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Florida Locations */}
+      <Section background="white" padding>
+        <Container size="lg">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-4xl font-black text-navy-deep mb-4">
+              Serving {industry.name} Across Florida
+            </h2>
+            <p className="text-xl text-gray-600">
+              Local expertise in major Florida markets
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {FLORIDA_CITIES.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/florida/${city.slug}`}
+                className="p-4 bg-gray-50 hover:bg-cyan-50 rounded-lg text-center transition-colors group"
+              >
+                <div className="font-bold text-navy-deep group-hover:text-cyan-primary transition-colors">
+                  {city.name}
+                </div>
+                <div className="text-sm text-gray-600">{city.population}</div>
+              </Link>
+            ))}
           </div>
         </Container>
       </Section>

@@ -4,13 +4,13 @@ import { INDUSTRIES } from '@/lib/constants';
 export const metadata = {
   title: 'AI Automation for Automotive | Dealerships, Repair Shops & Detailing',
   description:
-    'Accelerate your automotive business with AI. Automated lead follow-up, service reminders, appointment booking, and customer retention for dealerships and auto shops.',
+    'Accelerate your Florida automotive business with AI. Automated lead follow-up, service reminders, appointment booking, and customer retention for dealerships and auto shops.',
   keywords: [
-    'AI for car dealerships',
-    'auto shop automation',
+    'AI for car dealerships Florida',
+    'auto shop automation Tampa',
     'automotive lead generation AI',
-    'dealership AI tools',
-    'auto repair automation',
+    'dealership AI tools Miami',
+    'auto repair automation Orlando',
   ].join(', '),
 };
 
