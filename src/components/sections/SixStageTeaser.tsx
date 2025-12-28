@@ -87,10 +87,10 @@ export default function SixStageTeaser() {
         <div ref={stagesRef} className="relative">
           {/* Desktop: Horizontal Flow */}
           <div className="hidden lg:block">
-            <div className="flex items-start justify-between relative">
+            <div className="grid grid-cols-3 gap-8 relative">
               {SIX_STAGES.map((stage, index) => (
-                <div key={stage.number} className="flex items-center">
-                  <div className="stage-card w-64">
+                <div key={stage.number} className="flex flex-col items-center">
+                  <div className="stage-card w-full">
                     <Card
                       variant="glass"
                       className={`p-6 transition-all duration-300 ${
@@ -129,24 +129,6 @@ export default function SixStageTeaser() {
                       </div>
                     </Card>
                   </div>
-
-                  {/* Connecting Arrow */}
-                  {index < SIX_STAGES.length - 1 && (
-                    <div className="stage-line flex items-center mx-4">
-                      <div className="h-0.5 w-12 bg-gradient-to-r from-cyan-primary to-white/30" />
-                      <svg
-                        className="w-6 h-6 text-cyan-primary"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

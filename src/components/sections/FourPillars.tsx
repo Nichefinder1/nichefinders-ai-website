@@ -78,46 +78,46 @@ export default function FourPillars() {
         <div className="py-20 min-h-screen flex items-center">
           <div
             ref={cardsContainerRef}
-            className="flex space-x-8 pl-[10vw] md:pl-[calc(50vw-200px)] pr-[10vw] md:pr-[calc(50vw-200px)]"
+            className="flex space-x-8 pl-[10vw] md:pl-[calc(50vw-220px)] pr-[10vw] md:pr-[calc(50vw-220px)]"
             style={{ width: 'max-content' }}
           >
             {SERVICES.map((service, index) => (
               <Card
                 key={service.slug}
                 variant="elevated"
-                className="pillar-card flex-shrink-0 w-[80vw] md:w-[400px] p-5 md:p-6 bg-white"
+                className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-white"
               >
                 {/* Pillar Number */}
-                <div className="flex items-start justify-between mb-3">
-                  <div className="text-6xl font-black text-cyan-primary/20">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-7xl font-black text-cyan-primary/20">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-                  <div className="text-3xl">{service.icon}</div>
+                  <div className="text-4xl">{service.icon}</div>
                 </div>
 
                 {/* Content */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-black text-navy-deep mb-2">
+                <div className="mb-5">
+                  <h3 className="text-2xl font-black text-navy-deep mb-3">
                     {service.name}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-3 leading-snug">
+                  <p className="text-base text-gray-600 mb-4 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Key Features */}
-                <div className="space-y-2 mb-4">
-                  <h4 className="font-bold text-navy-deep uppercase text-xs tracking-wide">
+                <div className="space-y-2 mb-5">
+                  <h4 className="font-bold text-navy-deep uppercase text-sm tracking-wide">
                     What You Get:
                   </h4>
-                  <ul className="space-y-1.5">
+                  <ul className="space-y-2">
                     {service.deliverables.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start space-x-2 text-gray-700 text-xs leading-tight"
+                        className="flex items-start space-x-2 text-gray-700 text-sm leading-relaxed"
                       >
                         <svg
-                          className="w-3.5 h-3.5 text-cyan-primary flex-shrink-0 mt-0.5"
+                          className="w-4 h-4 text-cyan-primary flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -134,11 +134,11 @@ export default function FourPillars() {
                 </div>
 
                 {/* Details */}
-                <div className="mb-4 p-3 bg-gray-50 rounded-lg">
-                  <h4 className="font-bold text-navy-deep mb-1.5 text-xs uppercase tracking-wide">
+                <div className="mb-5 p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-bold text-navy-deep mb-2 text-sm uppercase tracking-wide">
                     What You Get:
                   </h4>
-                  <p className="text-gray-700 text-xs leading-snug">{service.details}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">{service.details}</p>
                 </div>
 
                 {/* CTA */}
@@ -146,7 +146,7 @@ export default function FourPillars() {
                   href={`/solutions/${service.slug}`}
                   variant="primary"
                   size="md"
-                  className="w-full justify-center text-sm"
+                  className="w-full justify-center text-base"
                 >
                   Learn More About {service.name}
                 </Button>
@@ -156,7 +156,7 @@ export default function FourPillars() {
             {/* Final CTA Card */}
             <Card
               variant="gradient-border"
-              className="pillar-card flex-shrink-0 w-[80vw] md:w-[400px] p-5 md:p-6 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
+              className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
             >
               <div className="text-4xl mb-3">🚀</div>
               <h3 className="text-xl font-black mb-2">

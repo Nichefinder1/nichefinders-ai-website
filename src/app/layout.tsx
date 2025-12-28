@@ -97,7 +97,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${inter.variable} ${spaceMono.variable}`}
+      className={`${poppins.variable} ${inter.variable} ${spaceMono.variable} overflow-x-hidden`}
     >
       <head>
         {/* Preconnect to external domains */}
@@ -143,7 +143,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
         {/* Smooth Scrolling */}
         <SmoothScroll />
 
