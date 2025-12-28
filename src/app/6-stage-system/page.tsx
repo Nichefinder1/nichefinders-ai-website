@@ -103,18 +103,24 @@ export default function SixStageSystemPage() {
                     .getElementById(`stage-${stage.number}`)
                     ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }}
-                className={`p-4 rounded-xl border-2 transition-all duration-300 ${
+                className={`p-4 rounded-xl border-2 transition-all duration-300 group ${
                   activeStage === index
                     ? 'border-cyan-primary bg-cyan-50 shadow-lg scale-105'
-                    : 'border-gray-200 bg-white hover:border-cyan-primary/50'
+                    : 'border-gray-200 bg-white hover:border-cyan-primary/50 hover:shadow-md'
                 }`}
               >
                 <div className="text-3xl mb-2">{stage.icon}</div>
                 <div className="text-xs font-bold text-gray-500 mb-1">
                   STAGE {stage.number}
                 </div>
-                <div className="text-sm font-semibold text-navy-deep leading-tight">
+                <div className="text-sm font-semibold text-navy-deep leading-tight mb-3">
                   {stage.name.split(' ').slice(0, 2).join(' ')}
+                </div>
+                <div className="text-xs text-cyan-primary font-semibold underline decoration-1 underline-offset-2 group-hover:text-cyan-dark transition-colors flex items-center justify-center gap-1">
+                  See How It Works
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               </button>
             ))}
