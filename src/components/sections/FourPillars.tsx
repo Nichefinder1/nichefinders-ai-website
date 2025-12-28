@@ -33,15 +33,16 @@ export default function FourPillars() {
       scrollTrigger: {
         trigger: scrollContainer,
         start: 'top top',
-        end: () => `+=${totalWidth * 1.5}`,
+        end: () => `+=${totalWidth * 2}`,
         scrub: 1,
         pin: true,
         anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
     });
 
     tl.to(cardsContainer, {
-      x: -totalWidth,
+      x: () => -(cardsContainer.scrollWidth - window.innerWidth),
       ease: 'none',
     });
 
@@ -88,7 +89,7 @@ export default function FourPillars() {
         <div className="pb-20">
           <div
             ref={cardsContainerRef}
-            className="flex space-x-8 pl-6 md:pl-[10vw]"
+            className="flex space-x-8 pl-6 md:pl-[10vw] pr-6 md:pr-[10vw]"
             style={{ width: 'max-content' }}
           >
             {SERVICES.map((service, index) => (
