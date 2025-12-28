@@ -135,15 +135,15 @@ export default function Hero() {
           {/* Trust Badges */}
           <div
             ref={badgesRef}
-            className="flex flex-wrap items-center justify-center gap-3 mb-8"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 px-4"
           >
-            <Badge variant="secondary" size="sm">
+            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[10px] sm:text-xs">
               🚀 Florida's #1 AI Automation Agency
             </Badge>
-            <Badge variant="secondary" size="sm">
+            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[10px] sm:text-xs">
               ⚡ 400% Average ROI
             </Badge>
-            <Badge variant="secondary" size="sm">
+            <Badge variant="secondary" size="sm" className="whitespace-nowrap text-[10px] sm:text-xs">
               🏆 50+ Businesses Transformed
             </Badge>
           </div>
