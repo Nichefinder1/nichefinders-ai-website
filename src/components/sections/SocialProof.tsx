@@ -158,74 +158,76 @@ export default function SocialProof() {
             </div>
           </Card>
 
-          {/* Testimonial Navigation */}
-          <div className="flex items-center justify-center mt-8 space-x-4">
-            {/* Dots */}
-            <div className="flex space-x-2">
-              {TESTIMONIALS.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial
-                      ? 'bg-cyan-primary w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`View testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
+          {/* Testimonial Navigation - Only show if there are multiple testimonials */}
+          {TESTIMONIALS.length > 1 && (
+            <div className="flex items-center justify-center mt-8 space-x-4">
+              {/* Dots */}
+              <div className="flex space-x-2">
+                {TESTIMONIALS.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentTestimonial
+                        ? 'bg-cyan-primary w-8'
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`View testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
 
-            {/* Navigation Arrows */}
-            <div className="flex space-x-2">
-              <button
-                onClick={() =>
-                  setCurrentTestimonial((prev) =>
-                    prev === 0 ? TESTIMONIALS.length - 1 : prev - 1
-                  )
-                }
-                className="w-10 h-10 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center hover:border-cyan-primary hover:text-cyan-primary transition-colors"
-                aria-label="Previous testimonial"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {/* Navigation Arrows */}
+              <div className="flex space-x-2">
+                <button
+                  onClick={() =>
+                    setCurrentTestimonial((prev) =>
+                      prev === 0 ? TESTIMONIALS.length - 1 : prev - 1
+                    )
+                  }
+                  className="w-10 h-10 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center hover:border-cyan-primary hover:text-cyan-primary transition-colors"
+                  aria-label="Previous testimonial"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              <button
-                onClick={() =>
-                  setCurrentTestimonial((prev) =>
-                    prev === TESTIMONIALS.length - 1 ? 0 : prev + 1
-                  )
-                }
-                className="w-10 h-10 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center hover:border-cyan-primary hover:text-cyan-primary transition-colors"
-                aria-label="Next testimonial"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() =>
+                    setCurrentTestimonial((prev) =>
+                      prev === TESTIMONIALS.length - 1 ? 0 : prev + 1
+                    )
+                  }
+                  className="w-10 h-10 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center hover:border-cyan-primary hover:text-cyan-primary transition-colors"
+                  aria-label="Next testimonial"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Trust Indicators */}
