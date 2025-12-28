@@ -85,7 +85,7 @@ export default function FourPillars() {
               <Card
                 key={service.slug}
                 variant="elevated"
-                className="pillar-card flex-shrink-0 w-[85vw] md:w-[600px] p-8 md:p-12 bg-white"
+                className="pillar-card flex-shrink-0 w-[80vw] md:w-[500px] p-6 md:p-10 bg-white"
               >
                 {/* Pillar Number */}
                 <div className="flex items-start justify-between mb-6">
@@ -156,7 +156,7 @@ export default function FourPillars() {
             {/* Final CTA Card */}
             <Card
               variant="gradient-border"
-              className="pillar-card flex-shrink-0 w-[85vw] md:w-[600px] p-8 md:p-12 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
+              className="pillar-card flex-shrink-0 w-[80vw] md:w-[500px] p-6 md:p-10 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
             >
               <div className="text-6xl mb-6">🚀</div>
               <h3 className="text-3xl font-black mb-4">
