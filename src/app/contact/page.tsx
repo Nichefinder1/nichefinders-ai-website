@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
@@ -137,22 +138,22 @@ export default function ContactPage() {
                   Schedule Your Call
                 </h3>
 
-                {/* PLACEHOLDER: User will add their webform/calendar embed here */}
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-                  <div className="text-6xl mb-4">📅</div>
-                  <h4 className="text-xl font-bold text-gray-700 mb-2">
-                    Calendar Booking Widget Goes Here
-                  </h4>
-                  <p className="text-gray-600 mb-6">
-                    Replace this placeholder with your Calendly, Acuity, or
-                    custom booking calendar embed code.
-                  </p>
-                  <div className="text-sm text-gray-500 font-mono bg-white p-4 rounded">
-                    {`<!-- Replace this div with your calendar embed -->`}
-                  </div>
+                {/* Calendar Booking Widget */}
+                <div className="calendar-embed-container">
+                  <iframe
+                    src="https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM"
+                    style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
+                    scrolling="no"
+                    id="kkK9pI9aOnuMejTcRnfw_1766896299539"
+                    title="Book Your Discovery Call"
+                  />
+                  <Script
+                    src="https://nichefinder.coreyreeder.com/js/form_embed.js"
+                    strategy="lazyOnload"
+                  />
                 </div>
 
-                {/* Temporary Contact Info */}
+                {/* Contact Info */}
                 <div className="mt-8 pt-8 border-t border-gray-200">
                   <h4 className="font-bold text-navy-deep mb-4">
                     Or Contact Us Directly:
