@@ -70,7 +70,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
 
             {/* Headline with Gradient */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              <span className="block text-gradient">{service.headline}</span>
+              <span className="block text-gradient" dangerouslySetInnerHTML={{ __html: service.headline }} />
             </h1>
 
             {/* CTAs */}

@@ -596,7 +596,7 @@ export const SERVICES: Service[] = [
     title: 'AI Education & Training',
     slug: 'ai-education-training',
     icon: '',
-    headline: 'Turn Your Team Into AI Experts',
+    headline: 'Transform Your Team Into<br/>AI Experts',
     description: 'Hands-on training that drives adoption and continuous improvement',
     details:
       'Hands-on training, workflow optimization workshops, and ongoing coaching that turns your team into AI power users who drive continuous improvement.',
