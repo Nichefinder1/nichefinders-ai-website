@@ -165,7 +165,7 @@ export default function Hero() {
               href={CALENDAR_LINK}
               variant="primary"
               size="lg"
-              className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg"
+              className="min-w-[320px] sm:min-w-[380px] shadow-2xl shadow-cyan-primary/50 text-xl sm:text-2xl font-bold py-6 px-10"
               external
             >
               Book Your Free Discovery Call
