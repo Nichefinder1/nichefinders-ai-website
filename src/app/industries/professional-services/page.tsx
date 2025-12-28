@@ -4,13 +4,13 @@ import { INDUSTRIES } from '@/lib/constants';
 export const metadata = {
   title: 'AI Automation for Professional Services | Law, Accounting & Consulting',
   description:
-    'Streamline your Florida professional services firm with AI. Automated client intake, appointment scheduling, document processing, and follow-up for lawyers, accountants, and consultants.',
+    'Streamline your professional services firm with AI. Automated client intake, appointment scheduling, document processing, and follow-up for lawyers, accountants, and consultants.',
   keywords: [
-    'AI for law firms Florida',
-    'accounting automation Tampa',
+    'AI for law firms',
+    'accounting automation',
     'professional services AI',
-    'legal automation Jacksonville',
-    'consulting business AI Miami',
+    'legal automation',
+    'consulting business AI',
   ].join(', '),
 };
 

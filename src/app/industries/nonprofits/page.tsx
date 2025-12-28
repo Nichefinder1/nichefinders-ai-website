@@ -4,13 +4,13 @@ import { INDUSTRIES } from '@/lib/constants';
 export const metadata = {
   title: 'AI Automation for Nonprofits | Donor Management & Fundraising',
   description:
-    'Maximize impact for your Florida nonprofit with AI automation. Automated donor outreach, event management, volunteer coordination, and fundraising campaigns that scale.',
+    'Maximize impact for your nonprofit with AI automation. Automated donor outreach, event management, volunteer coordination, and fundraising campaigns that scale.',
   keywords: [
-    'AI for nonprofits Florida',
-    'nonprofit automation Tampa',
+    'AI for nonprofits',
+    'nonprofit automation',
     'donor management AI',
-    'fundraising automation Jacksonville',
-    'volunteer coordination AI Miami',
+    'fundraising automation',
+    'volunteer coordination AI',
   ].join(', '),
 };
 
