@@ -1,5 +1,7 @@
+'use client';
+
+import { useEffect } from 'react';
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
@@ -10,35 +12,11 @@ type Props = {
   params: { slug: string };
 };
 
-// Generate static params for all case studies
-export async function generateStaticParams() {
-  return CASE_STUDIES.map((study) => ({
-    slug: study.slug,
-  }));
-}
-
-// Generate metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const study = CASE_STUDIES.find((s) => s.slug === params.slug);
-
-  if (!study) {
-    return {
-      title: 'Case Study Not Found',
-    };
-  }
-
-  return {
-    title: `${study.client.name} Case Study | NicheFinders AI`,
-    description: study.challenge,
-    openGraph: {
-      title: `${study.client.name} Case Study`,
-      description: study.challenge,
-      type: 'article',
-    },
-  };
-}
-
 export default function CaseStudyPage({ params }: Props) {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [params.slug]);
   const study = CASE_STUDIES.find((s) => s.slug === params.slug);
 
   if (!study) {
