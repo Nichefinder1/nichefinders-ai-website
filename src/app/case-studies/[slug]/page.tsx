@@ -15,28 +15,27 @@ type Props = {
 export default function CaseStudyPage({ params }: Props) {
   // Scroll to top on mount
   useEffect(() => {
-    // Force scroll to top immediately
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    // Force scroll to top immediately and aggressively
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
 
-    // Multiple fallback attempts to ensure it works
+    // Execute immediately
+    scrollToTop();
+
+    // Continue scrolling to top for a longer period to handle any layout shifts
     const timeouts = [
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }, 50),
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }, 150),
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      }, 300),
+      setTimeout(scrollToTop, 10),
+      setTimeout(scrollToTop, 50),
+      setTimeout(scrollToTop, 100),
+      setTimeout(scrollToTop, 150),
+      setTimeout(scrollToTop, 200),
+      setTimeout(scrollToTop, 300),
+      setTimeout(scrollToTop, 500),
+      setTimeout(scrollToTop, 750),
+      setTimeout(scrollToTop, 1000),
     ];
 
     return () => timeouts.forEach((t) => clearTimeout(t));
