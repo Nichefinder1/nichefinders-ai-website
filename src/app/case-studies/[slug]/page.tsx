@@ -15,8 +15,17 @@ type Props = {
 export default function CaseStudyPage({ params }: Props) {
   // Scroll to top on mount
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll immediately
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // Also scroll after a short delay to ensure it works
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [params.slug]);
+
   const study = CASE_STUDIES.find((s) => s.slug === params.slug);
 
   if (!study) {
