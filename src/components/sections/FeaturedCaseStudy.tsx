@@ -86,7 +86,7 @@ export default function FeaturedCaseStudy() {
               <div className="w-full max-w-md">
                 {/* Industry Badge at Top */}
                 <div className="text-center mb-8">
-                  <Badge variant="secondary" size="lg" className="bg-cyan-light/20 text-cyan-light border border-cyan-light/30">
+                  <Badge variant="secondary" size="lg" className="bg-white/10 text-white border border-white/30">
                     {featured.client.industry}
                   </Badge>
                 </div>
@@ -96,18 +96,18 @@ export default function FeaturedCaseStudy() {
                   {/* Before State */}
                   <div className="relative">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-bold uppercase tracking-wider text-gray-300">Before</span>
-                      <div className="h-px flex-1 bg-gradient-to-r from-gray-400 to-transparent ml-4"></div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-white/80">Before</span>
+                      <div className="h-px flex-1 bg-gradient-to-r from-white/30 to-transparent ml-4"></div>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                       <div className="flex items-center space-x-4">
                         <div className="flex-shrink-0">
-                          <svg className="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <svg className="w-12 h-12 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm text-gray-300 leading-relaxed">Manual processes, missed opportunities, inefficient workflows</p>
+                          <p className="text-sm text-white/80 leading-relaxed">Manual processes, missed opportunities, inefficient workflows</p>
                         </div>
                       </div>
                     </div>
@@ -116,10 +116,10 @@ export default function FeaturedCaseStudy() {
                   {/* Transformation Arrow */}
                   <div className="flex justify-center">
                     <div className="relative">
-                      <svg className="w-8 h-8 text-cyan-light animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <svg className="w-8 h-8 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
-                      <div className="absolute -inset-2 bg-cyan-light/20 rounded-full blur-md"></div>
+                      <div className="absolute -inset-2 bg-white/20 rounded-full blur-md"></div>
                     </div>
                   </div>
 
@@ -129,7 +129,7 @@ export default function FeaturedCaseStudy() {
                       <span className="text-xs font-bold uppercase tracking-wider text-white">After AI Automation</span>
                       <div className="h-px flex-1 bg-gradient-to-r from-white/50 to-transparent ml-4"></div>
                     </div>
-                    <div className="bg-gradient-to-br from-cyan-light/10 to-cyan-primary/5 backdrop-blur-sm rounded-lg p-6 border border-cyan-light/30 shadow-lg">
+                    <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/40 shadow-lg">
                       <div className="flex items-center space-x-4 mb-4">
                         <div className="flex-shrink-0">
                           <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -142,13 +142,13 @@ export default function FeaturedCaseStudy() {
                       </div>
 
                       {/* Key Metrics */}
-                      <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-white/20">
+                      <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-white/30">
                         {featured.results.slice(0, 2).map((result, idx) => (
                           <div key={idx} className="text-center">
                             <div className="text-2xl font-black text-white mb-1">
                               {result.value}
                             </div>
-                            <div className="text-xs text-cyan-light uppercase tracking-wide">
+                            <div className="text-xs text-white/90 uppercase tracking-wide font-semibold">
                               {result.metric}
                             </div>
                           </div>
@@ -159,7 +159,7 @@ export default function FeaturedCaseStudy() {
 
                   {/* Timeline Badge */}
                   <div className="text-center pt-4">
-                    <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-5 py-2 border border-white/10">
+                    <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 border border-white/30">
                       <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
