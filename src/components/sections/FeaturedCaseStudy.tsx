@@ -164,7 +164,7 @@ export default function FeaturedCaseStudy() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <span className="text-sm font-semibold text-gray-300">
-                        Completed in {featured.implementation.timeline}
+                        Completed in {featured.implementation.duration}
                       </span>
                     </div>
                   </div>
