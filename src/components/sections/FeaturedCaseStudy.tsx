@@ -114,12 +114,17 @@ export default function FeaturedCaseStudy() {
                   </div>
 
                   {/* Transformation Arrow */}
-                  <div className="flex justify-center">
-                    <div className="relative">
-                      <svg className="w-8 h-8 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                      <div className="absolute -inset-2 bg-white/20 rounded-full blur-md"></div>
+                  <div className="flex justify-center py-4">
+                    <div className="relative inline-flex items-center justify-center">
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 bg-white/10 rounded-full blur-xl"></div>
+
+                      {/* Arrow Container */}
+                      <div className="relative bg-white/5 backdrop-blur-sm rounded-full p-4 border border-white/20">
+                        <svg className="w-6 h-6 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
 
