@@ -71,8 +71,12 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
 
             {/* Headline with Gradient */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              <span className="block">AI Automation for</span>
-              <span className="block text-gradient">{industry.name}</span>
+              <span className="block">
+                {industry.slug === 'home-services' ? 'AI Automation for Home &' : industry.slug === 'automotive' ? 'AI Automation for Automotive' : 'AI Automation for'}
+              </span>
+              <span className="block text-gradient">
+                {industry.slug === 'home-services' ? 'Building Service Companies' : industry.slug === 'automotive' ? 'Dealers & Services' : industry.name}
+              </span>
             </h1>
 
             {/* CTAs */}
