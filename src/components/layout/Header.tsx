@@ -59,7 +59,7 @@ export default function Header() {
             <span
               className={cn(
                 'text-xl md:text-2xl font-black transition-all duration-300',
-                isScrolled ? 'text-navy-deep' : 'text-white drop-shadow-md'
+                isScrolled ? 'text-gradient' : 'text-white drop-shadow-md'
               )}
             >
               NicheFinders AI
