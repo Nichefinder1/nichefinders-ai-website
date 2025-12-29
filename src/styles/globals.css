@@ -5,8 +5,8 @@
 /* CSS Variables - Design System Tokens */
 :root {
   /* Colors */
-  --cyan-primary: #3BBADD;
-  --navy-deep: #0A1929;
+  --cyan-primary: #0055A4;
+  --navy-deep: #002855;
   --white: #FFFFFF;
   --gray-light: #F8FAFC;
   --green-success: #10B981;
@@ -127,7 +127,7 @@ html.lenis {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2A9FBF;
+  background: #003D7A;
 }
 
 /* Utility Classes */
@@ -152,7 +152,7 @@ html.lenis {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #3BBADD 0%, #0A1929 100%);
+  background: linear-gradient(135deg, #0055A4 0%, #002855 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -178,7 +178,7 @@ html.lenis {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, #3BBADD, #0A1929);
+  background: linear-gradient(135deg, #0055A4, #002855);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -239,13 +239,13 @@ html.lenis {
 .btn-primary {
   background: var(--cyan-primary);
   color: white;
-  box-shadow: 0 4px 14px rgba(59, 186, 221, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 85, 164, 0.25);
 }
 
 .btn-primary:hover {
-  background: #2A9FBF;
+  background: #003D7A;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 186, 221, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 85, 164, 0.35);
 }
 
 .btn-primary:active {
@@ -320,7 +320,7 @@ html.lenis {
 
 .input-field:focus {
   border-color: var(--cyan-primary);
-  box-shadow: 0 0 0 3px rgba(59, 186, 221, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1);
 }
 
 .input-field::placeholder {
@@ -329,7 +329,7 @@ html.lenis {
 
 /* Hero gradient background */
 .hero-gradient {
-  background: linear-gradient(180deg, #0A1929 0%, #1a2742 50%, #0A1929 100%);
+  background: linear-gradient(180deg, #002855 0%, #003D7A 50%, #002855 100%);
   position: relative;
   overflow: hidden;
 }
@@ -341,7 +341,7 @@ html.lenis {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(59, 186, 221, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 0%, rgba(0, 85, 164, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -356,7 +356,7 @@ html.lenis {
 }
 
 .gradient-text-animated {
-  background: linear-gradient(90deg, #3BBADD, #2A9FBF, #3BBADD);
+  background: linear-gradient(90deg, #0055A4, #003D7A, #0055A4);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -371,7 +371,7 @@ html.lenis {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3BBADD 0%, #2A9FBF 100%);
+  background: linear-gradient(90deg, #0055A4 0%, #003D7A 100%);
   transform-origin: 0%;
   z-index: 9999;
 }

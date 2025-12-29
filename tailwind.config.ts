@@ -10,14 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         cyan: {
-          primary: '#3BBADD',
-          light: '#5FCCE8',
-          dark: '#2A9FBF',
+          primary: '#0055A4',
+          light: '#C8D9E6',
+          dark: '#003D7A',
         },
         navy: {
-          deep: '#0A1929',
-          DEFAULT: '#1a2742',
-          light: '#2d3f5f',
+          deep: '#002855',
+          DEFAULT: '#003D7A',
+          light: '#0055A4',
         },
         gray: {
           light: '#F8FAFC',
@@ -79,8 +79,8 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #3BBADD 0%, #0A1929 100%)',
-        'gradient-hero': 'linear-gradient(180deg, #0A1929 0%, #1a2742 50%, #0A1929 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #0055A4 0%, #002855 100%)',
+        'gradient-hero': 'linear-gradient(180deg, #002855 0%, #003D7A 50%, #002855 100%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       transitionTimingFunction: {
