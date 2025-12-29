@@ -79,7 +79,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #0055A4 0%, #002855 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #C8D9E6 0%, #0055A4 100%)',
         'gradient-hero': 'linear-gradient(180deg, #002855 0%, #003D7A 50%, #002855 100%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },

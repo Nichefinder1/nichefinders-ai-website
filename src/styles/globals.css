@@ -152,7 +152,7 @@ html.lenis {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #0055A4 0%, #002855 100%);
+  background: linear-gradient(135deg, #C8D9E6 0%, #0055A4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -178,7 +178,7 @@ html.lenis {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, #0055A4, #002855);
+  background: linear-gradient(135deg, #C8D9E6, #0055A4);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -254,14 +254,14 @@ html.lenis {
 
 .btn-secondary {
   background: transparent;
-  color: var(--cyan-primary);
-  border: 2px solid var(--cyan-primary);
+  color: #C8D9E6;
+  border: 2px solid #C8D9E6;
   padding: 0.875rem 1.75rem;
 }
 
 .btn-secondary:hover {
-  background: var(--cyan-primary);
-  color: white;
+  background: #C8D9E6;
+  color: #002855;
 }
 
 .btn-ghost {
@@ -356,7 +356,7 @@ html.lenis {
 }
 
 .gradient-text-animated {
-  background: linear-gradient(90deg, #0055A4, #003D7A, #0055A4);
+  background: linear-gradient(90deg, #C8D9E6, #0055A4, #C8D9E6);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -371,7 +371,7 @@ html.lenis {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #0055A4 0%, #003D7A 100%);
+  background: linear-gradient(90deg, #C8D9E6 0%, #0055A4 100%);
   transform-origin: 0%;
   z-index: 9999;
 }
