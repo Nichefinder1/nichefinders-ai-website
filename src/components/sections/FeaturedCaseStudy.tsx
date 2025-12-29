@@ -82,9 +82,46 @@ export default function FeaturedCaseStudy() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: Image/Visual */}
-            <div className="relative h-64 lg:h-auto bg-gradient-to-br from-cyan-primary/20 to-navy-deep/20 flex items-center justify-center p-12">
-              <div className="text-center">
-                <Badge variant="primary" size="lg">
+            <div className="relative h-64 lg:h-auto bg-gradient-to-br from-cyan-light/20 via-white to-cyan-primary/10 flex items-center justify-center p-12">
+              {/* Decorative Grid Pattern */}
+              <div className="absolute inset-0 opacity-5">
+                <div
+                  className="w-full h-full"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0,85,164,0.1) 1px, transparent 1px),
+                                     linear-gradient(90deg, rgba(0,85,164,0.1) 1px, transparent 1px)`,
+                    backgroundSize: '30px 30px',
+                  }}
+                />
+              </div>
+
+              <div className="text-center relative z-10">
+                {/* Industry Icon with Glow Effect */}
+                <div className="relative mb-6">
+                  {/* Glow Background */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-48 h-48 bg-cyan-primary/20 rounded-full blur-3xl"></div>
+                  </div>
+
+                  {/* Icon - Dynamic based on industry */}
+                  <svg
+                    className="w-32 h-32 mx-auto text-cyan-primary relative z-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    {/* Building/Office Icon for most industries */}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+
+                {/* Industry Badge */}
+                <Badge variant="primary" size="lg" className="shadow-lg">
                   {featured.client.industry}
                 </Badge>
               </div>
