@@ -179,7 +179,7 @@ export default function FourPillars() {
         </div>
 
         {/* Scroll Hint */}
-        <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden md:flex flex-col items-center gap-6">
+        <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden md:flex flex-col items-center gap-12">
           {/* Arrow with background */}
           <div className="relative">
             <div className="absolute inset-0 bg-cyan-primary/10 rounded-full blur-lg"></div>
@@ -201,7 +201,7 @@ export default function FourPillars() {
           </div>
 
           {/* Scroll text */}
-          <span className="text-xs font-semibold uppercase tracking-wider rotate-90 origin-center whitespace-nowrap text-gray-500">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] rotate-90 origin-center whitespace-nowrap text-gray-500">
             Scroll
           </span>
         </div>
