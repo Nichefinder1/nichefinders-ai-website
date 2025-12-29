@@ -169,7 +169,7 @@ export default function Hero() {
               { value: '<5min', label: 'Response time with AI' },
             ].map((stat, index) => (
               <div key={index} className="text-center relative z-20">
-                <div className="text-4xl md:text-5xl font-black text-cyan-primary mb-2">
+                <div className="text-4xl md:text-5xl font-black text-cyan-light mb-2">
                   {stat.value}
                 </div>
                 <div className="text-gray-300 text-sm uppercase tracking-wide">
