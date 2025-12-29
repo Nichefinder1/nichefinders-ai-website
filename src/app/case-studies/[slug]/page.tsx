@@ -96,65 +96,79 @@ export default function CaseStudyPage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* Challenge Section */}
-      <Section>
-        <Container size="md">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-navy-deep mb-6">
-              The Challenge
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {study.challenge}
-            </p>
-          </div>
-
-          {/* Solution Section */}
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-navy-deep mb-6">
-              Our Solution
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              {study.solution}
-            </p>
-
-            <div className="bg-gray-light rounded-lg p-8">
-              <h3 className="text-xl font-bold text-navy-deep mb-4">
-                Implementation Details
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold text-navy-deep mb-2">
-                    Stages Implemented:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {study.implementation.stages.map((stage) => (
-                      <Badge key={stage} variant="primary" size="md">
-                        Stage {stage}
-                      </Badge>
-                    ))}
+      {/* Client Overview Section */}
+      <Section background="white">
+        <Container size="lg">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-gray-200">
+              {study.image ? (
+                <img
+                  src={study.image}
+                  alt={study.client.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-50 to-navy-50">
+                  <div className="text-center p-8">
+                    <div className="text-6xl mb-4 text-cyan-primary">🏢</div>
+                    <p className="text-gray-500 text-lg">{study.client.name}</p>
                   </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-navy-deep mb-2">Duration:</p>
-                  <p className="text-gray-700">{study.implementation.duration}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-navy-deep mb-2">
-                    Services Used:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {study.implementation.services.map((service) => (
-                      <Badge key={service} variant="secondary" size="sm">
-                        {service}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
+              )}
+            </div>
+
+            {/* Client Info */}
+            <div>
+              <div className="flex items-baseline gap-3 mb-6">
+                <h2 className="text-4xl md:text-5xl font-black text-navy-deep">
+                  {study.client.name}
+                </h2>
+                <span className="text-gray-500">{study.client.location}</span>
+              </div>
+
+              <p className="text-lg text-gray-600 mb-6">
+                {study.client.size} • {study.client.yearsFounded}
+              </p>
+
+              <div className="mb-8">
+                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">
+                  The Challenge
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {study.challenge}
+                </p>
+              </div>
+
+              <div className="bg-cyan-50 rounded-lg p-6">
+                <h3 className="text-sm font-bold text-cyan-primary uppercase tracking-wide mb-3">
+                  Our Solution
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {study.solution}
+                </p>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {study.implementation.stages.map((stage) => (
+                  <Badge key={stage} variant="primary" size="sm">
+                    Stage {stage}
+                  </Badge>
+                ))}
+                {study.implementation.services.map((service, i) => (
+                  <Badge key={i} variant="secondary" size="sm">
+                    {service}
+                  </Badge>
+                ))}
               </div>
             </div>
           </div>
+        </Container>
+      </Section>
 
-          {/* Results Section */}
+      {/* Results Section */}
+      <Section>
+        <Container size="md">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-navy-deep mb-6">
               The Results
