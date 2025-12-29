@@ -73,7 +73,7 @@ export default function CityTemplate({ city }: CityTemplateProps) {
           <div ref={heroRef} className="max-w-4xl mx-auto">
             {/* Badge */}
             <Badge variant="secondary" size="md" className="mb-6">
-              {city.region.toUpperCase()} FLORIDA
+              {city.region.toUpperCase()}
             </Badge>
 
             {/* Headline with Gradient */}
