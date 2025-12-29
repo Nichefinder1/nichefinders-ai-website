@@ -91,7 +91,7 @@ export default function CaseStudiesPage() {
                 { label: 'Avg Timeline', value: '6-9 weeks' },
               ].map((stat, index) => (
                 <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-4xl font-black text-cyan-primary mb-2">
+                  <div className="text-4xl font-black text-cyan-light mb-2">
                     {stat.value}
                   </div>
                   <div className="text-sm text-white/80">{stat.label}</div>
