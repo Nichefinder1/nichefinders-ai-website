@@ -101,7 +101,7 @@ export default function CaseStudyPage({ params }: Props) {
         <Container size="lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-gray-200">
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-elevated">
               {study.image ? (
                 <img
                   src={study.image}
@@ -109,22 +109,45 @@ export default function CaseStudyPage({ params }: Props) {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-50 to-navy-50">
-                  <div className="text-center p-8">
-                    <svg
-                      className="w-24 h-24 mx-auto mb-6 text-cyan-primary"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                      />
-                    </svg>
-                    <p className="text-gray-500 text-lg font-semibold">{study.client.name}</p>
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-light/30 via-white to-cyan-primary/20 relative">
+                  {/* Decorative Pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div
+                      className="w-full h-full"
+                      style={{
+                        backgroundImage: `linear-gradient(rgba(0,85,164,0.1) 1px, transparent 1px),
+                                         linear-gradient(90deg, rgba(0,85,164,0.1) 1px, transparent 1px)`,
+                        backgroundSize: '40px 40px',
+                      }}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="text-center p-8 relative z-10">
+                    <div className="mb-6 relative">
+                      {/* Icon Background Glow */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-32 h-32 bg-cyan-primary/10 rounded-full blur-2xl"></div>
+                      </div>
+
+                      {/* Building Icon */}
+                      <svg
+                        className="w-28 h-28 mx-auto text-cyan-primary relative z-10"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        />
+                      </svg>
+                    </div>
+
+                    <p className="text-navy-deep text-xl font-bold mb-2">{study.client.name}</p>
+                    <p className="text-gray-600 text-sm">Case Study</p>
                   </div>
                 </div>
               )}
