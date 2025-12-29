@@ -64,7 +64,7 @@ export default function SixStageTeaser() {
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-cyan-primary/20 text-cyan-primary font-bold text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-cyan-light/20 text-cyan-light font-bold text-sm rounded-full mb-4">
             OUR PROPRIETARY FRAMEWORK
           </span>
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
@@ -101,7 +101,7 @@ export default function SixStageTeaser() {
                     >
                       {/* Stage Number */}
                       <div className="flex items-center justify-between mb-4">
-                        <div className="text-5xl font-black text-cyan-primary/40">
+                        <div className="text-5xl font-black text-cyan-light/60">
                           {String(stage.number).padStart(2, '0')}
                         </div>
                         <div className="text-3xl">{stage.icon}</div>
@@ -115,7 +115,7 @@ export default function SixStageTeaser() {
                       {/* CTA Link */}
                       <a
                         href={`/6-stage-system#stage-${stage.number}`}
-                        className="text-xs text-cyan-primary font-semibold underline decoration-1 underline-offset-2 hover:text-cyan-light transition-colors flex items-center gap-1 mt-3"
+                        className="text-xs text-cyan-light font-semibold underline decoration-1 underline-offset-2 hover:text-white transition-colors flex items-center gap-1 mt-3"
                       >
                         See How It Works
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,10 +140,10 @@ export default function SixStageTeaser() {
                 <div className="flex items-start space-x-4">
                   {/* Number & Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-cyan-primary/20 rounded-full flex items-center justify-center text-2xl mb-2">
+                    <div className="w-16 h-16 bg-cyan-light/20 rounded-full flex items-center justify-center text-2xl mb-2">
                       {stage.icon}
                     </div>
-                    <div className="text-2xl font-black text-cyan-primary text-center">
+                    <div className="text-2xl font-black text-cyan-light text-center">
                       {String(stage.number).padStart(2, '0')}
                     </div>
                   </div>
@@ -155,7 +155,7 @@ export default function SixStageTeaser() {
                     </h3>
                     <a
                       href={`/6-stage-system#stage-${stage.number}`}
-                      className="text-xs text-cyan-primary font-semibold underline decoration-1 underline-offset-2 hover:text-cyan-light transition-colors flex items-center gap-1"
+                      className="text-xs text-cyan-light font-semibold underline decoration-1 underline-offset-2 hover:text-white transition-colors flex items-center gap-1"
                     >
                       See How It Works
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
