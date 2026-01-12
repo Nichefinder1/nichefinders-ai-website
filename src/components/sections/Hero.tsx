@@ -164,8 +164,8 @@ export default function Hero() {
           {/* Stats */}
           <div ref={ctaRef} className="mt-8 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { value: '78%', label: 'Of leads go unanswered' },
-              { value: '400%', label: 'Average ROI for clients' },
+              { value: '50%+', label: 'Of leads never get follow-up' },
+              { value: '3x', label: 'Average ROI with AI automation' },
               { value: '<5min', label: 'Response time with AI' },
             ].map((stat, index) => (
               <div key={index} className="text-center relative z-20">

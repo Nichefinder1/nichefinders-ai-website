@@ -199,7 +199,7 @@ export default function ContactPage() {
               <div className="mt-6 grid grid-cols-3 gap-4">
                 {[
                   { value: '50+', label: 'Clients Served' },
-                  { value: '400%', label: 'Avg ROI' },
+                  { value: '3x', label: 'Avg ROI' },
                   { value: '<60s', label: 'Response Time' },
                 ].map((stat, index) => (
                   <div

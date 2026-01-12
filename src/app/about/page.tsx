@@ -9,7 +9,7 @@ import { CALENDAR_LINK } from '@/lib/constants';
 export const metadata = {
   title: 'About Us | Florida AI Automation Experts',
   description:
-    'Meet the team behind NicheFinders AI. We help Florida businesses grow with proven AI automation solutions. 50+ businesses served, 400% average ROI.',
+    'Meet the team behind NicheFinders AI. We help Florida businesses grow with proven AI automation solutions. 50+ businesses served, 3x average ROI.',
 };
 
 export default function AboutPage() {
@@ -80,7 +80,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { value: '50+', label: 'Businesses Served' },
-                { value: '400%', label: 'Average ROI' },
+                { value: '3x', label: 'Average ROI' },
                 { value: '10', label: 'Florida Cities' },
                 { value: '<60s', label: 'Lead Response Time' },
               ].map((stat, index) => (

@@ -4,7 +4,7 @@ import { FLORIDA_CITIES } from '@/lib/constants';
 export const metadata = {
   title: 'AI Automation Agency Tampa | Tampa Bay Business Automation | NicheFinders AI',
   description:
-    'Transform your Tampa Bay business with AI automation. From our Miami headquarters, we serve 400,000+ Tampa residents and 150,000+ businesses across Hillsborough, Pinellas, and Pasco counties. 400% average ROI with proven AI solutions.',
+    'Transform your Tampa Bay business with AI automation. From our Miami headquarters, we serve 400,000+ Tampa residents and 150,000+ businesses across Hillsborough, Pinellas, and Pasco counties. 3x average ROI with proven AI solutions.',
   keywords: [
     'AI automation Tampa',
     'Tampa AI agency',

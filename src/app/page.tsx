@@ -14,7 +14,7 @@ import Container from '@/components/ui/Container';
 export const metadata = {
   title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',
   description:
-    'Miami-based AI automation agency serving all of Florida. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services across Miami, Tampa, and statewide.',
+    'Miami-based AI automation agency serving all of Florida. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 3x average ROI for home services, automotive, nonprofits, and professional services across Miami, Tampa, and statewide.',
   keywords: [
     'AI automation agency Florida',
     'AI automation Miami',
@@ -30,7 +30,7 @@ export const metadata = {
   openGraph: {
     title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',
     description:
-      'Miami-based AI automation agency serving Florida businesses. Our proven 6-Stage System delivers 400% average ROI for home services, automotive, nonprofits, and professional services.',
+      'Miami-based AI automation agency serving Florida businesses. Our proven 6-Stage System delivers 3x average ROI for home services, automotive, nonprofits, and professional services.',
     type: 'website',
     url: 'https://nichefinders.ai',
     images: [
@@ -46,7 +46,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',
     description:
-      'Miami-based AI automation agency serving Florida. 400% average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
+      'Miami-based AI automation agency serving Florida. 3x average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
     images: ['/og-image.png'],
   },
 };

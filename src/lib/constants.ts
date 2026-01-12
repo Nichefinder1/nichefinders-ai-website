@@ -871,8 +871,8 @@ export const PAIN_POINTS = [
     impact: 'That\'s 780 hours annually wasted',
   },
   {
-    stat: '78%',
-    problem: 'Of home service leads go unanswered in first hour',
+    stat: '50%+',
+    problem: 'Of leads never get follow-up',
     impact: 'They call your competitor instead',
   },
 ];
@@ -1778,7 +1778,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 // Statistics for SocialProof component
 export const STATISTICS = [
   { value: '50+', label: 'Clients Served', icon: '', target: 50, prefix: '', suffix: '+' },
-  { value: '400%', label: 'Average ROI', icon: '', target: 400, prefix: '', suffix: '%' },
+  { value: '3x', label: 'Average ROI', icon: '', target: 3, prefix: '', suffix: 'x' },
   { value: '24/7', label: 'Automation Running', icon: '', target: 24, prefix: '', suffix: '/7' },
   { value: '95%', label: 'Client Satisfaction', icon: '', target: 95, prefix: '', suffix: '%' },
 ];

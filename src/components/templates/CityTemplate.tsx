@@ -217,7 +217,7 @@ export default function CityTemplate({ city }: CityTemplateProps) {
                   {
                     title: 'Proven Results',
                     description:
-                      'Our clients see 400% average ROI with our 6-Stage System.',
+                      'Our clients see 3x average ROI with our 6-Stage System.',
                   },
                   {
                     title: 'Industry Specialists',

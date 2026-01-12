@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
               {[
                 { label: 'Case Studies', value: CASE_STUDIES.length },
                 { label: 'Industries', value: industries.length - 1 },
-                { label: 'Avg ROI', value: '400%' },
+                { label: 'Avg ROI', value: '3x' },
                 { label: 'Avg Timeline', value: '6-9 weeks' },
               ].map((stat, index) => (
                 <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">

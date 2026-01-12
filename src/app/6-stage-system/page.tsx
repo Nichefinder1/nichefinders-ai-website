@@ -414,7 +414,7 @@ export default function SixStageSystemPage() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>400% average ROI</span>
+                  <span>3x average ROI</span>
                 </div>
               </div>
             </div>

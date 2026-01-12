@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: '%s | NicheFinders AI',
   },
   description:
-    'Transform your business with revenue-generating AI. Proven 6-Stage System delivering 400% average ROI for home services, automotive, nonprofits, and professional services. Serving clients nationwide.',
+    'Transform your business with revenue-generating AI. Proven 6-Stage System delivering 3x average ROI for home services, automotive, nonprofits, and professional services. Serving clients nationwide.',
   keywords: [
     'AI automation',
     'business automation',

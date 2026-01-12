@@ -196,7 +196,7 @@ export default function WhoWeServe() {
                 </div>
                 <div>
                   <div className="text-4xl font-black text-cyan-primary mb-2">
-                    400%
+                    3x
                   </div>
                   <div className="text-gray-300 text-sm">
                     Average ROI

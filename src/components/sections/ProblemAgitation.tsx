@@ -84,7 +84,7 @@ export default function ProblemAgitation() {
       icon: '',
       title: 'Missed Opportunities',
       description:
-        '78% of leads never get a response. Every unanswered call is money left on the table.',
+        'Over 50% of leads never get a follow-up. Every unanswered call is money left on the table.',
     },
     {
       icon: '',
@@ -127,9 +127,9 @@ export default function ProblemAgitation() {
     },
     {
       icon: '',
-      title: '400% ROI on Average',
+      title: '3x ROI on Average',
       description:
-        'Our clients see massive returns by automating what used to take hours of manual labor.',
+        'Businesses see $3.50 return for every $1 invested in AI automation according to industry research.',
     },
   ];
 
