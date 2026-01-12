@@ -2,15 +2,18 @@ import CityTemplate from '@/components/templates/CityTemplate';
 import { FLORIDA_CITIES } from '@/lib/constants';
 
 export const metadata = {
-  title: 'AI Automation Agency Miami | Business Automation Miami-Dade',
+  title: 'AI Automation Agency Miami | Our Headquarters | NicheFinders AI',
   description:
-    'Transform your Miami business with AI. Serving 475,000+ residents and 200,000+ businesses across Miami-Dade, Broward, and Monroe counties with cutting-edge AI automation.',
+    'NicheFinders AI headquarters in Miami. Transform your Miami business with AI automation. Serving 450,000+ residents and 200,000+ businesses across Miami-Dade and Broward counties. 400% average ROI with our proven 6-Stage System.',
   keywords: [
     'AI automation Miami',
+    'Miami AI agency',
+    'AI automation agency Miami',
     'business automation Miami-Dade',
     'AI consulting Miami',
-    'Miami AI agency',
     'automated lead generation Miami',
+    'Miami business automation',
+    'AI agency South Florida',
   ].join(', '),
 };
 

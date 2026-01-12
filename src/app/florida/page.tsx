@@ -74,7 +74,7 @@ export default function FloridaLocationsPage() {
           <div ref={heroRef} className="max-w-4xl mx-auto">
             {/* Badge */}
             <Badge variant="secondary" size="md" className="mb-6">
-              10 FLORIDA LOCATIONS
+              MIAMI HEADQUARTERS • 10 FLORIDA LOCATIONS
             </Badge>
 
             {/* Headline with Gradient */}
@@ -85,8 +85,8 @@ export default function FloridaLocationsPage() {
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-8">
-              From Tampa to Miami, Jacksonville to Naples - we bring proven AI automation
-              solutions to businesses throughout the Sunshine State.
+              From our Miami headquarters, we bring proven AI automation solutions to businesses
+              across Florida—from Tampa to Jacksonville, Naples to Orlando, and everywhere in between.
             </p>
 
             {/* CTAs */}

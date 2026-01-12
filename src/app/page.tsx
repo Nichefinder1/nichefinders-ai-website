@@ -12,24 +12,25 @@ import InlineCalendarCTA from '@/components/ui/InlineCalendarCTA';
 import Container from '@/components/ui/Container';
 
 export const metadata = {
-  title: 'NicheFinders AI | Revenue-Generating AI Automation',
+  title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',
   description:
-    'Transform your business with revenue-generating AI. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services.',
+    'Miami-based AI automation agency serving all of Florida. Our proven 6-Stage System automates lead capture, follow-up, and conversion. 400% average ROI for home services, automotive, nonprofits, and professional services across Miami, Tampa, and statewide.',
   keywords: [
-    'revenue-generating AI',
-    'AI automation',
-    'business automation',
-    'AI consulting',
-    'automated lead generation',
+    'AI automation agency Florida',
+    'AI automation Miami',
+    'business automation Florida',
+    'AI consulting Miami',
+    'AI automation Tampa',
+    'automated lead generation Florida',
     'AI for home services',
     'business process automation',
-    'AI automation Florida',
-    'business automation Tampa',
+    'Miami AI agency',
+    'Florida business automation',
   ].join(', '),
   openGraph: {
-    title: 'NicheFinders AI | Transform Your Business with Revenue-Generating AI',
+    title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',
     description:
-      'Stop losing revenue to manual processes. Our proven 6-Stage System delivers 400% average ROI for businesses nationwide.',
+      'Miami-based AI automation agency serving Florida businesses. Our proven 6-Stage System delivers 400% average ROI for home services, automotive, nonprofits, and professional services.',
     type: 'website',
     url: 'https://nichefinders.ai',
     images: [
@@ -37,15 +38,15 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'NicheFinders AI - Revenue-Generating AI Automation',
+        alt: 'NicheFinders AI - Miami-Based AI Automation Agency Serving Florida',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NicheFinders AI | Revenue-Generating AI Automation',
+    title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',
     description:
-      'Transform your business with revenue-generating AI. 400% average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
+      'Miami-based AI automation agency serving Florida. 400% average ROI. Proven results in home services, automotive, nonprofits, and professional services.',
     images: ['/og-image.png'],
   },
 };

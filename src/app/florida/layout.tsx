@@ -1,16 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Florida AI Automation Locations | NicheFinders AI',
+  title: 'AI Automation Services Florida | Miami, Tampa & 10 Cities | NicheFinders AI',
   description:
-    'AI automation services across Florida - Tampa, Miami, Jacksonville, Orlando, Fort Lauderdale, West Palm Beach, Naples, Sarasota, Daytona, and Tallahassee. Local expertise, proven results.',
+    'AI automation services across Florida from our Miami headquarters. Serving Miami, Tampa, Jacksonville, Orlando, Fort Lauderdale, West Palm Beach, Naples, Sarasota, Daytona, and Tallahassee. Local expertise, proven 400% ROI results.',
   keywords: [
     'AI automation Florida',
+    'AI automation Miami',
+    'AI automation Tampa',
     'Florida AI agency',
     'business automation Florida',
-    'AI consulting Tampa',
     'AI consulting Miami',
-    'AI consulting Jacksonville',
+    'AI consulting Tampa',
+    'Miami AI agency',
     'Florida business automation',
   ].join(', '),
 };
