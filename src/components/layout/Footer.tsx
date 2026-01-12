@@ -193,31 +193,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="mt-12 pt-12 border-t border-white/10">
-          <div className="max-w-2xl">
-            <h3 className="text-2xl font-bold mb-3">
-              Stay Ahead with AI Insights
-            </h3>
-            <p className="text-gray-400 mb-6">
-              Get weekly tips on AI automation, case studies, and exclusive
-              strategies to transform your business.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-primary focus:border-transparent"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-cyan-primary hover:bg-cyan-dark text-white font-semibold rounded-lg transition-colors duration-300"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Bar */}

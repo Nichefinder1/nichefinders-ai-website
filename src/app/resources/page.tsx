@@ -143,34 +143,6 @@ export default function ResourcesPage() {
         </Container>
       </Section>
 
-      {/* Newsletter Signup */}
-      <Section background="navy" padding>
-        <Container size="lg">
-          <div className="max-w-2xl mx-auto text-center text-white">
-            <h2 className="text-4xl font-black mb-4">
-              Get Weekly AI Insights
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join 500+ Florida business owners getting actionable AI automation
-              tips, case studies, and strategies every week.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-primary"
-              />
-              <Button variant="primary" size="lg" className="whitespace-nowrap">
-                Subscribe Free
-              </Button>
-            </form>
-            <p className="text-sm text-gray-400 mt-4">
-              No spam. Unsubscribe anytime. We respect your privacy.
-            </p>
-          </div>
-        </Container>
-      </Section>
-
       {/* CTA */}
       <Section background="white" padding>
         <Container size="lg">
