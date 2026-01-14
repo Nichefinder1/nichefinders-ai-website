@@ -18,24 +18,7 @@ export default function FinalCTA() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const content = contentRef.current;
-
-    if (!section || !content) return;
-
-    // Fade in animation
-    gsap.from(content.children, {
-      y: 60,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 70%',
-      },
-    });
-
+    // Animations disabled for now
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -55,7 +38,8 @@ export default function FinalCTA() {
 
           {/* Headline */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            Stop Losing Money to Manual Processes
+            <span className="block">Stop Losing Money</span>
+            <span className="block">to Manual Processes</span>
           </h2>
 
           {/* Subheadline */}
@@ -100,7 +84,7 @@ export default function FinalCTA() {
               href={CALENDAR_LINK}
               variant="primary"
               size="lg"
-              className="min-w-[280px] shadow-2xl shadow-black/30 bg-white text-navy-deep hover:bg-gray-100 flex items-center justify-center gap-2"
+              className="min-w-[280px] flex items-center justify-center gap-2"
               external
             >
               <span>Book Your Discovery Call</span>
@@ -110,7 +94,7 @@ export default function FinalCTA() {
               href="/6-stage-system"
               variant="secondary"
               size="lg"
-              className="min-w-[280px] bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20 flex items-center justify-center gap-2"
+              className="min-w-[280px] flex items-center justify-center gap-2"
             >
               <span>Learn About Our System</span>
               <Icon name="arrow-right" className="w-5 h-5" />
@@ -161,17 +145,6 @@ export default function FinalCTA() {
               </svg>
               <span>Proven results in 4 industries</span>
             </div>
-          </div>
-
-          {/* Urgency Note */}
-          <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm border border-white/30 rounded-xl">
-            <p className="text-lg font-semibold mb-2">
-              ⏰ Limited Availability
-            </p>
-            <p className="text-white/90">
-              We only take on 5 new clients per month to ensure exceptional
-              results. Book your discovery call today to secure your spot.
-            </p>
           </div>
         </div>
       </Container>

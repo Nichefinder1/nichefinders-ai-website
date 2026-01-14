@@ -69,16 +69,6 @@ export default function HomePage() {
       {/* Who We Serve - Industries Grid */}
       <WhoWeServe />
 
-      {/* In-Content CTA #1 - After Industries */}
-      <Container size="lg">
-        <InlineCalendarCTA
-          variant="primary"
-          headline="Stop wondering if AI can work for your industry"
-          subheadline="We've helped 50+ businesses just like yours. Book a call and we'll show you exactly how."
-          buttonText="See How It Works for Your Business"
-        />
-      </Container>
-
       {/* Social Proof - Stats & Testimonials */}
       <SocialProof />
 
@@ -87,16 +77,6 @@ export default function HomePage() {
 
       {/* Featured Case Study */}
       <FeaturedCaseStudy />
-
-      {/* In-Content CTA #2 - After Case Study */}
-      <Container size="lg">
-        <InlineCalendarCTA
-          variant="secondary"
-          headline="Want results like this for your business?"
-          subheadline="Book your discovery call. We'll analyze your processes and show you exactly where AI can deliver ROI."
-          buttonText="Get Your Custom AI Strategy"
-        />
-      </Container>
 
       {/* ROI Calculator */}
       <ROICalculator />

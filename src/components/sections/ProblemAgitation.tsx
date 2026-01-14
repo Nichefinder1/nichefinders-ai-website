@@ -17,63 +17,7 @@ export default function ProblemAgitation() {
   const rightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const left = leftRef.current;
-    const right = rightRef.current;
-
-    if (!section || !left || !right) return;
-
-    // Split-screen reveal animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'top center',
-        end: 'center center',
-        scrub: 1,
-      },
-    });
-
-    // Slide in from sides
-    tl.from(left, {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-    }).from(
-      right,
-      {
-        x: 100,
-        opacity: 0,
-        duration: 1,
-      },
-      '<'
-    );
-
-    // Animate list items on scroll
-    const problemItems = left.querySelectorAll('.problem-item');
-    const solutionItems = right.querySelectorAll('.solution-item');
-
-    gsap.from(problemItems, {
-      x: -30,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: left,
-        start: 'top 75%',
-      },
-    });
-
-    gsap.from(solutionItems, {
-      x: 30,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: right,
-        start: 'top 75%',
-      },
-    });
-
+    // Animations disabled for now
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

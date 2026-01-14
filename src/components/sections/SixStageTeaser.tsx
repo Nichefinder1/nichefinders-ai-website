@@ -19,41 +19,7 @@ export default function SixStageTeaser() {
   const [activeStage, setActiveStage] = useState(0);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const stages = stagesRef.current;
-
-    if (!section || !stages) return;
-
-    // Animate stage cards on scroll
-    const stageCards = stages.querySelectorAll('.stage-card');
-
-    stageCards.forEach((card, index) => {
-      gsap.from(card, {
-        y: 50,
-        opacity: 0,
-        scale: 0.95,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 80%',
-          onEnter: () => setActiveStage(index),
-        },
-      });
-    });
-
-    // Animate connecting lines
-    const lines = stages.querySelectorAll('.stage-line');
-    lines.forEach((line) => {
-      gsap.from(line, {
-        scaleX: 0,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: line,
-          start: 'top 75%',
-        },
-      });
-    });
-
+    // Animations disabled for now
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -68,7 +34,8 @@ export default function SixStageTeaser() {
             OUR PROPRIETARY FRAMEWORK
           </span>
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-            The 6-Stage AI Automation System
+            <span className="block">The 6-Stage</span>
+            <span className="block">AI Automation System</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Most agencies throw AI at your business and hope it works. We
@@ -85,45 +52,42 @@ export default function SixStageTeaser() {
 
         {/* Stages */}
         <div ref={stagesRef} className="relative">
-          {/* Desktop: Horizontal Flow */}
+          {/* Desktop: Simple Grid with Step Numbers */}
           <div className="hidden lg:block">
-            <div className="grid grid-cols-3 gap-8 relative">
+            <div className="grid grid-cols-3 gap-6">
               {SIX_STAGES.map((stage, index) => (
-                <div key={stage.number} className="flex flex-col items-center">
-                  <div className="stage-card w-full">
-                    <Card
-                      variant="glass"
-                      className={`p-6 transition-all duration-300 ${
-                        activeStage === index
-                          ? 'border-2 border-cyan-primary scale-105'
-                          : 'border border-white/20'
-                      }`}
-                    >
-                      {/* Stage Number */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="text-5xl font-black text-cyan-light/60">
-                          {String(stage.number).padStart(2, '0')}
-                        </div>
-                        <div className="text-3xl">{stage.icon}</div>
-                      </div>
-
-                      {/* Stage Name */}
-                      <h3 className="text-lg font-bold text-white mb-3">
-                        {stage.name}
-                      </h3>
-
-                      {/* CTA Link */}
-                      <a
-                        href={`/6-stage-system#stage-${stage.number}`}
-                        className="text-xs text-cyan-light font-semibold underline decoration-1 underline-offset-2 hover:text-white transition-colors flex items-center gap-1 mt-3"
-                      >
-                        See How It Works
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                    </Card>
+                <div key={stage.number} className="stage-card relative">
+                  {/* Step number badge */}
+                  <div className="absolute -top-3 -left-3 w-10 h-10 bg-cyan-primary rounded-full flex items-center justify-center text-white font-black text-lg shadow-lg z-10">
+                    {stage.number}
                   </div>
+                  <Card
+                    variant="glass"
+                    className="p-6 pt-8 h-full border border-white/20 hover:border-cyan-primary/50 transition-all duration-300"
+                  >
+                    {/* Icon */}
+                    <div className="text-4xl mb-4">{stage.icon}</div>
+
+                    {/* Stage Name */}
+                    <h3 className="text-lg font-bold text-white mb-3">
+                      {stage.name}
+                    </h3>
+
+                    {/* CTA Link */}
+                    <a
+                      href={`/6-stage-system#stage-${stage.number}`}
+                      className="text-xs text-cyan-light font-semibold underline decoration-1 underline-offset-2 hover:text-white transition-colors flex items-center gap-1 mt-3"
+                    >
+                      See How It Works
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </Card>
+                  {/* Connecting line to next card (except last in row and last overall) */}
+                  {index < 5 && index !== 2 && (
+                    <div className="absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-cyan-light/60 to-cyan-light/20"></div>
+                  )}
                 </div>
               ))}
             </div>
@@ -169,42 +133,6 @@ export default function SixStageTeaser() {
           </div>
         </div>
 
-        {/* Feature Highlight */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: '',
-              title: 'Complete Coverage',
-              description:
-                'Every customer touchpoint is automated—no gaps, no missed opportunities.',
-            },
-            {
-              icon: '',
-              title: 'Data-Driven',
-              description:
-                'Real-time analytics show exactly where your AI is working hardest.',
-            },
-            {
-              icon: '',
-              title: 'Lightning Fast',
-              description:
-                'Respond to leads in under 60 seconds, 24/7, with zero manual work.',
-            },
-          ].map((feature, index) => (
-            <Card
-              key={index}
-              variant="glass"
-              className="p-6 text-center border border-white/20"
-            >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-gray-300">{feature.description}</p>
-            </Card>
-          ))}
-        </div>
-
         {/* CTA */}
         <div className="mt-16 text-center">
           <p className="text-xl text-gray-300 mb-6">
@@ -224,7 +152,7 @@ export default function SixStageTeaser() {
               external
               variant="secondary"
               size="lg"
-              className="min-w-[240px] bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20"
+              className="min-w-[240px]"
             >
               Book a Strategy Call
             </Button>

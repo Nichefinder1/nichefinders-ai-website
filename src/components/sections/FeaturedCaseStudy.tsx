@@ -22,36 +22,7 @@ export default function FeaturedCaseStudy() {
   const featured = CASE_STUDIES[0];
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const content = contentRef.current;
-
-    if (!section || !content) return;
-
-    // Slide in animation
-    gsap.from(content, {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 70%',
-      },
-    });
-
-    // Animate stats
-    const stats = content.querySelectorAll('.stat-item');
-    gsap.from(stats, {
-      scale: 0.8,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: stats[0],
-        start: 'top 80%',
-      },
-    });
-
+    // Animations disabled for now
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -82,7 +53,7 @@ export default function FeaturedCaseStudy() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: Visual Infographic */}
-            <div className="relative h-auto bg-gradient-to-br from-navy-deep to-navy-DEFAULT p-8 md:p-12 flex items-center justify-center">
+            <div className="relative h-auto bg-navy-deep p-8 md:p-12 flex items-center justify-center">
               <div className="w-full max-w-md">
                 {/* Industry Badge at Top */}
                 <div className="text-center mb-8">
@@ -266,7 +237,6 @@ export default function FeaturedCaseStudy() {
             href="/case-studies"
             variant="secondary"
             size="lg"
-            className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20"
           >
             View All Case Studies
           </Button>

@@ -19,27 +19,7 @@ export default function WhoWeServe() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const grid = gridRef.current;
-
-    if (!section || !grid) return;
-
-    // Stagger animation for industry cards
-    const cards = grid.querySelectorAll('.industry-card');
-
-    gsap.from(cards, {
-      y: 60,
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.6,
-      stagger: 0.15,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: grid,
-        start: 'top 75%',
-      },
-    });
-
+    // Animations disabled for now
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -167,68 +147,6 @@ export default function WhoWeServe() {
               </Card>
             </Link>
           ))}
-        </div>
-
-        {/* Bottom Stats & CTA */}
-        <div className="bg-gradient-to-br from-navy-deep to-navy text-white rounded-2xl p-8 md:p-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Stats */}
-            <div>
-              <h3 className="text-3xl font-black mb-6">
-                Industry-Specific Expertise
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <div className="text-4xl font-black text-cyan-primary mb-2">
-                    50+
-                  </div>
-                  <div className="text-gray-300 text-sm">
-                    Florida Businesses Served
-                  </div>
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-cyan-primary mb-2">
-                    4
-                  </div>
-                  <div className="text-gray-300 text-sm">
-                    Core Industries
-                  </div>
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-cyan-primary mb-2">
-                    3x
-                  </div>
-                  <div className="text-gray-300 text-sm">
-                    Average ROI
-                  </div>
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-cyan-primary mb-2">
-                    60s
-                  </div>
-                  <div className="text-gray-300 text-sm">
-                    Lead Response Time
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center md:text-right">
-              <p className="text-xl mb-6">
-                Don't see your industry? We work with all types of service
-                businesses across Florida.
-              </p>
-              <a
-                href={CALENDAR_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 bg-cyan-primary hover:bg-cyan-dark text-white font-bold rounded-lg transition-colors duration-300 shadow-lg shadow-cyan-primary/30"
-              >
-                Discuss Your Industry
-              </a>
-            </div>
-          </div>
         </div>
       </Container>
     </Section>

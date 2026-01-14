@@ -28,35 +28,35 @@ export default function Hero() {
     if (!hero || !headline || !subheadline || !cta || !background)
       return;
 
-    // Initial animation timeline
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    // Initial animation timeline - disabled for now
+    // const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    // Animate elements on load
-    tl.from(headline.children, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.1,
-    })
-      .from(
-        subheadline,
-        {
-          y: 50,
-          opacity: 0,
-          duration: 0.8,
-        },
-        '-=0.5'
-      )
-      .from(
-        cta.children,
-        {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.15,
-        },
-        '-=0.4'
-      );
+    // // Animate elements on load
+    // tl.from(headline.children, {
+    //   y: 100,
+    //   opacity: 0,
+    //   duration: 1,
+    //   stagger: 0.1,
+    // })
+    //   .from(
+    //     subheadline,
+    //     {
+    //       y: 50,
+    //       opacity: 0,
+    //       duration: 0.8,
+    //     },
+    //     '-=0.5'
+    //   )
+    //   .from(
+    //     cta.children,
+    //     {
+    //       y: 30,
+    //       opacity: 0,
+    //       duration: 0.6,
+    //       stagger: 0.15,
+    //     },
+    //     '-=0.4'
+    //   );
 
     // Parallax scroll effect on background
     gsap.to(background, {
@@ -70,18 +70,18 @@ export default function Hero() {
       },
     });
 
-    // Fade out hero content on scroll
-    gsap.to([headline, subheadline, cta], {
-      opacity: 0,
-      y: -50,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: hero,
-        start: 'top top',
-        end: '80% top',
-        scrub: 1,
-      },
-    });
+    // Fade out hero content on scroll - disabled for now
+    // gsap.to([headline, subheadline, cta], {
+    //   opacity: 0,
+    //   y: -50,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: hero,
+    //     start: 'top top',
+    //     end: '80% top',
+    //     scrub: 1,
+    //   },
+    // });
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -91,7 +91,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-24"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-32 md:pt-40"
     >
       {/* Animated Background */}
       <div
@@ -117,12 +117,12 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <Container size="lg" className="relative z-10 text-center">
+      <Container size="lg" className="relative z-20 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight relative z-20"
           >
             <span className="block">Transform Your Business With</span>
             <span className="block text-gradient">
@@ -131,7 +131,7 @@ export default function Hero() {
           </h1>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 relative z-20">
             <Button
               href={CALENDAR_LINK}
               variant="primary"
@@ -154,7 +154,7 @@ export default function Hero() {
           {/* Subheadline */}
           <p
             ref={subheadlineRef}
-            className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed max-w-3xl mx-auto relative z-20"
           >
             Stop losing revenue to manual processes. Our proven 6-Stage System
             automates lead capture, follow-up, and conversion—so you close more
@@ -162,7 +162,7 @@ export default function Hero() {
           </p>
 
           {/* Stats */}
-          <div ref={ctaRef} className="mt-8 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div ref={ctaRef} className="mt-4 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { value: '50%+', label: 'Of leads never get follow-up' },
               { value: '3x', label: 'Average ROI with AI automation' },

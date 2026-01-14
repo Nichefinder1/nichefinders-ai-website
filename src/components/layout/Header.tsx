@@ -37,37 +37,29 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4 pointer-events-none',
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-md'
           : 'bg-transparent'
       )}
     >
-      <nav className="container-custom max-w-screen-xl mx-auto px-6">
+      <nav className="container-custom max-w-screen-xl mx-auto px-6 pointer-events-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-14 h-14 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-48 h-48 md:w-56 md:h-56 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
               <Image
                 src="/logo.svg"
                 alt="NicheFinders AI"
                 fill
-                className="object-contain"
+                className="object-contain pointer-events-none"
                 priority
               />
             </div>
-            <span
-              className={cn(
-                'text-xl md:text-2xl font-black transition-all duration-300',
-                isScrolled ? 'text-gradient' : 'text-white drop-shadow-md'
-              )}
-            >
-              NicheFinders AI
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 relative z-10">
             {/* Solutions Mega Menu */}
             <div
               className="relative"
@@ -355,7 +347,7 @@ export default function Header() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block relative z-10">
             <Button href={CALENDAR_LINK} variant="primary" size="md" external>
               Book Discovery Call
             </Button>
