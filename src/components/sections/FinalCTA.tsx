@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import MagneticButton from '@/components/ui/MagneticButton';
 import Icon from '@/components/ui/Icon';
 import { CALENDAR_LINK } from '@/lib/constants';
 
@@ -80,25 +81,29 @@ export default function FinalCTA() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button
-              href={CALENDAR_LINK}
-              variant="primary"
-              size="lg"
-              className="min-w-[280px] flex items-center justify-center gap-2"
-              external
-            >
-              <span>Book Your Discovery Call</span>
-              <Icon name="arrow-right" className="w-5 h-5" />
-            </Button>
-            <Button
-              href="/6-stage-system"
-              variant="secondary"
-              size="lg"
-              className="min-w-[280px] flex items-center justify-center gap-2"
-            >
-              <span>Learn About Our System</span>
-              <Icon name="arrow-right" className="w-5 h-5" />
-            </Button>
+            <MagneticButton strength={0.5}>
+              <Button
+                href={CALENDAR_LINK}
+                variant="primary"
+                size="lg"
+                className="min-w-[280px] flex items-center justify-center gap-2"
+                external
+              >
+                <span>Book Your Discovery Call</span>
+                <Icon name="arrow-right" className="w-5 h-5" />
+              </Button>
+            </MagneticButton>
+            <MagneticButton strength={0.5}>
+              <Button
+                href="/6-stage-system"
+                variant="secondary"
+                size="lg"
+                className="min-w-[280px] flex items-center justify-center gap-2"
+              >
+                <span>Learn About Our System</span>
+                <Icon name="arrow-right" className="w-5 h-5" />
+              </Button>
+            </MagneticButton>
           </div>
 
           {/* Trust Signals */}

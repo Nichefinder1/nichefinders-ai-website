@@ -329,6 +329,65 @@ export function infiniteLoop(
 }
 
 /**
+ * Magnetic hover effect
+ * Element subtly pulls toward cursor on hover
+ */
+export function magneticHover(
+  element: HTMLElement,
+  options: { strength?: number; ease?: number } = {}
+) {
+  const { strength = 0.4, ease = 0.15 } = options;
+
+  let boundingRect: DOMRect | null = null;
+  let animationId: number;
+  let currentX = 0;
+  let currentY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  const animate = () => {
+    currentX += (targetX - currentX) * ease;
+    currentY += (targetY - currentY) * ease;
+
+    gsap.set(element, { x: currentX, y: currentY });
+    animationId = requestAnimationFrame(animate);
+  };
+
+  const onEnter = () => {
+    boundingRect = element.getBoundingClientRect();
+    animationId = requestAnimationFrame(animate);
+  };
+
+  const onMove = (e: MouseEvent) => {
+    if (!boundingRect) return;
+    const centerX = boundingRect.left + boundingRect.width / 2;
+    const centerY = boundingRect.top + boundingRect.height / 2;
+    targetX = (e.clientX - centerX) * strength;
+    targetY = (e.clientY - centerY) * strength;
+  };
+
+  const onLeave = () => {
+    targetX = 0;
+    targetY = 0;
+    setTimeout(() => {
+      if (targetX === 0 && targetY === 0) cancelAnimationFrame(animationId);
+    }, 500);
+  };
+
+  element.addEventListener('mouseenter', onEnter);
+  element.addEventListener('mousemove', onMove);
+  element.addEventListener('mouseleave', onLeave);
+
+  // Return cleanup function
+  return () => {
+    element.removeEventListener('mouseenter', onEnter);
+    element.removeEventListener('mousemove', onMove);
+    element.removeEventListener('mouseleave', onLeave);
+    cancelAnimationFrame(animationId);
+  };
+}
+
+/**
  * Card hover lift effect
  * Premium micro-interaction
  */

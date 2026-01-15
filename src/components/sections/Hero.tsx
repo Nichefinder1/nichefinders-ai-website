@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/ui/Button';
+import MagneticButton from '@/components/ui/MagneticButton';
 import Container from '@/components/ui/Container';
 import { CALENDAR_LINK } from '@/lib/constants';
 
@@ -125,30 +126,32 @@ export default function Hero() {
             className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight relative z-20"
           >
             <span className="block">Transform Your Business With</span>
-            <span className="block text-gradient">
-              Revenue-Generating AI
-            </span>
+            <span className="block text-gradient">Revenue-Generating AI</span>
           </h1>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 relative z-20">
-            <Button
-              href={CALENDAR_LINK}
-              variant="primary"
-              size="lg"
-              className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
-              external
-            >
-              Book Your Discovery Call
-            </Button>
-            <Button
-              href="/6-stage-system"
-              variant="secondary"
-              size="lg"
-              className="min-w-[280px] text-lg font-bold py-4 px-8"
-            >
-              Explore Our 6-Stage System
-            </Button>
+            <MagneticButton strength={0.5}>
+              <Button
+                href={CALENDAR_LINK}
+                variant="primary"
+                size="lg"
+                className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
+                external
+              >
+                Book Your Discovery Call
+              </Button>
+            </MagneticButton>
+            <MagneticButton strength={0.5}>
+              <Button
+                href="/6-stage-system"
+                variant="secondary"
+                size="lg"
+                className="min-w-[280px] text-lg font-bold py-4 px-8"
+              >
+                Explore Our 6-Stage System
+              </Button>
+            </MagneticButton>
           </div>
 
           {/* Subheadline */}

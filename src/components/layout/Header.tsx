@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
+import MagneticButton from '@/components/ui/MagneticButton';
 import { SERVICES, INDUSTRIES, FLORIDA_CITIES, CALENDAR_LINK } from '@/lib/constants';
 
 export default function Header() {
@@ -348,9 +349,11 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block relative z-10">
-            <Button href={CALENDAR_LINK} variant="primary" size="md" external>
-              Book Discovery Call
-            </Button>
+            <MagneticButton strength={0.45}>
+              <Button href={CALENDAR_LINK} variant="primary" size="md" external>
+                Book Discovery Call
+              </Button>
+            </MagneticButton>
           </div>
 
           {/* Mobile Menu Toggle */}
