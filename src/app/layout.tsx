@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Poppins, Inter, Space_Mono } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FloatingActionButton from '@/components/layout/FloatingActionButton';
 import ScrollProgress from '@/components/layout/ScrollProgress';
 import SmoothScroll from '@/components/SmoothScroll';
+import CookieConsent from '@/components/CookieConsent';
 import '@/styles/globals.css';
 
 const poppins = Poppins({
@@ -97,20 +97,6 @@ export default function RootLayout({
       className={`${poppins.variable} ${inter.variable} ${spaceMono.variable} overflow-x-hidden`}
     >
       <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-72H0P1G7BM"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-72H0P1G7BM');
-          `}
-        </Script>
-
         {/* Viewport - critical for iOS/mobile */}
         <meta
           name="viewport"
@@ -183,6 +169,9 @@ export default function RootLayout({
 
         {/* Floating Action Button */}
         <FloatingActionButton />
+
+        {/* Cookie Consent Banner */}
+        <CookieConsent />
       </body>
     </html>
   );
