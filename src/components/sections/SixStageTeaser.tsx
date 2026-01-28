@@ -1,32 +1,13 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { SIX_STAGES, CALENDAR_LINK } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function SixStageTeaser() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const stagesRef = useRef<HTMLDivElement>(null);
-  const [activeStage, setActiveStage] = useState(0);
-
-  useEffect(() => {
-    // Animations disabled for now
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
-    <Section ref={sectionRef} background="navy" padding>
+    <Section background="navy" padding>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -51,7 +32,7 @@ export default function SixStageTeaser() {
         </div>
 
         {/* Stages */}
-        <div ref={stagesRef} className="relative">
+        <div className="relative">
           {/* Desktop: Simple Grid with Step Numbers */}
           <div className="hidden lg:block">
             <div className="grid grid-cols-3 gap-6">

@@ -44,6 +44,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent iOS text size adjust */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -51,6 +53,56 @@ body {
   color: var(--navy-deep);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent pull-to-refresh on mobile */
+  overscroll-behavior-y: none;
+}
+
+/* iOS/Mobile Touch Optimizations */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Disable iOS tap highlight globally for interactive elements */
+button,
+a,
+[role="button"],
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure buttons have proper touch targets (min 44px) */
+@media (pointer: coarse) {
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+  }
+}
+
+/* iOS Safari smooth scrolling for overflow containers */
+.overflow-y-auto,
+.overflow-x-auto,
+.overflow-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix iOS input zoom on focus */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
 }
 
 /* Smooth scroll with Lenis */
@@ -80,24 +132,6 @@ html.lenis {
 *:focus-visible {
   outline: 2px solid var(--cyan-primary);
   outline-offset: 2px;
-}
-
-/* Skip to content link (accessibility) */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  background: var(--cyan-primary);
-  color: white;
-  padding: 1rem 2rem;
-  z-index: 10000;
-  font-weight: 700;
-  text-decoration: none;
-  transition: top 0.2s;
-}
-
-.skip-link:focus {
-  top: 0;
 }
 
 /* Reduced motion (accessibility) */
@@ -185,38 +219,6 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Text reveal animation utilities */
-.word-reveal {
-  display: inline-block;
-  overflow: hidden;
-}
-
-.word-reveal span {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
-}
-
-/* Loading states */
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 0%,
-    #e0e0e0 50%,
-    #f0f0f0 100%
-  );
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.5s ease-in-out infinite;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
 
 /* Button base styles */
 .btn {
@@ -346,33 +348,3 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Animated gradient text */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.gradient-text-animated {
-  background: linear-gradient(90deg, #C8D9E6, #0055A4, #C8D9E6);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 3s ease infinite;
-}
-
-/* Scroll progress bar */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #C8D9E6 0%, #0055A4 100%);
-  transform-origin: 0%;
-  z-index: 9999;
-}

@@ -15,7 +15,6 @@ if (typeof window !== 'undefined') {
 export default function SocialProof() {
   const sectionRef = useRef<HTMLElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const testimonialsRef = useRef<HTMLDivElement>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   useEffect(() => {
@@ -108,7 +107,7 @@ export default function SocialProof() {
         </div>
 
         {/* Testimonials Carousel */}
-        <div ref={testimonialsRef} className="relative">
+        <div className="relative">
           {/* Main Testimonial Display */}
           <Card variant="glass" className="p-8 md:p-12 bg-white border-2 border-cyan-primary/20">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8">

@@ -1,8 +1,5 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
@@ -10,26 +7,12 @@ import MagneticButton from '@/components/ui/MagneticButton';
 import Icon from '@/components/ui/Icon';
 import { CALENDAR_LINK } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function FinalCTA() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Animations disabled for now
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
-    <Section ref={sectionRef} background="gradient" padding>
+    <Section background="gradient" padding>
       <Container size="lg">
         <div
-          ref={contentRef}
           className="text-center max-w-4xl mx-auto text-white"
         >
           {/* Badge */}

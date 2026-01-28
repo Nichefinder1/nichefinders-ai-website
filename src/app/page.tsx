@@ -8,8 +8,6 @@ import TechStack from '@/components/sections/TechStack';
 import FeaturedCaseStudy from '@/components/sections/FeaturedCaseStudy';
 import ROICalculator from '@/components/sections/ROICalculator';
 import FinalCTA from '@/components/sections/FinalCTA';
-import InlineCalendarCTA from '@/components/ui/InlineCalendarCTA';
-import Container from '@/components/ui/Container';
 
 export const metadata = {
   title: 'AI Automation Agency Florida | Miami-Based | NicheFinders AI',

@@ -1,8 +1,3 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
@@ -12,38 +7,16 @@ import Badge from '@/components/ui/Badge';
 import type { Industry } from '@/lib/constants';
 import { FLORIDA_CITIES, SIX_STAGES, CALENDAR_LINK } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 interface IndustryTemplateProps {
   industry: Industry;
 }
 
 export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    gsap.from(hero.children, {
-      y: 60,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: 'power3.out',
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
     <main>
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient pt-32 pb-20">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient pt-24 pb-20">
         {/* Animated Background */}
         <div className="absolute inset-0 z-0">
           {/* Gradient Orbs */}
@@ -65,7 +38,7 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
 
         {/* Content */}
         <Container size="lg" className="relative z-10 text-center">
-          <div ref={heroRef} className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {/* Icon */}
             <div className="text-7xl mb-6">{industry.icon}</div>
 

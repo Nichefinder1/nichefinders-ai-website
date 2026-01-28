@@ -1,8 +1,3 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
@@ -10,26 +5,13 @@ import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { CASE_STUDIES } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function FeaturedCaseStudy() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
 
   // Feature the first case study (can be made dynamic later)
   const featured = CASE_STUDIES[0];
 
-  useEffect(() => {
-    // Animations disabled for now
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   return (
-    <Section ref={sectionRef} background="navy" padding>
+    <Section background="navy" padding>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -47,7 +29,6 @@ export default function FeaturedCaseStudy() {
 
         {/* Featured Case Study Card */}
         <Card
-          ref={contentRef}
           variant="elevated"
           className="bg-white overflow-hidden"
         >

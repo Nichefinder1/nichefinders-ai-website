@@ -1,32 +1,14 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
-import { INDUSTRIES, CALENDAR_LINK } from '@/lib/constants';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { INDUSTRIES } from '@/lib/constants';
 
 export default function WhoWeServe() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Animations disabled for now
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
-    <Section ref={sectionRef} background="white" padding>
+    <Section background="white" padding>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -44,7 +26,7 @@ export default function WhoWeServe() {
         </div>
 
         {/* Industry Grid */}
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {INDUSTRIES.map((industry) => (
             <Link
               key={industry.slug}

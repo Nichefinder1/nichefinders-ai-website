@@ -1,28 +1,8 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function ProblemAgitation() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const leftRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Animations disabled for now
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   const problems = [
     {
       icon: '',
@@ -78,12 +58,11 @@ export default function ProblemAgitation() {
   ];
 
   return (
-    <Section ref={sectionRef} background="white" padding>
+    <Section background="white" padding>
       <Container size="xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16 min-h-[600px]">
           {/* Left Side - Problems */}
           <div
-            ref={leftRef}
             className="relative p-8 lg:p-12 rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 border-l-4 border-alert"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-alert to-orange-500" />
@@ -131,7 +110,6 @@ export default function ProblemAgitation() {
 
           {/* Right Side - Solutions */}
           <div
-            ref={rightRef}
             className="relative p-8 lg:p-12 rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 border-l-4 border-cyan-primary mt-8 lg:mt-0"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-primary to-navy-deep" />

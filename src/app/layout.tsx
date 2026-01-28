@@ -83,10 +83,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-    // Add other verification codes as needed
-  },
 };
 
 export default function RootLayout({
@@ -100,6 +96,17 @@ export default function RootLayout({
       className={`${poppins.variable} ${inter.variable} ${spaceMono.variable} overflow-x-hidden`}
     >
       <head>
+        {/* Viewport - critical for iOS/mobile */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"
+        />
+
+        {/* iOS Safari specific */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

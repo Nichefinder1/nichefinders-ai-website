@@ -1,8 +1,5 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
@@ -11,29 +8,7 @@ import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { FLORIDA_CITIES, CALENDAR_LINK } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function FloridaLocationsPage() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    gsap.from(hero.children, {
-      y: 60,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: 'power3.out',
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   // Group cities by region
   const citiesByRegion = FLORIDA_CITIES.reduce((acc, city) => {
@@ -71,7 +46,7 @@ export default function FloridaLocationsPage() {
 
         {/* Content */}
         <Container size="lg" className="relative z-10 text-center">
-          <div ref={heroRef} className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {/* Badge */}
             <Badge variant="secondary" size="md" className="mb-6">
               MIAMI HEADQUARTERS • 10 FLORIDA LOCATIONS

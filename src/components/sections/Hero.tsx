@@ -14,50 +14,13 @@ if (typeof window !== 'undefined') {
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const subheadlineRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const hero = heroRef.current;
-    const headline = headlineRef.current;
-    const subheadline = subheadlineRef.current;
-    const cta = ctaRef.current;
     const background = backgroundRef.current;
 
-    if (!hero || !headline || !subheadline || !cta || !background)
-      return;
-
-    // Initial animation timeline - disabled for now
-    // const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-    // // Animate elements on load
-    // tl.from(headline.children, {
-    //   y: 100,
-    //   opacity: 0,
-    //   duration: 1,
-    //   stagger: 0.1,
-    // })
-    //   .from(
-    //     subheadline,
-    //     {
-    //       y: 50,
-    //       opacity: 0,
-    //       duration: 0.8,
-    //     },
-    //     '-=0.5'
-    //   )
-    //   .from(
-    //     cta.children,
-    //     {
-    //       y: 30,
-    //       opacity: 0,
-    //       duration: 0.6,
-    //       stagger: 0.15,
-    //     },
-    //     '-=0.4'
-    //   );
+    if (!hero || !background) return;
 
     // Parallax scroll effect on background
     gsap.to(background, {
@@ -70,19 +33,6 @@ export default function Hero() {
         scrub: 1,
       },
     });
-
-    // Fade out hero content on scroll - disabled for now
-    // gsap.to([headline, subheadline, cta], {
-    //   opacity: 0,
-    //   y: -50,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: hero,
-    //     start: 'top top',
-    //     end: '80% top',
-    //     scrub: 1,
-    //   },
-    // });
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -122,7 +72,6 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           {/* Headline */}
           <h1
-            ref={headlineRef}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight relative z-20"
           >
             <span className="block">Transform Your Business With</span>
@@ -156,7 +105,6 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p
-            ref={subheadlineRef}
             className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed max-w-3xl mx-auto relative z-20"
           >
             Stop losing revenue to manual processes. Our proven 6-Stage System
@@ -165,7 +113,7 @@ export default function Hero() {
           </p>
 
           {/* Stats */}
-          <div ref={ctaRef} className="mt-4 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-4 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { value: '50%+', label: 'Of leads never get follow-up' },
               { value: '3x', label: 'Average ROI with AI automation' },

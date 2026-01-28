@@ -37,11 +37,6 @@ export function initLenis() {
 
   gsap.ticker.lagSmoothing(0);
 
-  // Expose lenis globally for debugging
-  if (typeof window !== 'undefined') {
-    (window as any).lenis = lenis;
-  }
-
   return lenis;
 }
 
@@ -79,10 +74,7 @@ export function scrollTo(
     onComplete?: () => void;
   }
 ) {
-  if (!lenis) {
-    console.warn('Lenis not initialized. Call initLenis() first.');
-    return;
-  }
+  if (!lenis) return;
 
   lenis.scrollTo(target, options);
 }

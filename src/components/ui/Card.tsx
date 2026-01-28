@@ -11,7 +11,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const variants = {
       glass: 'card-glass',
       elevated: 'card-elevated',
-      'gradient-border': 'card-gradient-border',
+      'gradient-border': 'gradient-border',
     };
 
     return (

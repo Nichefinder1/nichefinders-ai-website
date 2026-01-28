@@ -1,9 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
@@ -11,32 +9,9 @@ import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { SIX_STAGES, CALENDAR_LINK } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function SixStageSystemPage() {
   const [activeStage, setActiveStage] = useState(0);
-  const heroRef = useRef<HTMLDivElement>(null);
   const stagesRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    // Animate hero content
-    gsap.from(hero.children, {
-      y: 60,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: 'power3.out',
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
     <main>
@@ -44,7 +19,6 @@ export default function SixStageSystemPage() {
       <Section background="gradient" padding>
         <Container size="lg">
           <div
-            ref={heroRef}
             className="text-center max-w-4xl mx-auto text-white py-20"
           >
             <Badge variant="secondary" size="md" className="mb-6 bg-white/20 text-white">
