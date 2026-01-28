@@ -400,7 +400,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto pointer-events-auto">
           <div className="container-custom max-w-screen-xl mx-auto px-6 py-6">
             {/* Solutions */}
             <div className="mb-6">
