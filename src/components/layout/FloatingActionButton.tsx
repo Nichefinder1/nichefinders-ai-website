@@ -14,9 +14,13 @@ export default function FloatingActionButton() {
       setIsVisible(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div
@@ -30,7 +34,13 @@ export default function FloatingActionButton() {
         href={CALENDAR_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-3 bg-gradient-to-r from-cyan-primary to-cyan-600 text-white px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+        className={cn(
+          'group flex items-center gap-3 bg-gradient-to-r from-cyan-primary to-cyan-600',
+          'text-white px-6 py-3 rounded-full shadow-xl',
+          'hover:shadow-2xl transition-all duration-300 hover:scale-105',
+          'active:scale-95 touch-manipulation',
+          'min-h-[44px]'
+        )}
       >
         <span className="font-bold text-sm whitespace-nowrap">Book Discovery Call</span>
         <svg
@@ -53,7 +63,11 @@ export default function FloatingActionButton() {
         {/* ROI Calculator */}
         <Link
           href="/resources/roi-calculator"
-          className="group flex items-center justify-center w-12 h-12 bg-white text-navy-deep rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          className={cn(
+            'group flex items-center justify-center w-12 h-12 bg-white text-navy-deep',
+            'rounded-full shadow-lg hover:shadow-xl transition-all duration-300',
+            'hover:scale-110 active:scale-95 touch-manipulation'
+          )}
           aria-label="ROI Calculator"
         >
           <svg
@@ -76,8 +90,17 @@ export default function FloatingActionButton() {
 
         {/* Scroll to Top */}
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="group flex items-center justify-center w-12 h-12 bg-white text-navy-deep rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          type="button"
+          onClick={scrollToTop}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            scrollToTop();
+          }}
+          className={cn(
+            'group flex items-center justify-center w-12 h-12 bg-white text-navy-deep',
+            'rounded-full shadow-lg hover:shadow-xl transition-all duration-300',
+            'hover:scale-110 active:scale-95 touch-manipulation cursor-pointer'
+          )}
           aria-label="Scroll to top"
         >
           <svg

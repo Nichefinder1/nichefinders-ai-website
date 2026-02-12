@@ -79,7 +79,7 @@ export default function FinalCTA() {
             <MagneticButton strength={0.5}>
               <Button
                 href="/6-stage-system"
-                variant="secondary"
+                variant="ghost"
                 size="lg"
                 className="min-w-[280px] flex items-center justify-center gap-2"
               >

@@ -10,7 +10,16 @@ interface SolutionTemplateProps {
   service: Service;
 }
 
+// Map solutions to their relevant case studies
+const solutionCaseStudyMap: Record<string, string> = {
+  'ai-consulting': '/case-studies/coastal-construction-group',
+  'custom-ai-development': '/case-studies/precision-plumbing-tampa',
+  'ai-powered-marketing': '/case-studies/sunshine-auto-jacksonville',
+  'ai-education-training': '/case-studies/mitchell-law-group-orlando',
+};
+
 export default function SolutionTemplate({ service }: SolutionTemplateProps) {
+  const caseStudyLink = solutionCaseStudyMap[service.slug] || '/case-studies';
 
   return (
     <main>
@@ -59,7 +68,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
               </Button>
               <Button
                 href="/6-stage-system"
-                variant="secondary"
+                variant="ghost"
                 size="lg"
                 className="min-w-[280px] text-lg font-bold py-4 px-8"
               >
@@ -250,7 +259,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
                 >
                   Book Your Discovery Call Now
                 </Button>
-                <Button href="/case-studies" variant="secondary" size="lg" className="min-w-[280px]">
+                <Button href={caseStudyLink} variant="outline" size="lg" className="min-w-[280px]">
                   See Real Client Results First
                 </Button>
               </div>

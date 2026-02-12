@@ -55,7 +55,7 @@ export default function CaseStudyPage({ params }: Props) {
           <div className="mb-6">
             <Button
               href="/case-studies"
-              variant="secondary"
+              variant="ghost"
               size="sm"
               className="bg-white/10 border-white/30 hover:bg-white/20"
             >

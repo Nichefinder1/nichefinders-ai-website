@@ -286,7 +286,7 @@ export default function AboutPage() {
               <Button href={CALENDAR_LINK} external variant="primary" size="lg">
                 Book Discovery Call
               </Button>
-              <Button href="/case-studies" variant="secondary" size="lg">
+              <Button href="/case-studies" variant="outline" size="lg">
                 See Our Work
               </Button>
             </div>

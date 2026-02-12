@@ -356,7 +356,7 @@ export default function SixStageSystemPage() {
                 <Button href={CALENDAR_LINK} external variant="primary" size="lg">
                   Book Your Discovery Call
                 </Button>
-                <Button href="/case-studies" variant="secondary" size="lg">
+                <Button href="/case-studies" variant="outline" size="lg">
                   See Success Stories
                 </Button>
               </div>

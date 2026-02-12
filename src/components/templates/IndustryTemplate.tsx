@@ -11,7 +11,16 @@ interface IndustryTemplateProps {
   industry: Industry;
 }
 
+// Map industries to their relevant case studies
+const industryCaseStudyMap: Record<string, string> = {
+  'home-services': '/case-studies/precision-plumbing-tampa',
+  'automotive': '/case-studies/sunshine-auto-jacksonville',
+  'nonprofits': '/case-studies/florida-community-foundation',
+  'professional-services': '/case-studies/mitchell-law-group-orlando',
+};
+
 export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
+  const caseStudyLink = industryCaseStudyMap[industry.slug] || '/case-studies';
 
   return (
     <main>
@@ -249,7 +258,7 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
           <div className="mt-12 text-center">
             <Button
               href="/6-stage-system"
-              variant="secondary"
+              variant="ghost"
               size="lg"
               className="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20"
             >
@@ -306,8 +315,8 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
               <Button href={CALENDAR_LINK} external variant="primary" size="lg">
                 Book Industry-Specific Consultation
               </Button>
-              <Button href="/case-studies" variant="secondary" size="lg">
-                View {industry.name} Case Studies
+              <Button href={caseStudyLink} variant="outline" size="lg">
+                View {industry.name} Case Study
               </Button>
             </div>
           </Card>

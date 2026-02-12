@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 
 type BaseProps = {
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
   className?: string;
@@ -31,18 +31,21 @@ export default function Button({
   external = false,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'btn';
+  // Base styles with iOS/mobile touch optimizations
+  const baseStyles = 'btn touch-manipulation select-none';
 
   const variants = {
-    primary: 'btn-primary',
-    secondary: 'btn-secondary',
-    ghost: 'btn-ghost',
+    primary: 'btn-primary active:scale-[0.98]',
+    secondary: 'btn-secondary active:scale-[0.98]',
+    outline: 'btn-outline active:scale-[0.98]',
+    ghost: 'btn-ghost active:bg-gray-100',
   };
 
+  // Ensure minimum touch target of 44px
   const sizes = {
-    sm: 'text-sm px-4 py-2',
-    md: 'text-base px-6 py-3',
-    lg: 'text-lg px-8 py-4',
+    sm: 'text-sm px-4 py-2 min-h-[40px]',
+    md: 'text-base px-6 py-3 min-h-[44px]',
+    lg: 'text-lg px-8 py-4 min-h-[48px]',
   };
 
   const classes = cn(baseStyles, variants[variant], sizes[size], className);

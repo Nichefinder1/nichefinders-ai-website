@@ -267,6 +267,19 @@ html.lenis {
   border-color: white;
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--navy-deep);
+  border: 2px solid var(--navy-deep);
+  padding: 0.875rem 1.75rem;
+}
+
+.btn-outline:hover {
+  background: var(--navy-deep);
+  color: white;
+  border-color: var(--navy-deep);
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--navy-deep);
