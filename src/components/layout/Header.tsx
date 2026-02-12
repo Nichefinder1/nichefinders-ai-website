@@ -98,7 +98,7 @@ export default function Header() {
 
                 {/* Solutions Dropdown */}
                 {activeMegaMenu === 'solutions' && (
-                  <div className="absolute top-full left-0 mt-0 pt-2 w-80">
+                  <div className="absolute top-full left-0 mt-0 pt-2 w-80 pointer-events-auto">
                     <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
                     <div className="p-4">
                       <p className="text-sm text-gray-600 mb-4">
@@ -218,7 +218,7 @@ export default function Header() {
 
                 {/* Industries Dropdown */}
                 {activeMegaMenu === 'industries' && (
-                  <div className="absolute top-full left-0 mt-0 pt-2 w-96">
+                  <div className="absolute top-full left-0 mt-0 pt-2 w-96 pointer-events-auto">
                     <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
                     <div className="p-4">
                       <p className="text-sm text-gray-600 mb-4">
