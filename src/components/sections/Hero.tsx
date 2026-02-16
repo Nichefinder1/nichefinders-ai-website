@@ -94,7 +94,7 @@ export default function Hero() {
             <MagneticButton strength={0.5}>
               <Button
                 href="/6-stage-system"
-                variant="ghost"
+                variant="secondary"
                 size="lg"
                 className="min-w-[280px] text-lg font-bold py-4 px-8"
               >
