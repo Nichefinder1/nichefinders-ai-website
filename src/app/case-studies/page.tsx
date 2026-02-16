@@ -348,9 +348,8 @@ export default function CaseStudiesPage() {
               </Button>
               <Button
                 href="/6-stage-system"
-                variant="ghost"
+                variant="secondary"
                 size="lg"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white/20"
               >
                 Explore Our 6-Stage System
               </Button>

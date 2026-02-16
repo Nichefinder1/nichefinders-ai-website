@@ -210,9 +210,9 @@ export default function ROICalculator() {
                 </Button>
                 <Button
                   href="/resources/roi-calculator"
-                  variant="ghost"
+                  variant="secondary"
                   size="lg"
-                  className="flex-1 border-2 border-white/30 hover:bg-white/10"
+                  className="flex-1"
                 >
                   Full Calculator
                 </Button>

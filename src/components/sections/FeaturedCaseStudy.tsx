@@ -216,7 +216,7 @@ export default function FeaturedCaseStudy() {
           </p>
           <Button
             href="/case-studies"
-            variant="ghost"
+            variant="secondary"
             size="lg"
           >
             View All Case Studies

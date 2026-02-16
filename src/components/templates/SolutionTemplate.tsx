@@ -68,7 +68,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
               </Button>
               <Button
                 href="/6-stage-system"
-                variant="ghost"
+                variant="secondary"
                 size="lg"
                 className="min-w-[280px] text-lg font-bold py-4 px-8"
               >

@@ -77,7 +77,7 @@ export default function FloridaLocationsPage() {
               </Button>
               <Button
                 href="/6-stage-system"
-                variant="ghost"
+                variant="secondary"
                 size="lg"
                 className="min-w-[280px] text-lg font-bold py-4 px-8"
               >
@@ -318,7 +318,7 @@ export default function FloridaLocationsPage() {
               </Button>
               <Button
                 href="/case-studies"
-                variant="ghost"
+                variant="secondary"
                 size="lg"
                 className="min-w-[280px]"
               >
