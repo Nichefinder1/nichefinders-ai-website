@@ -4,7 +4,7 @@ interface IconProps {
 }
 
 export default function Icon({ name, className = 'w-6 h-6' }: IconProps) {
-  const icons: { [key: string]: JSX.Element } = {
+  const icons: { [key: string]: React.JSX.Element } = {
     // Strategic icons only - minimal, professional
     'arrow-right': (
       <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
