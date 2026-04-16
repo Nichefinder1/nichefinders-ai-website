@@ -39,7 +39,7 @@ export default function ScrollProgress() {
       {/* Top Progress Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-transparent pointer-events-none">
         <div
-          className="h-full bg-gradient-to-r from-cyan-primary via-cyan-light to-navy-deep transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-orange-cta via-orange-hover to-orange-dark transition-all duration-150 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -79,8 +79,8 @@ export default function ScrollProgress() {
             />
             <defs>
               <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3BBADD" />
-                <stop offset="100%" stopColor="#0A1929" />
+                <stop offset="0%" stopColor="#CC5500" />
+                <stop offset="100%" stopColor="#E06616" />
               </linearGradient>
             </defs>
           </svg>

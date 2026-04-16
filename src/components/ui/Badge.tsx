@@ -14,7 +14,7 @@ export default function Badge({
   ...props
 }: BadgeProps) {
   const variants = {
-    primary: 'bg-cyan-primary text-white',
+    primary: 'bg-orange-cta text-white',
     secondary: 'bg-gray-light text-navy-deep',
     success: 'bg-success text-white',
     alert: 'bg-alert text-white',

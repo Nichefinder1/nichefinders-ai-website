@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { HTMLAttributes, forwardRef } from 'react';
 
 type CardProps = HTMLAttributes<HTMLDivElement> & {
-  variant?: 'glass' | 'elevated' | 'gradient-border';
+  variant?: 'glass' | 'elevated' | 'elevated-dark' | 'gradient-border';
   hover?: boolean;
 };
 
@@ -11,6 +11,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const variants = {
       glass: 'card-glass',
       elevated: 'card-elevated',
+      'elevated-dark': 'card-elevated-dark',
       'gradient-border': 'gradient-border',
     };
 

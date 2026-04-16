@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins, Inter, Space_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FloatingActionButton from '@/components/layout/FloatingActionButton';
@@ -7,6 +8,13 @@ import ScrollProgress from '@/components/layout/ScrollProgress';
 import SmoothScroll from '@/components/SmoothScroll';
 import CookieConsent from '@/components/CookieConsent';
 import '@/styles/globals.css';
+
+const satoshi = localFont({
+  src: '../../public/fonts/Satoshi-Variable.woff2',
+  variable: '--font-satoshi',
+  display: 'swap',
+  weight: '300 900',
+});
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -94,7 +102,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${inter.variable} ${spaceMono.variable} overflow-x-hidden`}
+      className={`${satoshi.variable} ${poppins.variable} ${inter.variable} ${spaceMono.variable} overflow-x-hidden`}
     >
       <head>
         {/* Viewport - critical for iOS/mobile */}

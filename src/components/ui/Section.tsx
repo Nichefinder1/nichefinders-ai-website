@@ -3,7 +3,7 @@ import { HTMLAttributes, forwardRef } from 'react';
 
 type SectionProps = HTMLAttributes<HTMLElement> & {
   padding?: boolean;
-  background?: 'white' | 'gray' | 'navy' | 'gradient';
+  background?: 'white' | 'gray' | 'navy' | 'navy-medium' | 'navy-deepest' | 'gradient';
 };
 
 const Section = forwardRef<HTMLElement, SectionProps>(
@@ -12,6 +12,8 @@ const Section = forwardRef<HTMLElement, SectionProps>(
       white: 'bg-white',
       gray: 'bg-gray-light',
       navy: 'bg-navy-deep text-white',
+      'navy-medium': 'bg-navy-medium text-white',
+      'navy-deepest': 'bg-navy-deepest text-white',
       gradient: 'hero-gradient text-white',
     };
 

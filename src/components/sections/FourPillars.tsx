@@ -56,18 +56,18 @@ export default function FourPillars() {
   }, []);
 
   return (
-    <Section ref={sectionRef} background="gray" padding={false}>
+    <Section ref={sectionRef} background="navy-medium" padding={false}>
       <div ref={scrollContainerRef} className="relative overflow-hidden">
         {/* Section Header */}
         <Container size="lg" className="py-20">
           <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-1.5 bg-cyan-primary/10 text-cyan-primary font-bold text-sm rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-orange-cta/20 text-orange-cta font-bold text-sm rounded-full mb-4">
               OUR APPROACH
             </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-navy-deep mb-6">
+            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
               The 4 Pillars of AI Transformation
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Every business is unique, but success follows a proven path. Our
               4-pillar approach ensures you get results, not just technology.
             </p>
@@ -85,22 +85,22 @@ export default function FourPillars() {
               // Dynamic icons for each pillar
               const pillarIcons: { [key: string]: React.JSX.Element } = {
                 'ai-consulting': (
-                  <svg className="w-16 h-16 text-cyan-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 ),
                 'custom-ai-development': (
-                  <svg className="w-16 h-16 text-cyan-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 ),
                 'ai-powered-marketing': (
-                  <svg className="w-16 h-16 text-cyan-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 ),
                 'ai-education-training': (
-                  <svg className="w-16 h-16 text-cyan-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 ),
@@ -109,12 +109,12 @@ export default function FourPillars() {
               return (
               <Card
                 key={service.slug}
-                variant="elevated"
-                className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-white"
+                variant="elevated-dark"
+                className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7"
               >
                 {/* Pillar Icon */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 bg-cyan-primary/10 rounded-xl">
+                  <div className="p-3 bg-orange-cta/20 rounded-xl">
                     {pillarIcons[service.slug]}
                   </div>
                   <div className="text-4xl">{service.icon}</div>
@@ -122,27 +122,27 @@ export default function FourPillars() {
 
                 {/* Content */}
                 <div className="mb-5">
-                  <h3 className="text-2xl font-black text-navy-deep mb-3">
+                  <h3 className="text-2xl font-black text-white mb-3">
                     {service.name}
                   </h3>
-                  <p className="text-base text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-base text-gray-300 mb-4 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Key Features */}
                 <div className="space-y-2 mb-5">
-                  <h4 className="font-bold text-navy-deep uppercase text-sm tracking-wide">
+                  <h4 className="font-bold text-white uppercase text-sm tracking-wide">
                     What You Get:
                   </h4>
                   <ul className="space-y-2">
                     {service.deliverables.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start space-x-2 text-gray-700 text-sm leading-relaxed"
+                        className="flex items-start space-x-2 text-gray-300 text-sm leading-relaxed"
                       >
                         <svg
-                          className="w-4 h-4 text-cyan-primary flex-shrink-0 mt-0.5"
+                          className="w-4 h-4 text-orange-cta flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -159,11 +159,11 @@ export default function FourPillars() {
                 </div>
 
                 {/* Details */}
-                <div className="mb-5 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-bold text-navy-deep mb-2 text-sm uppercase tracking-wide">
+                <div className="mb-5 p-4 bg-white/5 rounded-lg">
+                  <h4 className="font-bold text-white mb-2 text-sm uppercase tracking-wide">
                     What You Get:
                   </h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">{service.details}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{service.details}</p>
                 </div>
 
                 {/* CTA */}
@@ -182,7 +182,7 @@ export default function FourPillars() {
             {/* Final CTA Card */}
             <Card
               variant="gradient-border"
-              className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-gradient-to-br from-cyan-primary to-navy-deep text-white flex flex-col items-center justify-center text-center"
+              className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-gradient-to-br from-orange-cta to-navy-deepest text-white flex flex-col items-center justify-center text-center"
             >
               <h3 className="text-xl font-black mb-2">
                 Ready to Transform Your Business?
@@ -208,10 +208,10 @@ export default function FourPillars() {
         <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden md:flex flex-col items-center gap-12">
           {/* Arrow with background */}
           <div className="relative">
-            <div className="absolute inset-0 bg-cyan-primary/10 rounded-full blur-lg"></div>
-            <div className="relative bg-white/80 backdrop-blur-sm rounded-full p-3 border border-gray-200 shadow-lg">
+            <div className="absolute inset-0 bg-orange-cta/10 rounded-full blur-lg"></div>
+            <div className="relative bg-white/10 backdrop-blur-sm rounded-full p-3 border border-white/20 shadow-lg">
               <svg
-                className="w-5 h-5 text-cyan-primary animate-bounce-horizontal"
+                className="w-5 h-5 text-orange-cta animate-bounce-horizontal"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -227,7 +227,7 @@ export default function FourPillars() {
           </div>
 
           {/* Scroll text */}
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] rotate-90 origin-center whitespace-nowrap text-gray-500">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] rotate-90 origin-center whitespace-nowrap text-white/50">
             Scroll
           </span>
         </div>

@@ -33,7 +33,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/nichefinders-ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cyan-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-cta transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -48,7 +48,7 @@ export default function Footer() {
                 href="https://twitter.com/nichefinders"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cyan-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-cta transition-colors duration-300"
                 aria-label="Twitter"
               >
                 <svg
@@ -63,7 +63,7 @@ export default function Footer() {
                 href="https://facebook.com/nichefinders"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cyan-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-cta transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <svg
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/solutions/${service.slug}`}
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     {service.name}
                   </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/6-stage-system"
-                  className="text-cyan-primary hover:text-cyan-light font-semibold transition-colors duration-300"
+                  className="text-orange-cta hover:text-orange-hover font-semibold transition-colors duration-300"
                 >
                   Our 6-Stage System
                 </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
                 <li key={industry.slug}>
                   <Link
                     href={`/industries/${industry.slug}`}
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     {industry.name}
                   </Link>
@@ -125,7 +125,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/case-studies"
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     Case Studies
                   </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/resources"
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     Blog & Resources
                   </Link>
@@ -141,7 +141,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/resources/roi-calculator"
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     ROI Calculator
                   </Link>
@@ -158,7 +158,7 @@ export default function Footer() {
                 <li key={city.slug}>
                   <Link
                     href={`/florida/${city.slug}`}
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     {city.name}
                   </Link>
@@ -173,7 +173,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about"
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     About Us
                   </Link>
@@ -183,7 +183,7 @@ export default function Footer() {
                     href={CALENDAR_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-cyan-primary transition-colors duration-300"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     Contact
                   </a>
@@ -205,19 +205,19 @@ export default function Footer() {
             <div className="flex space-x-6">
               <Link
                 href="/privacy-policy"
-                className="text-gray-400 hover:text-cyan-primary text-sm transition-colors duration-300"
+                className="text-gray-400 hover:text-orange-cta text-sm transition-colors duration-300"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-of-service"
-                className="text-gray-400 hover:text-cyan-primary text-sm transition-colors duration-300"
+                className="text-gray-400 hover:text-orange-cta text-sm transition-colors duration-300"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/sitemap.xml"
-                className="text-gray-400 hover:text-cyan-primary text-sm transition-colors duration-300"
+                className="text-gray-400 hover:text-orange-cta text-sm transition-colors duration-300"
               >
                 Sitemap
               </Link>

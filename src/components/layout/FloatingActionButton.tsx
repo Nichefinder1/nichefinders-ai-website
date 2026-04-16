@@ -35,7 +35,7 @@ export default function FloatingActionButton() {
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          'group flex items-center gap-3 bg-gradient-to-r from-cyan-primary to-cyan-600',
+          'group flex items-center gap-3 bg-gradient-to-r from-orange-cta to-orange-hover',
           'text-white px-6 py-3 rounded-full shadow-xl',
           'hover:shadow-2xl transition-all duration-300 hover:scale-105',
           'active:scale-95 touch-manipulation',

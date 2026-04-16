@@ -18,6 +18,15 @@ const config: Config = {
           deep: '#002855',
           DEFAULT: '#003D7A',
           light: '#0055A4',
+          medium: '#0A2040',
+          deepest: '#001A3A',
+          section: '#061830',
+        },
+        orange: {
+          cta: '#CC5500',
+          hover: '#E06616',
+          dark: '#993D00',
+          glow: 'rgba(204, 85, 0, 0.35)',
         },
         gray: {
           light: '#F8FAFC',
@@ -28,7 +37,7 @@ const config: Config = {
         alert: '#FF6B6B',
       },
       fontFamily: {
-        header: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        header: ['var(--font-satoshi)', 'var(--font-poppins)', 'system-ui', 'sans-serif'],
         body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-space-mono)', 'Courier New', 'monospace'],
       },
@@ -57,6 +66,8 @@ const config: Config = {
         'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
         'elevated': '0 10px 40px rgba(0, 0, 0, 0.08)',
         'premium': '0 20px 60px rgba(0, 0, 0, 0.12)',
+        'cta-glow': '0 8px 20px rgba(204, 85, 0, 0.35)',
+        'cta-glow-lg': '0 12px 32px rgba(204, 85, 0, 0.45)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

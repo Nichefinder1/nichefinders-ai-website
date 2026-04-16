@@ -66,17 +66,17 @@ export default function SocialProof() {
   }, []);
 
   return (
-    <Section ref={sectionRef} background="gray" padding>
+    <Section ref={sectionRef} background="navy-medium" padding>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 bg-success/10 text-success font-bold text-sm rounded-full mb-4">
             PROVEN RESULTS
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-navy-deep mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
             Real Businesses, Real Results
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-300">
             Don't take our word for it. See what business owners are
             saying about their AI transformation.
           </p>
@@ -87,19 +87,19 @@ export default function SocialProof() {
           {STATISTICS.map((stat, index) => (
             <Card
               key={index}
-              variant="elevated"
-              className="p-6 text-center bg-white"
+              variant="elevated-dark"
+              className="p-6 text-center"
             >
               <div className="text-5xl mb-2">{stat.icon}</div>
               <div
-                className="stat-number text-3xl md:text-4xl font-black text-cyan-primary mb-2"
+                className="stat-number text-3xl md:text-4xl font-black text-orange-cta mb-2"
                 data-target={stat.target}
                 data-suffix={stat.suffix}
                 data-prefix={stat.prefix}
               >
                 {stat.prefix}0{stat.suffix}
               </div>
-              <div className="text-sm text-gray-600 font-medium">
+              <div className="text-sm text-gray-300 font-medium">
                 {stat.label}
               </div>
             </Card>
@@ -109,7 +109,7 @@ export default function SocialProof() {
         {/* Testimonials Carousel */}
         <div className="relative">
           {/* Main Testimonial Display */}
-          <Card variant="glass" className="p-8 md:p-12 bg-white border-2 border-cyan-primary/20">
+          <Card variant="elevated-dark" className="p-8 md:p-12 border border-white/10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
               {/* Quote Icon */}
               <div className="flex-shrink-0">
@@ -124,20 +124,20 @@ export default function SocialProof() {
 
               {/* Testimonial Content */}
               <div className="flex-1">
-                <p className="text-xl md:text-2xl text-gray-700 font-medium mb-6 leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-200 font-medium mb-6 leading-relaxed">
                   "{TESTIMONIALS[currentTestimonial].quote}"
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="font-bold text-navy-deep text-lg">
+                    <div className="font-bold text-white text-lg">
                       {TESTIMONIALS[currentTestimonial].name}
                     </div>
-                    <div className="text-gray-600">
+                    <div className="text-gray-300">
                       {TESTIMONIALS[currentTestimonial].title},{' '}
                       {TESTIMONIALS[currentTestimonial].company}
                     </div>
-                    <div className="text-sm text-gray-500 mt-1">
+                    <div className="text-sm text-gray-400 mt-1">
                       {TESTIMONIALS[currentTestimonial].industry} •{' '}
                       {TESTIMONIALS[currentTestimonial].location}
                     </div>
@@ -168,8 +168,8 @@ export default function SocialProof() {
                     onClick={() => setCurrentTestimonial(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentTestimonial
-                        ? 'bg-cyan-primary w-8'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                        ? 'bg-orange-cta w-8'
+                        : 'bg-white/30 hover:bg-white/50'
                     }`}
                     aria-label={`View testimonial ${index + 1}`}
                   />
@@ -184,7 +184,7 @@ export default function SocialProof() {
                       prev === 0 ? TESTIMONIALS.length - 1 : prev - 1
                     )
                   }
-                  className="w-10 h-10 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center hover:border-cyan-primary hover:text-cyan-primary transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center text-white hover:border-orange-cta hover:text-orange-cta transition-colors"
                   aria-label="Previous testimonial"
                 >
                   <svg
@@ -207,7 +207,7 @@ export default function SocialProof() {
                       prev === TESTIMONIALS.length - 1 ? 0 : prev + 1
                     )
                   }
-                  className="w-10 h-10 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center hover:border-cyan-primary hover:text-cyan-primary transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center text-white hover:border-orange-cta hover:text-orange-cta transition-colors"
                   aria-label="Next testimonial"
                 >
                   <svg
@@ -250,10 +250,10 @@ export default function SocialProof() {
           ].map((indicator, index) => (
             <div key={index} className="text-center">
               <div className="text-5xl mb-4">{indicator.icon}</div>
-              <h3 className="text-xl font-bold text-navy-deep mb-2">
+              <h3 className="text-xl font-bold text-white mb-2">
                 {indicator.title}
               </h3>
-              <p className="text-gray-600">{indicator.description}</p>
+              <p className="text-gray-300">{indicator.description}</p>
             </div>
           ))}
         </div>

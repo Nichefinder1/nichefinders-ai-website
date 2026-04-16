@@ -7,13 +7,18 @@
   /* Colors */
   --cyan-primary: #0055A4;
   --navy-deep: #002855;
+  --navy-medium: #0A2040;
+  --navy-deepest: #001A3A;
+  --orange-cta: #CC5500;
+  --orange-cta-hover: #E06616;
+  --orange-glow: rgba(204, 85, 0, 0.35);
   --white: #FFFFFF;
   --gray-light: #F8FAFC;
   --green-success: #10B981;
   --coral-alert: #FF6B6B;
 
   /* Typography */
-  --font-header: var(--font-poppins);
+  --font-header: var(--font-satoshi), var(--font-poppins);
   --font-body: var(--font-inter);
   --font-mono: var(--font-space-mono);
 
@@ -124,13 +129,13 @@ html.lenis {
 
 /* Selection */
 ::selection {
-  background-color: var(--cyan-primary);
+  background-color: var(--orange-cta);
   color: white;
 }
 
 /* Focus visible (accessibility) */
 *:focus-visible {
-  outline: 2px solid var(--cyan-primary);
+  outline: 2px solid var(--orange-cta);
   outline-offset: 2px;
 }
 
@@ -152,7 +157,7 @@ html.lenis {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--gray-light);
+  background: var(--navy-deepest);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -239,15 +244,15 @@ html.lenis {
 }
 
 .btn-primary {
-  background: var(--cyan-primary);
+  background: var(--orange-cta);
   color: white;
-  box-shadow: 0 4px 14px rgba(0, 85, 164, 0.25);
+  box-shadow: 0 4px 14px var(--orange-glow);
 }
 
 .btn-primary:hover {
-  background: #004080;
+  background: var(--orange-cta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 85, 164, 0.35);
+  box-shadow: 0 8px 20px var(--orange-glow);
 }
 
 .btn-primary:active {
@@ -322,6 +327,21 @@ html.lenis {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
+.card-elevated-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all var(--duration-normal) var(--ease-premium);
+}
+
+.card-elevated-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
 /* Input styles */
 .input-field {
   width: 100%;
@@ -345,7 +365,7 @@ html.lenis {
 
 /* Hero gradient background */
 .hero-gradient {
-  background: linear-gradient(180deg, #002855 0%, #003D7A 50%, #002855 100%);
+  background: linear-gradient(180deg, #001A3A 0%, #002855 35%, #103060 65%, #002855 100%);
   position: relative;
   overflow: hidden;
 }
@@ -357,7 +377,7 @@ html.lenis {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(0, 85, 164, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 0%, rgba(204, 85, 0, 0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 

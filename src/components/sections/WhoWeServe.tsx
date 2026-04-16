@@ -8,17 +8,17 @@ import { INDUSTRIES } from '@/lib/constants';
 export default function WhoWeServe() {
 
   return (
-    <Section background="white" padding>
+    <Section background="navy" padding>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-navy-deep/10 text-navy-deep font-bold text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-orange-cta/20 text-orange-cta font-bold text-sm rounded-full mb-4">
             INDUSTRIES WE TRANSFORM
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-navy-deep mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
             Who We Serve
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-300">
             We specialize in high-stakes industries where every lead counts and
             speed wins deals. Our AI solutions are battle-tested in the most
             competitive Florida markets.
@@ -34,7 +34,7 @@ export default function WhoWeServe() {
               className="industry-card group"
             >
               <Card
-                variant="elevated"
+                variant="elevated-dark"
                 className="p-8 h-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2"
               >
                 {/* Icon & Name */}
@@ -47,22 +47,22 @@ export default function WhoWeServe() {
                   </Badge>
                 </div>
 
-                <h3 className="text-2xl font-black text-navy-deep mb-3 group-hover:text-cyan-primary transition-colors">
+                <h3 className="text-2xl font-black text-white mb-3 group-hover:text-orange-cta transition-colors">
                   {industry.name}
                 </h3>
 
-                <p className="text-gray-600 mb-6">{industry.description}</p>
+                <p className="text-gray-300 mb-6">{industry.description}</p>
 
                 {/* Pain Points */}
                 <div className="mb-6">
-                  <h4 className="font-bold text-sm uppercase tracking-wide text-gray-500 mb-3">
+                  <h4 className="font-bold text-sm uppercase tracking-wide text-gray-400 mb-3">
                     Common Challenges:
                   </h4>
                   <ul className="space-y-2">
                     {industry.challenges.slice(0, 3).map((pain, index) => (
                       <li
                         key={index}
-                        className="flex items-start space-x-2 text-sm text-gray-700"
+                        className="flex items-start space-x-2 text-sm text-gray-300"
                       >
                         <svg
                           className="w-4 h-4 text-alert flex-shrink-0 mt-0.5"
@@ -82,18 +82,18 @@ export default function WhoWeServe() {
                 </div>
 
                 {/* AI Solutions */}
-                <div className="mb-6 p-4 bg-cyan-50 rounded-lg">
-                  <h4 className="font-bold text-sm uppercase tracking-wide text-cyan-primary mb-3">
+                <div className="mb-6 p-4 bg-orange-cta/10 rounded-lg">
+                  <h4 className="font-bold text-sm uppercase tracking-wide text-orange-cta mb-3">
                     AI Solutions:
                   </h4>
                   <ul className="space-y-2">
                     {industry.solutions.slice(0, 3).map((solution, index) => (
                       <li
                         key={index}
-                        className="flex items-start space-x-2 text-sm text-gray-700"
+                        className="flex items-start space-x-2 text-sm text-gray-300"
                       >
                         <svg
-                          className="w-4 h-4 text-cyan-primary flex-shrink-0 mt-0.5"
+                          className="w-4 h-4 text-orange-cta flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -110,7 +110,7 @@ export default function WhoWeServe() {
                 </div>
 
                 {/* View More Link */}
-                <div className="flex items-center text-cyan-primary font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                <div className="flex items-center text-orange-cta font-semibold group-hover:translate-x-2 transition-transform duration-300">
                   <span>See {industry.name} Solutions</span>
                   <svg
                     className="w-5 h-5 ml-2"

@@ -60,11 +60,11 @@ export default function ROICalculator() {
                   step="10"
                   value={monthlyLeads}
                   onChange={(e) => setMonthlyLeads(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-cyan-primary"
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-cta"
                 />
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-sm text-gray-600">10</span>
-                  <span className="text-2xl font-black text-cyan-primary">
+                  <span className="text-2xl font-black text-orange-cta">
                     {monthlyLeads}
                   </span>
                   <span className="text-sm text-gray-600">1000+</span>
@@ -83,11 +83,11 @@ export default function ROICalculator() {
                   step="100"
                   value={avgDealValue}
                   onChange={(e) => setAvgDealValue(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-cyan-primary"
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-cta"
                 />
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-sm text-gray-600">$100</span>
-                  <span className="text-2xl font-black text-cyan-primary">
+                  <span className="text-2xl font-black text-orange-cta">
                     {formatCurrency(avgDealValue)}
                   </span>
                   <span className="text-sm text-gray-600">$10,000+</span>
@@ -106,11 +106,11 @@ export default function ROICalculator() {
                   step="1"
                   value={currentConversionRate}
                   onChange={(e) => setCurrentConversionRate(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-cyan-primary"
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-cta"
                 />
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-sm text-gray-600">5%</span>
-                  <span className="text-2xl font-black text-cyan-primary">
+                  <span className="text-2xl font-black text-orange-cta">
                     {currentConversionRate}%
                   </span>
                   <span className="text-sm text-gray-600">50%</span>
@@ -148,9 +148,9 @@ export default function ROICalculator() {
                   <div className="text-xs text-gray-500">per month</div>
                 </div>
 
-                <div className="p-4 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg border-2 border-cyan-primary">
-                  <div className="text-sm text-cyan-primary mb-1">With AI</div>
-                  <div className="text-2xl font-black text-cyan-primary">
+                <div className="p-4 bg-gradient-to-br from-orange-cta/10 to-navy-deep/10 rounded-lg border-2 border-orange-cta">
+                  <div className="text-sm text-orange-cta mb-1">With AI</div>
+                  <div className="text-2xl font-black text-orange-cta">
                     {formatCurrency(improvedMonthlyRevenue)}
                   </div>
                   <div className="text-xs text-gray-600">per month</div>
@@ -168,11 +168,11 @@ export default function ROICalculator() {
                   </div>
                 </div>
 
-                <div className="p-6 bg-cyan-primary/10 border-l-4 border-cyan-primary rounded-lg">
+                <div className="p-6 bg-orange-cta/10 border-l-4 border-orange-cta rounded-lg">
                   <div className="text-sm text-gray-600 mb-1">
                     Annual Revenue Gain
                   </div>
-                  <div className="text-4xl font-black text-cyan-primary">
+                  <div className="text-4xl font-black text-orange-cta">
                     +{formatCurrency(annualGain)}
                   </div>
                 </div>

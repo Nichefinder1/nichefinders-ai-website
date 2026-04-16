@@ -124,7 +124,7 @@ export default function SixStageTeaser() {
               href="/6-stage-system"
               variant="primary"
               size="lg"
-              className="min-w-[240px] shadow-xl shadow-cyan-primary/30"
+              className="min-w-[240px] shadow-xl shadow-orange-cta/30"
             >
               Explore the Full System
             </Button>

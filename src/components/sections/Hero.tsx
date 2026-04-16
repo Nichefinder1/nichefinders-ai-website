@@ -85,7 +85,7 @@ export default function Hero() {
                 href={CALENDAR_LINK}
                 variant="primary"
                 size="lg"
-                className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
+                className="min-w-[280px] shadow-2xl shadow-orange-cta/50 text-lg font-bold py-4 px-8"
                 external
               >
                 Book Your Discovery Call
@@ -120,7 +120,7 @@ export default function Hero() {
               { value: '<5min', label: 'Response time with AI' },
             ].map((stat, index) => (
               <div key={index} className="text-center relative z-20">
-                <div className="text-4xl md:text-5xl font-black text-cyan-light mb-2">
+                <div className="text-4xl md:text-5xl font-black text-[#E8EDF2] mb-2">
                   {stat.value}
                 </div>
                 <div className="text-gray-300 text-sm uppercase tracking-wide">

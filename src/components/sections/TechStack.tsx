@@ -45,17 +45,17 @@ export default function TechStack() {
   }, []);
 
   return (
-    <Section background="white" padding>
+    <Section background="navy" padding>
       <Container size="full">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 px-6">
-          <span className="inline-block px-4 py-1.5 bg-navy-deep/10 text-navy-deep font-bold text-sm rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-orange-cta/20 text-orange-cta font-bold text-sm rounded-full mb-4">
             OUR TECHNOLOGY
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-navy-deep mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
             Powered by Best-in-Class Tools
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-300">
             We leverage the most powerful AI and automation platforms to build
             custom solutions that actually work for your business.
           </p>
@@ -64,8 +64,8 @@ export default function TechStack() {
         {/* Infinite Scroll Marquee */}
         <div className="relative overflow-hidden py-8">
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-navy-deep to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-navy-deep to-transparent z-10 pointer-events-none" />
 
           {/* Marquee Container */}
           <div
@@ -78,18 +78,15 @@ export default function TechStack() {
                 key={index}
                 className="tech-item flex-shrink-0 group cursor-pointer"
               >
-                <div className="px-8 py-6 bg-white border-2 border-gray-200 rounded-xl hover:border-cyan-primary hover:shadow-lg transition-all duration-300 flex items-center space-x-4">
-                  {/* Icon/Logo Placeholder */}
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-primary/20 to-navy-deep/20 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                <div className="px-8 py-6 bg-white/5 border-2 border-white/10 rounded-xl hover:border-orange-cta/50 hover:shadow-lg transition-all duration-300 flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-cta/20 to-navy-deepest/40 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                     {tech.icon}
                   </div>
-
-                  {/* Tech Info */}
                   <div>
-                    <div className="font-black text-navy-deep text-lg group-hover:text-cyan-primary transition-colors">
+                    <div className="font-black text-white text-lg group-hover:text-orange-cta transition-colors">
                       {tech.name}
                     </div>
-                    <div className="text-sm text-gray-600">{tech.category}</div>
+                    <div className="text-sm text-gray-400">{tech.category}</div>
                   </div>
                 </div>
               </div>
@@ -128,14 +125,14 @@ export default function TechStack() {
             ].map((category, index) => (
               <div
                 key={index}
-                className="text-center p-6 bg-gray-50 rounded-xl hover:bg-cyan-50 transition-colors"
+                className="text-center p-6 bg-white/5 rounded-xl hover:bg-white/8 transition-colors"
               >
                 <div className="text-5xl mb-4">{category.icon}</div>
-                <h3 className="text-xl font-bold text-navy-deep mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {category.title}
                 </h3>
-                <p className="text-gray-600 mb-2">{category.description}</p>
-                <div className="text-sm font-semibold text-cyan-primary">
+                <p className="text-gray-400 mb-2">{category.description}</p>
+                <div className="text-sm font-semibold text-orange-cta">
                   {category.count}
                 </div>
               </div>
@@ -145,18 +142,18 @@ export default function TechStack() {
 
         {/* Bottom CTA */}
         <div className="mt-16 px-6 text-center max-w-2xl mx-auto">
-          <div className="p-8 bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-primary/30 rounded-2xl">
-            <h3 className="text-2xl font-black text-navy-deep mb-3">
+          <div className="p-8 bg-white/5 border-2 border-orange-cta/20 rounded-2xl">
+            <h3 className="text-2xl font-black text-white mb-3">
               Custom Tech Stack for Every Client
             </h3>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-300 mb-6">
               We don't force you into our favorite tools. We analyze your
               existing systems and build the perfect automation stack for your
               unique needs.
             </p>
             <a
               href="/6-stage-system"
-              className="inline-flex items-center text-cyan-primary font-bold hover:text-cyan-dark transition-colors"
+              className="inline-flex items-center text-orange-cta font-bold hover:text-orange-hover transition-colors"
             >
               <span>See How We Choose the Right Tools</span>
               <svg
