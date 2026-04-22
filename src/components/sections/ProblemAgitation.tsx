@@ -71,11 +71,11 @@ export default function ProblemAgitation() {
               <span className="inline-block px-4 py-1.5 bg-alert/10 text-alert font-bold text-sm rounded-full mb-4">
                 THE PROBLEM
               </span>
-              <h2 className="text-3xl lg:text-4xl font-black text-navy-deep mb-4">
+              <h2 className="font-header text-3xl lg:text-4xl font-bold text-navy-deep mb-4">
                 Your Business Is Hemorrhaging Money
               </h2>
               <p className="text-lg text-gray-700">
-                While you're busy running your business, opportunities slip
+                While you&apos;re busy running your business, opportunities slip
                 through the cracks every single day.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function ProblemAgitation() {
 
             <div className="mt-8 p-6 bg-alert/5 border border-alert/20 rounded-lg">
               <p className="text-sm font-semibold text-gray-700 text-center">
-                Sound familiar? You're not alone. But there's a better way...
+                Sound familiar? You&apos;re not alone. But there&apos;s a better way...
               </p>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function ProblemAgitation() {
               <span className="inline-block px-4 py-1.5 bg-cyan-primary/10 text-cyan-primary font-bold text-sm rounded-full mb-4">
                 THE SOLUTION
               </span>
-              <h2 className="text-3xl lg:text-4xl font-black text-navy-deep mb-4">
+              <h2 className="font-header text-3xl lg:text-4xl font-bold text-navy-deep mb-4">
                 AI Automation That Actually Delivers
               </h2>
               <p className="text-lg text-gray-700">

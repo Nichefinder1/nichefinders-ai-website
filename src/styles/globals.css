@@ -17,6 +17,11 @@
   --green-success: #10B981;
   --coral-alert: #FF6B6B;
 
+  /* Blue glow */
+  --blue-glow: rgba(30, 120, 255, 0.18);
+  --blue-glow-strong: rgba(56, 152, 255, 0.28);
+  --blue-glow-color: #3B82F6;
+
   /* Typography */
   --font-header: var(--font-satoshi), var(--font-poppins);
   --font-body: var(--font-inter);
@@ -331,7 +336,6 @@ html.lenis {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
-  padding: 2rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all var(--duration-normal) var(--ease-premium);
 }
@@ -379,5 +383,38 @@ html.lenis {
   bottom: 0;
   background: radial-gradient(circle at 50% 0%, rgba(204, 85, 0, 0.08) 0%, transparent 50%);
   pointer-events: none;
+}
+
+/* Section bottom glow — Evervault-style pulsing blue radial */
+@keyframes section-glow-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.08);
+  }
+}
+
+.section-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-glow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 180px;
+  background: radial-gradient(ellipse 60% 100% at 50% 100%, var(--blue-glow-strong) 0%, transparent 75%);
+  pointer-events: none;
+  animation: section-glow-pulse 4s ease-in-out infinite;
+}
+
+.font-display {
 }
 

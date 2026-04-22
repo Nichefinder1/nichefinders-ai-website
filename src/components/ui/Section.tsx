@@ -4,10 +4,11 @@ import { HTMLAttributes, forwardRef } from 'react';
 type SectionProps = HTMLAttributes<HTMLElement> & {
   padding?: boolean;
   background?: 'white' | 'gray' | 'navy' | 'navy-medium' | 'navy-deepest' | 'gradient';
+  glow?: boolean;
 };
 
 const Section = forwardRef<HTMLElement, SectionProps>(
-  ({ padding = true, background = 'white', children, className, ...props }, ref) => {
+  ({ padding = true, background = 'white', glow = false, children, className, ...props }, ref) => {
     const backgrounds = {
       white: 'bg-white',
       gray: 'bg-gray-light',
@@ -23,6 +24,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
         className={cn(
           padding && 'section-padding',
           backgrounds[background],
+          glow && 'section-glow',
           className
         )}
         {...props}

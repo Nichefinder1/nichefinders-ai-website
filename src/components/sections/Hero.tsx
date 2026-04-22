@@ -1,11 +1,9 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Button from '@/components/ui/Button';
-import MagneticButton from '@/components/ui/MagneticButton';
-import Container from '@/components/ui/Container';
 import { CALENDAR_LINK } from '@/lib/constants';
 
 if (typeof window !== 'undefined') {
@@ -22,7 +20,6 @@ export default function Hero() {
 
     if (!hero || !background) return;
 
-    // Parallax scroll effect on background
     gsap.to(background, {
       y: '30%',
       ease: 'none',
@@ -42,101 +39,86 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-32 md:pt-40"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40"
+      style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 45%, #001A3A 100%)' }}
     >
-      {/* Animated Background */}
+      {/* Parallax background layer */}
       <div
         ref={backgroundRef}
         className="absolute inset-0 z-0"
         style={{ willChange: 'transform' }}
       >
-        {/* Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-navy-deep/30 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Blue radial glow from top center */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(circle at 50% 0%, rgba(0,85,164,0.22) 0%, transparent 55%)' }}
+          aria-hidden="true"
+        />
 
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
-            }}
-          />
-        </div>
+        {/* Subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+                               linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+          }}
+          aria-hidden="true"
+        />
       </div>
 
       {/* Content */}
-      <Container size="lg" className="relative z-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Headline */}
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 leading-tight relative z-20"
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full">
+
+        {/* Eyebrow */}
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-6">
+          Nichefinders AI Agency
+        </p>
+
+        {/* Headline */}
+        <h1
+          className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6 whitespace-pre-line"
+        >
+          {'Your Business Is Manual.\n'}
+          <span
+            className="text-transparent bg-clip-text"
+            style={{ backgroundImage: 'linear-gradient(90deg, #C8D9E6 0%, #7aafd4 100%)' }}
           >
-            <span className="block">Transform Your Business With</span>
-            <span className="block text-gradient">Revenue-Generating AI</span>
-          </h1>
+            AI Changes That.
+          </span>
+        </h1>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 relative z-20">
-            <MagneticButton strength={0.5}>
-              <Button
-                href={CALENDAR_LINK}
-                variant="primary"
-                size="lg"
-                className="min-w-[280px] shadow-2xl shadow-orange-cta/50 text-lg font-bold py-4 px-8"
-                external
-              >
-                Book Your Discovery Call
-              </Button>
-            </MagneticButton>
-            <MagneticButton strength={0.5}>
-              <Button
-                href="/6-stage-system"
-                variant="secondary"
-                size="lg"
-                className="min-w-[280px] text-lg font-bold py-4 px-8"
-              >
-                Explore Our 6-Stage System
-              </Button>
-            </MagneticButton>
-          </div>
+        {/* Subheadline */}
+        <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+          We architect, install, and operate a custom AI Operating System built around your business
+          so you stop losing revenue to missed leads and manual work.
+        </p>
 
-          {/* Subheadline */}
-          <p
-            className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed max-w-3xl mx-auto relative z-20"
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href={CALENDAR_LINK}
+            className="inline-flex items-center justify-center px-8 py-4 bg-orange-cta hover:bg-orange-hover text-white font-bold text-base uppercase tracking-wide rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5 min-w-[260px]"
           >
-            Stop losing revenue to manual processes. Our proven 6-Stage System
-            automates lead capture, follow-up, and conversion—so you close more
-            deals while working less.
-          </p>
-
-          {/* Stats */}
-          <div className="mt-4 mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { value: '50%+', label: 'Of leads never get follow-up' },
-              { value: '3x', label: 'Average ROI with AI automation' },
-              { value: '<5min', label: 'Response time with AI' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center relative z-20">
-                <div className="text-4xl md:text-5xl font-black text-[#E8EDF2] mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-gray-300 text-sm uppercase tracking-wide">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+            Book a Discovery Call
+          </Link>
+          <Link
+            href="/ai-os-partner-program"
+            className="inline-flex items-center justify-center px-8 py-[0.9rem] text-white border border-white/35 hover:border-white hover:bg-white/5 rounded font-semibold text-base transition-all duration-200 min-w-[260px]"
+          >
+            See the AI OS Partner Program
+          </Link>
         </div>
-      </Container>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden md:block">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-        </div>
+      </div>
+
+      {/* Scroll hint */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hidden md:flex" aria-hidden="true">
+        <span className="text-[0.7rem] tracking-[0.15em] uppercase text-white/40">Scroll</span>
+        <div
+          className="w-[2px] h-12 opacity-60"
+          style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.3), #CC5500)' }}
+        />
       </div>
     </section>
   );

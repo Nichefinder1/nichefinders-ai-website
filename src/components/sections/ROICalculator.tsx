@@ -31,7 +31,7 @@ export default function ROICalculator() {
           <span className="inline-block px-4 py-1.5 bg-cyan-primary/10 text-cyan-primary font-bold text-sm rounded-full mb-4">
             INTERACTIVE TOOL
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-navy-deep mb-6">
+          <h2 className="font-header text-4xl lg:text-5xl font-bold text-navy-deep mb-6">
             Calculate Your AI ROI in 60 Seconds
           </h2>
           <p className="text-xl text-gray-600">
@@ -43,7 +43,7 @@ export default function ROICalculator() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left: Input Form */}
           <Card variant="elevated" className="p-8 bg-white">
-            <h3 className="text-2xl font-black text-navy-deep mb-6">
+            <h3 className="text-2xl font-bold text-navy-deep mb-6">
               Your Current Metrics
             </h3>
 
@@ -135,7 +135,7 @@ export default function ROICalculator() {
           <div className="space-y-6">
             {/* Current vs Improved */}
             <Card variant="gradient-border" className="p-8 bg-white">
-              <h3 className="text-2xl font-black text-navy-deep mb-6">
+              <h3 className="text-2xl font-bold text-navy-deep mb-6">
                 Your Potential Results
               </h3>
 

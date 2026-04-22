@@ -45,14 +45,14 @@ export default function TechStack() {
   }, []);
 
   return (
-    <Section background="navy" padding>
+    <Section background="navy" padding glow>
       <Container size="full">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 px-6">
           <span className="inline-block px-4 py-1.5 bg-orange-cta/20 text-orange-cta font-bold text-sm rounded-full mb-4">
             OUR TECHNOLOGY
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
+          <h2 className="font-header text-4xl lg:text-5xl font-bold text-white mb-6">
             Powered by Best-in-Class Tools
           </h2>
           <p className="text-xl text-gray-300">
@@ -143,7 +143,7 @@ export default function TechStack() {
         {/* Bottom CTA */}
         <div className="mt-16 px-6 text-center max-w-2xl mx-auto">
           <div className="p-8 bg-white/5 border-2 border-orange-cta/20 rounded-2xl">
-            <h3 className="text-2xl font-black text-white mb-3">
+            <h3 className="text-2xl font-bold text-white mb-3">
               Custom Tech Stack for Every Client
             </h3>
             <p className="text-gray-300 mb-6">

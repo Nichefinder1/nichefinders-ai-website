@@ -1,253 +1,143 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { SERVICES, CALENDAR_LINK } from '@/lib/constants';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+const pillarConfig: { [key: string]: { color: string; glow: string; icon: React.JSX.Element } } = {
+  'ai-consulting': {
+    color: '#CC5500',
+    glow: 'rgba(204,85,0,0.2)',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+  },
+  'custom-ai-development': {
+    color: '#0055A4',
+    glow: 'rgba(0,85,164,0.25)',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  'ai-powered-marketing': {
+    color: '#10B981',
+    glow: 'rgba(16,185,129,0.2)',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
+  },
+  'ai-education-training': {
+    color: '#7C3AED',
+    glow: 'rgba(124,58,237,0.2)',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+  },
+};
 
 export default function FourPillars() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const scrollContainer = scrollContainerRef.current;
-    const cardsContainer = cardsContainerRef.current;
-
-    if (!section || !scrollContainer || !cardsContainer) return;
-
-    // Horizontal scroll animation
-    const cards = cardsContainer.querySelectorAll('.pillar-card');
-
-    // Calculate total scroll distance needed
-    const cardWidth = cards[0]?.getBoundingClientRect().width || 600;
-    const gap = 32; // space-x-8 = 32px
-    const totalScrollWidth = (cardWidth + gap) * cards.length;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: scrollContainer,
-        start: 'top -55%',
-        end: () => `+=${totalScrollWidth * 1.2}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    tl.to(cardsContainer, {
-      x: () => -(cardsContainer.scrollWidth - window.innerWidth),
-      ease: 'none',
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   return (
-    <Section ref={sectionRef} background="navy-medium" padding={false}>
-      <div ref={scrollContainerRef} className="relative overflow-hidden">
+    <Section background="navy-medium" padding={false} glow>
+      <Container size="xl" className="py-20 md:py-28">
         {/* Section Header */}
-        <Container size="lg" className="py-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block px-4 py-1.5 bg-orange-cta/20 text-orange-cta font-bold text-sm rounded-full mb-4">
-              OUR APPROACH
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
-              The 4 Pillars of AI Transformation
-            </h2>
-            <p className="text-xl text-gray-300">
-              Every business is unique, but success follows a proven path. Our
-              4-pillar approach ensures you get results, not just technology.
-            </p>
-          </div>
-        </Container>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">
+            Our Approach
+          </p>
+          <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            The 4 Pillars of AI Transformation
+          </h2>
+          <p className="text-white/70 text-lg leading-relaxed">
+            Every business is unique, but success follows a proven path. Our
+            4-pillar approach ensures you get results, not just technology.
+          </p>
+        </div>
 
-        {/* Horizontal Scroll Cards */}
-        <div className="py-20 min-h-screen flex items-center">
-          <div
-            ref={cardsContainerRef}
-            className="flex space-x-8 pl-[10vw] md:pl-[calc(50vw-220px)] pr-[10vw] md:pr-[calc(50vw-220px)]"
-            style={{ width: 'max-content' }}
-          >
-            {SERVICES.map((service, index) => {
-              // Dynamic icons for each pillar
-              const pillarIcons: { [key: string]: React.JSX.Element } = {
-                'ai-consulting': (
-                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                ),
-                'custom-ai-development': (
-                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                ),
-                'ai-powered-marketing': (
-                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                ),
-                'ai-education-training': (
-                  <svg className="w-16 h-16 text-orange-cta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                ),
-              };
-
-              return (
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {SERVICES.map((service, index) => {
+            const config = pillarConfig[service.slug];
+            return (
               <Card
                 key={service.slug}
                 variant="elevated-dark"
-                className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7"
+                className="p-6 md:p-8"
+                style={{ borderTop: `3px solid ${config?.color}` }}
               >
-                {/* Pillar Icon */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 bg-orange-cta/20 rounded-xl">
-                    {pillarIcons[service.slug]}
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center"
+                    style={{
+                      background: config?.glow,
+                      border: `1.5px solid ${config?.color}`,
+                      boxShadow: `0 0 16px ${config?.glow}`,
+                      color: config?.color,
+                    }}
+                  >
+                    {config?.icon}
                   </div>
-                  <div className="text-4xl">{service.icon}</div>
+                  <span className="text-xs font-bold tracking-widest mt-1" style={{ color: config?.color }}>
+                    0{index + 1}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="mb-5">
-                  <h3 className="text-2xl font-black text-white mb-3">
-                    {service.name}
-                  </h3>
-                  <p className="text-base text-gray-300 mb-4 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+                <h3 className="font-header font-bold text-2xl text-white mb-3">{service.name}</h3>
+                <p className="text-white/60 text-base mb-5 leading-relaxed">{service.description}</p>
 
-                {/* Key Features */}
-                <div className="space-y-2 mb-5">
-                  <h4 className="font-bold text-white uppercase text-sm tracking-wide">
-                    What You Get:
-                  </h4>
-                  <ul className="space-y-2">
-                    {service.deliverables.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start space-x-2 text-gray-300 text-sm leading-relaxed"
-                      >
-                        <svg
-                          className="w-4 h-4 text-orange-cta flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="space-y-2 mb-5">
+                  {service.deliverables.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-white/60 text-sm leading-relaxed">
+                      <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: config?.color }} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-                {/* Details */}
-                <div className="mb-5 p-4 bg-white/5 rounded-lg">
-                  <h4 className="font-bold text-white mb-2 text-sm uppercase tracking-wide">
-                    What You Get:
-                  </h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">{service.details}</p>
-                </div>
-
-                {/* CTA */}
                 <Button
                   href={`/solutions/${service.slug}`}
                   variant="primary"
                   size="md"
-                  className="w-full justify-center text-base"
+                  className="w-full justify-center"
                 >
                   Learn More About {service.name}
                 </Button>
               </Card>
-              );
-            })}
-
-            {/* Final CTA Card */}
-            <Card
-              variant="gradient-border"
-              className="pillar-card flex-shrink-0 w-[80vw] md:w-[440px] p-6 md:p-7 bg-gradient-to-br from-orange-cta to-navy-deepest text-white flex flex-col items-center justify-center text-center"
-            >
-              <h3 className="text-xl font-black mb-2">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-sm mb-4 text-white/90 max-w-xs leading-snug">
-                Let's build a custom AI strategy that combines all four pillars
-                for maximum impact.
-              </p>
-              <Button
-                href={CALENDAR_LINK}
-                external
-                variant="secondary"
-                size="md"
-                className="bg-white text-navy-deep hover:bg-gray-100 text-sm"
-              >
-                Book Your Discovery Call
-              </Button>
-            </Card>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Scroll Hint */}
-        <div className="absolute top-1/2 right-8 -translate-y-1/2 hidden md:flex flex-col items-center gap-12">
-          {/* Arrow with background */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-orange-cta/10 rounded-full blur-lg"></div>
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-full p-3 border border-white/20 shadow-lg">
-              <svg
-                className="w-5 h-5 text-orange-cta animate-bounce-horizontal"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
+        {/* CTA Card */}
+        <div
+          className="rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{ background: '#CC5500' }}
+        >
+          <div>
+            <h3 className="font-header font-bold text-2xl text-white mb-2">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-white/90 text-base leading-relaxed max-w-lg">
+              Let&apos;s build a custom AI strategy that combines all four pillars for maximum impact.
+            </p>
           </div>
-
-          {/* Scroll text */}
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] rotate-90 origin-center whitespace-nowrap text-white/50">
-            Scroll
-          </span>
+          <Button
+            href={CALENDAR_LINK}
+            external
+            variant="secondary"
+            size="md"
+            className="border-white text-white hover:bg-white hover:text-orange-cta font-bold shrink-0"
+          >
+            Book Your Discovery Call
+          </Button>
         </div>
-      </div>
-
-      {/* Custom animation for horizontal bounce */}
-      <style jsx>{`
-        @keyframes bounce-horizontal {
-          0%,
-          100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(10px);
-          }
-        }
-        .animate-bounce-horizontal {
-          animation: bounce-horizontal 2s infinite;
-        }
-      `}</style>
+      </Container>
     </Section>
   );
 }

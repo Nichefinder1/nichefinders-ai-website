@@ -66,14 +66,14 @@ export default function SocialProof() {
   }, []);
 
   return (
-    <Section ref={sectionRef} background="navy-medium" padding>
+    <Section ref={sectionRef} background="navy-medium" padding glow>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 bg-success/10 text-success font-bold text-sm rounded-full mb-4">
             PROVEN RESULTS
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
+          <h2 className="font-header text-4xl lg:text-5xl font-bold text-white mb-6">
             Real Businesses, Real Results
           </h2>
           <p className="text-xl text-gray-300">

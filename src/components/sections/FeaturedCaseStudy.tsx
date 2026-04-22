@@ -11,14 +11,14 @@ export default function FeaturedCaseStudy() {
   const featured = CASE_STUDIES[0];
 
   return (
-    <Section background="navy" padding>
+    <Section background="navy" padding glow>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block px-4 py-1.5 bg-success/20 text-success font-bold text-sm rounded-full mb-4">
             SUCCESS STORY
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-white mb-6">
+          <h2 className="font-header text-4xl lg:text-5xl font-bold text-white mb-6">
             See What's Possible
           </h2>
           <p className="text-xl text-gray-300">
@@ -134,7 +134,7 @@ export default function FeaturedCaseStudy() {
               {/* Company Info */}
               <div className="mb-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <h3 className="text-3xl font-black text-navy-deep">
+                  <h3 className="text-3xl font-bold text-navy-deep">
                     {featured.client.name}
                   </h3>
                   <Badge variant="secondary" size="sm">

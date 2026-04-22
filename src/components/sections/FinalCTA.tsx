@@ -10,7 +10,7 @@ import { CALENDAR_LINK } from '@/lib/constants';
 export default function FinalCTA() {
 
   return (
-    <Section background="gradient" padding>
+    <Section background="gradient" padding glow>
       <Container size="lg">
         <div
           className="text-center max-w-4xl mx-auto text-white"
@@ -21,7 +21,7 @@ export default function FinalCTA() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+          <h2 className="font-header text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="block">Stop Losing Money</span>
             <span className="block">to Manual Processes</span>
           </h2>

@@ -37,6 +37,7 @@ const spaceMono = Space_Mono({
   display: 'swap',
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://nichefinders.ai'),
   title: {

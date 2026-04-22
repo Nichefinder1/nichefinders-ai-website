@@ -33,6 +33,11 @@ const config: Config = {
           DEFAULT: '#64748b',
           dark: '#475569',
         },
+        blue: {
+          glow: '#3B82F6',
+          'glow-soft': 'rgba(30, 120, 255, 0.18)',
+          'glow-strong': 'rgba(56, 152, 255, 0.28)',
+        },
         success: '#10B981',
         alert: '#FF6B6B',
       },
@@ -67,7 +72,7 @@ const config: Config = {
         'elevated': '0 10px 40px rgba(0, 0, 0, 0.08)',
         'premium': '0 20px 60px rgba(0, 0, 0, 0.12)',
         'cta-glow': '0 8px 20px rgba(204, 85, 0, 0.35)',
-        'cta-glow-lg': '0 12px 32px rgba(204, 85, 0, 0.45)',
+        'cta-glow-lg': '0 8px 20px rgba(204, 85, 0, 0.25)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
