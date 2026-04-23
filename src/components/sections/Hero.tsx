@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40"
+      className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-32 md:pt-40"
       style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 45%, #001A3A 100%)' }}
     >
       {/* Parallax background layer */}
@@ -68,7 +68,8 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full pb-24 md:pb-28">
+      <div className="relative z-10 flex-1 flex items-center justify-center">
+      <div className="text-center px-6 max-w-4xl mx-auto w-full">
 
         {/* Eyebrow */}
         <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-6">
@@ -109,11 +110,11 @@ export default function Hero() {
             See the AI OS Partner Program
           </Link>
         </div>
-
+      </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hidden md:flex" aria-hidden="true">
+      {/* Scroll hint — always below content */}
+      <div className="relative z-10 hidden md:flex flex-col items-center gap-2 pb-8" aria-hidden="true">
         <span className="text-[0.7rem] tracking-[0.15em] uppercase text-white/40">Scroll</span>
         <div
           className="w-[2px] h-12 opacity-60"
