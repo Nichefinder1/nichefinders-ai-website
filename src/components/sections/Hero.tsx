@@ -68,7 +68,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full pb-24 md:pb-28">
 
         {/* Eyebrow */}
         <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-6">
