@@ -114,7 +114,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll hint — always below content */}
-      <div className="relative z-10 hidden md:flex flex-col items-center gap-2 pb-8" aria-hidden="true">
+      <div className="relative z-10 hidden md:flex flex-col items-center gap-2 pt-12 pb-10" aria-hidden="true">
         <span className="text-[0.7rem] tracking-[0.15em] uppercase text-white/40">Scroll</span>
         <div
           className="w-[2px] h-12 opacity-60"
