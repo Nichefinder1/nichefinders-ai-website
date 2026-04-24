@@ -48,29 +48,26 @@ const TECH_ITEMS = [
     ),
   },
   {
-    name: 'Make',
-    category: 'Automation',
-    bg: '#6d00cc',
+    name: 'Supabase',
+    category: 'Database',
+    bg: '#3ecf8e',
     logo: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-        <circle cx="6" cy="12" r="2.5"/>
-        <circle cx="12" cy="7" r="2.5"/>
-        <circle cx="18" cy="12" r="2.5"/>
-        <circle cx="12" cy="17" r="2.5"/>
-        <line x1="8" y1="11" x2="10.5" y2="8.5" stroke="white" strokeWidth="1.5"/>
-        <line x1="13.5" y1="8.5" x2="16" y2="11" stroke="white" strokeWidth="1.5"/>
-        <line x1="16" y1="13" x2="13.5" y2="15.5" stroke="white" strokeWidth="1.5"/>
-        <line x1="10.5" y1="15.5" x2="8" y2="13" stroke="white" strokeWidth="1.5"/>
+        <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.33c-.63.795-.07 1.95.9 1.95h8.272l-.077 9.036c.015.986 1.26 1.41 1.874.637l9.261-11.931c.63-.795.07-1.95-.9-1.95h-8.272l.077-9.036z"/>
       </svg>
     ),
   },
   {
-    name: 'Zapier',
-    category: 'Automation',
-    bg: '#ff4a00',
+    name: 'LangChain',
+    category: 'AI Framework',
+    bg: '#1C3A47',
     logo: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="6" cy="12" r="2"/>
+        <circle cx="18" cy="12" r="2"/>
+        <circle cx="12" cy="6" r="2"/>
+        <circle cx="12" cy="18" r="2"/>
+        <path d="M8 12h4M14 12h2M12 8v2M12 14v2"/>
       </svg>
     ),
   },
@@ -85,24 +82,24 @@ const TECH_ITEMS = [
     ),
   },
   {
-    name: 'HubSpot',
-    category: 'CRM',
-    bg: '#ff7a59',
+    name: 'Docker',
+    category: 'Infrastructure',
+    bg: '#2496ed',
     logo: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-        <path d="M15 8.5V6a2 2 0 10-2 0v2.5a3.5 3.5 0 00-1.5 6.6V18a2 2 0 102 0v-2.9A3.5 3.5 0 0015 8.5z"/>
-        <circle cx="7" cy="10" r="3"/>
-        <path d="M7 13v5"/>
+        <path d="M13 6h2v2h-2zM10 6h2v2h-2zM7 6h2v2H7zM10 9h2v2h-2zM7 9h2v2H7zM4 9h2v2H4zM7 12h2v2H7zM4 12h2v2H4zM13 9h2v2h-2z"/>
+        <path d="M22 11.5c-.4-.3-1.3-.4-2-.3-.1-.7-.5-1.3-1.1-1.7l-.4-.2-.2.4c-.3.5-.4 1.3-.3 1.9-.5-.3-1.3-.4-2.5-.4H2.5c-.3 1.6.1 3.7 1.3 5.1.9 1.1 2.3 1.7 4.2 1.7 4 0 7-1.8 8.9-5 1.1 0 3.4.1 4.5-2.2l.1-.3-.5-.3z"/>
       </svg>
     ),
   },
   {
-    name: 'Salesforce',
-    category: 'CRM',
-    bg: '#00a1e0',
+    name: 'Pinecone',
+    category: 'Vector DB',
+    bg: '#1a1a2e',
     logo: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-        <path d="M10 4a4 4 0 014 4 4 4 0 01-.2 1.3A3.5 3.5 0 0117 12.5a3.5 3.5 0 01-3.5 3.5H7A3.5 3.5 0 013.5 12.5a3.5 3.5 0 012.8-3.43A4 4 0 0110 4z"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l2 5h5l-4 3 1.5 5L12 12l-4.5 3L9 10 5 7h5z"/>
+        <path d="M12 12v8" strokeWidth="1.5"/>
       </svg>
     ),
   },
