@@ -11,13 +11,13 @@ export default function FeaturedCaseStudy() {
   const featured = CASE_STUDIES[0];
 
   return (
-    <Section background="navy" padding glow>
+    <Section background="navy-deepest" padding glow>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-1.5 bg-success/20 text-success font-bold text-sm rounded-full mb-4">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">
             SUCCESS STORY
-          </span>
+          </p>
           <h2 className="font-header text-4xl lg:text-5xl font-bold text-white mb-6">
             See What's Possible
           </h2>

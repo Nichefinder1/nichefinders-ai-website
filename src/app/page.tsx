@@ -3,7 +3,6 @@ import ProblemAgitation from '@/components/sections/ProblemAgitation';
 import FourPillars from '@/components/sections/FourPillars';
 import SixStageTeaser from '@/components/sections/SixStageTeaser';
 import WhoWeServe from '@/components/sections/WhoWeServe';
-import SocialProof from '@/components/sections/SocialProof';
 import TechStack from '@/components/sections/TechStack';
 import FeaturedCaseStudy from '@/components/sections/FeaturedCaseStudy';
 import ROICalculator from '@/components/sections/ROICalculator';
@@ -66,9 +65,6 @@ export default function HomePage() {
 
       {/* Who We Serve - Industries Grid */}
       <WhoWeServe />
-
-      {/* Social Proof - Stats & Testimonials */}
-      <SocialProof />
 
       {/* Tech Stack - Infinite Marquee */}
       <TechStack />

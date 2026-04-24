@@ -385,17 +385,6 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Section bottom glow — Evervault-style pulsing blue radial */
-@keyframes section-glow-pulse {
-  0%, 100% {
-    opacity: 0.55;
-    transform: scaleX(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleX(1.08);
-  }
-}
 
 .section-glow {
   position: relative;
@@ -406,14 +395,17 @@ html.lenis {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 180px;
-  background: radial-gradient(ellipse 60% 100% at 50% 100%, var(--blue-glow-strong) 0%, transparent 75%);
+  left: 0;
+  width: 100%;
+  height: 320px;
+  background:
+    radial-gradient(ellipse 60% 100% at 0% 100%, var(--blue-glow-strong) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 100% at 50% 100%, var(--blue-glow-strong) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 100% at 100% 100%, var(--blue-glow-strong) 0%, transparent 70%);
   pointer-events: none;
-  animation: section-glow-pulse 4s ease-in-out infinite;
+  z-index: 0;
 }
+
 
 .font-display {
 }

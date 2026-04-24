@@ -8,13 +8,13 @@ import { INDUSTRIES } from '@/lib/constants';
 export default function WhoWeServe() {
 
   return (
-    <Section background="navy" padding glow>
+    <Section background="navy-deepest" padding glow>
       <Container size="lg">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-orange-cta/20 text-orange-cta font-bold text-sm rounded-full mb-4">
-            INDUSTRIES WE TRANSFORM
-          </span>
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">
+            Industries We Transform
+          </p>
           <h2 className="font-header text-4xl lg:text-5xl font-bold text-white mb-6">
             Who We Serve
           </h2>
