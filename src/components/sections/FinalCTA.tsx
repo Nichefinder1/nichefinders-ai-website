@@ -11,7 +11,7 @@ export default function FinalCTA() {
 
   return (
     <Section background="gradient" padding glow className="border-b border-blue-900/80" style={{ boxShadow: '0 4px 40px rgba(0,40,100,0.5)' }}>
-      <Container size="lg">
+      <Container size="lg" className="pb-20 md:pb-28">
         <div
           className="text-center max-w-4xl mx-auto text-white"
         >

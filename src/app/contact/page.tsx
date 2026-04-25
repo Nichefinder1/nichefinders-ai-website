@@ -1,8 +1,7 @@
 import Script from 'next/script';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
-import Card from '@/components/ui/Card';
-import Badge from '@/components/ui/Badge';
+import Button from '@/components/ui/Button';
 
 export const metadata = {
   title: 'Contact Us | Book Your AI Automation Discovery Call',
@@ -10,135 +9,134 @@ export const metadata = {
     'Book a discovery call with NicheFinders AI. Get a custom AI automation strategy for your Florida business. Expert consultation for Tampa, Jacksonville, Miami, Orlando businesses.',
 };
 
+const steps = [
+  {
+    step: 1,
+    title: 'Tell Us About Your Business',
+    description: "We'll ask about your current processes, pain points, and goals. No judgments, just understanding.",
+  },
+  {
+    step: 2,
+    title: "We'll Identify Opportunities",
+    description: "Based on your situation, we'll show you exactly where AI automation can have the biggest impact.",
+  },
+  {
+    step: 3,
+    title: 'Get a Custom Roadmap',
+    description: "You'll leave with a clear picture of what's possible, realistic timelines, and ballpark ROI estimates.",
+  },
+  {
+    step: 4,
+    title: "Decide if We're a Fit",
+    description: "No pressure. If we're not the right solution for you, we'll tell you. If we are, we'll discuss next steps.",
+  },
+];
+
+const faqs = [
+  { question: 'How long does implementation take?', answer: 'Most clients see their AI systems live in 6-9 weeks. Exact timeline depends on complexity and your existing tech stack.' },
+  { question: "What if I'm not tech-savvy?", answer: "Perfect. We handle all the technical work and train your team to use the systems. You don't need any technical knowledge." },
+  { question: 'Do you work with businesses outside Florida?', answer: 'While Florida is our primary market, we serve clients nationwide. Our proven systems work for businesses in any location.' },
+  { question: "What's your pricing model?", answer: "We'll discuss pricing on the discovery call based on your specific needs. Most clients see 4-10x ROI in the first year." },
+  { question: 'Can I see examples of your work?', answer: 'Check our case studies page to see real results from businesses just like yours.' },
+  { question: 'Do you offer ongoing support?', answer: 'Yes. We provide training, optimization, and support to ensure you get maximum value from your AI systems.' },
+];
+
 export default function ContactPage() {
   return (
-    <main>
+    <main style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 45%, #001A3A 100%)' }}>
+
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient pt-32 pb-20">
-        {/* Animated Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-primary/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-navy-deep/30 rounded-full blur-3xl animate-pulse delay-1000" />
+      <section className="relative pt-44 pb-20 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+        />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 0%, rgba(0,85,164,0.22) 0%, transparent 55%)' }} />
 
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div
-              className="w-full h-full"
-              style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                 linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                backgroundSize: '50px 50px',
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Content */}
         <Container size="lg" className="relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
-            <Badge variant="secondary" size="md" className="mb-6">
-              LET'S TALK
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-6">
+              Let's Talk
+            </p>
+            <h1 className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6">
               Book Your Discovery Call
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-8">
-              No sales pitch. Just an honest conversation about your business
-              challenges and whether AI automation can help.
+            <p className="text-white/60 text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+              No sales pitch. Just an honest conversation about your business challenges and whether AI automation can help.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { icon: '', label: '30-Minute Call' },
-                { icon: '', label: 'Custom Strategy' },
-                { icon: '', label: 'Expert Consultation' },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20"
-                >
-                  <div className="text-4xl mb-2">{item.icon}</div>
-                  <div className="text-white font-semibold">{item.label}</div>
-                </div>
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              {['30-Minute Call', 'Custom Strategy', 'Expert Consultation'].map((label, i, arr) => (
+                <span key={i} className="flex items-center gap-3">
+                  <span className="text-sm font-semibold px-4 py-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)' }}>
+                    {label}
+                  </span>
+                  {i < arr.length - 1 && <span className="w-1 h-1 rounded-full bg-white/20" />}
+                </span>
               ))}
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Contact Form/Calendar Section */}
-      <Section background="white" padding>
-        <Container size="lg">
+      {/* Calendar + Steps */}
+      <Section background="navy-deepest" padding={false}>
+        <Container size="lg" className="py-20 md:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left: What to Expect */}
+
+            {/* Left — What to expect */}
             <div>
-              <h2 className="text-3xl font-black text-navy-deep mb-6">
-                What to Expect on the Call
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">What to Expect</p>
+              <h2 className="font-header font-bold text-3xl text-white leading-tight mb-10">
+                What Happens on the Call
               </h2>
 
-              <div className="space-y-6">
-                {[
-                  {
-                    step: 1,
-                    title: 'Tell Us About Your Business',
-                    description:
-                      "We'll ask about your current processes, pain points, and goals. No judgments, just understanding.",
-                  },
-                  {
-                    step: 2,
-                    title: "We'll Identify Opportunities",
-                    description:
-                      "Based on your situation, we'll show you exactly where AI automation can have the biggest impact.",
-                  },
-                  {
-                    step: 3,
-                    title: 'Get a Custom Roadmap',
-                    description:
-                      "You'll leave with a clear picture of what's possible, realistic timelines, and ballpark ROI estimates.",
-                  },
-                  {
-                    step: 4,
-                    title: "Decide if We're a Fit",
-                    description:
-                      "No pressure. If we're not the right solution for you, we'll tell you. If we are, we'll discuss next steps.",
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-primary to-navy-deep rounded-full flex items-center justify-center text-white font-black text-xl">
+              <div className="space-y-6 mb-10">
+                {steps.map((item) => (
+                  <div key={item.step} className="flex items-start gap-5">
+                    <div
+                      className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center font-header font-bold text-lg text-orange-cta"
+                      style={{ background: 'rgba(204,85,0,0.1)', border: '1.5px solid rgba(204,85,0,0.3)' }}
+                    >
                       {item.step}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-navy-deep mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600">{item.description}</p>
+                      <h3 className="font-header font-bold text-lg text-white mb-1">{item.title}</h3>
+                      <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <Card variant="elevated" className="mt-8 p-6 bg-cyan-50">
-                <h3 className="font-bold text-navy-deep mb-3">
-                  ✓ What We Won't Do
-                </h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>✗ High-pressure sales tactics</li>
-                  <li>✗ One-size-fits-all pitches</li>
-                  <li>✗ Waste your time with fluff</li>
-                  <li>✗ Promise unrealistic results</li>
+              {/* What we won't do */}
+              <div
+                className="rounded-2xl p-6"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+              >
+                <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-4">What We Won't Do</p>
+                <ul className="space-y-2.5">
+                  {['High-pressure sales tactics', 'One-size-fits-all pitches', 'Waste your time with fluff', 'Promise unrealistic results'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-white/50">
+                      <svg className="w-4 h-4 text-red-400/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
-              </Card>
+              </div>
             </div>
 
-            {/* Right: Booking Form/Calendar */}
+            {/* Right — Calendar */}
             <div>
-              <Card variant="elevated" className="p-8 bg-white">
-                <h3 className="text-2xl font-black text-navy-deep mb-6">
-                  Schedule Your Call
-                </h3>
-
-                {/* Calendar Booking Widget */}
+              <div
+                className="card-elevated-dark rounded-2xl p-8 mb-6"
+                style={{ borderTop: '2px solid #CC5500', boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px rgba(204,85,0,0.1)' }}
+              >
+                <h3 className="font-header font-bold text-xl text-white mb-6">Schedule Your Call</h3>
                 <div className="calendar-embed-container">
                   <iframe
                     src="https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM"
@@ -147,186 +145,88 @@ export default function ContactPage() {
                     id="kkK9pI9aOnuMejTcRnfw_1766896299539"
                     title="Book Your Discovery Call"
                   />
-                  <Script
-                    src="https://nichefinder.coreyreeder.com/js/form_embed.js"
-                    strategy="lazyOnload"
-                  />
+                  <Script src="https://nichefinder.coreyreeder.com/js/form_embed.js" strategy="lazyOnload" />
                 </div>
 
-                {/* AI Agent Contact */}
-                <div className="mt-8 pt-8 border-t border-gray-200">
-                  <div className="text-center">
-                    <h4 className="font-bold text-navy-deep mb-2">
-                      Got Questions Now?
-                    </h4>
-                    <p className="text-gray-600 text-sm mb-4">
-                      Talk to our AI Agent instantly - available 24/7
-                    </p>
-                    <a
-                      href="tel:8639999152"
-                      className="inline-flex items-center gap-3 bg-gradient-to-r from-navy-deep to-navy text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                    >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        />
-                      </svg>
-                      <div className="text-left">
-                        <div className="text-xs text-gray-300 uppercase tracking-wide">
-                          Call or Text
-                        </div>
-                        <div className="font-bold text-lg">
-                          (863) 999-9152
-                        </div>
-                      </div>
-                    </a>
-                    <p className="text-xs text-gray-500 mt-3">
-                      Experience our AI automation firsthand
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Trust Signals */}
-              <div className="mt-6 grid grid-cols-3 gap-4">
-                {[
-                  { value: '50+', label: 'Clients Served' },
-                  { value: '3x', label: 'Avg ROI' },
-                  { value: '<60s', label: 'Response Time' },
-                ].map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-lg"
+                <div className="mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                  <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-4 text-center">Got Questions Now?</p>
+                  <a
+                    href="tel:8639999152"
+                    className="flex items-center gap-4 rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5"
+                    style={{ background: 'rgba(204,85,0,0.1)', border: '1.5px solid rgba(204,85,0,0.3)' }}
                   >
-                    <div className="text-2xl font-black text-cyan-primary">
-                      {stat.value}
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                      style={{ background: 'rgba(204,85,0,0.15)', color: '#CC5500' }}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
                     </div>
-                    <div className="text-xs text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
+                    <div>
+                      <div className="text-xs text-white/30 uppercase tracking-wide">Call or Text</div>
+                      <div className="font-header font-bold text-lg text-white">(863) 999-9152</div>
+                      <div className="text-xs text-white/30">Experience our AI automation firsthand</div>
+                    </div>
+                  </a>
+                </div>
               </div>
+
             </div>
           </div>
         </Container>
       </Section>
 
       {/* FAQ */}
-      <Section background="gray" padding>
-        <Container size="lg">
-          <h2 className="text-4xl font-black text-navy-deep mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
+      <Section background="navy-deepest" padding={false}>
+        <Container size="lg" className="pb-20 md:pb-28">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Common Questions</p>
+            <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                question: 'How long does implementation take?',
-                answer:
-                  'Most clients see their AI systems live in 6-9 weeks. Exact timeline depends on complexity and your existing tech stack.',
-              },
-              {
-                question: "What if I'm not tech-savvy?",
-                answer:
-                  "Perfect! We handle all the technical work and train your team to use the systems. You don't need any technical knowledge.",
-              },
-              {
-                question: 'Do you work with businesses outside Florida?',
-                answer:
-                  'While Florida is our primary market, we serve clients nationwide. Our proven systems work for businesses in any location.',
-              },
-              {
-                question: "What's your pricing model?",
-                answer:
-                  "We'll discuss pricing on the discovery call based on your specific needs. Most clients see 4-10x ROI in the first year.",
-              },
-              {
-                question: 'Can I see examples of your work?',
-                answer:
-                  'Absolutely! Check our case studies page to see real results from businesses just like yours.',
-              },
-              {
-                question: 'Do you offer ongoing support?',
-                answer:
-                  'Yes. We provide training, optimization, and support to ensure you get maximum value from your AI systems.',
-              },
-            ].map((faq, index) => (
-              <Card key={index} variant="elevated" className="p-6 bg-white">
-                <h3 className="text-lg font-bold text-navy-deep mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className="card-elevated-dark rounded-2xl p-6"
+                style={{ borderTop: '2px solid rgba(255,255,255,0.08)', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
+              >
+                <h3 className="font-header font-bold text-lg text-white mb-3">{faq.question}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* Final CTA */}
-      <Section background="navy" padding>
-        <Container size="lg">
-          <div className="text-center max-w-3xl mx-auto text-white">
-            <h2 className="text-4xl font-black mb-4">
-              Ready to Stop Losing Revenue?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Book your discovery call now. You'll get a custom AI
-              roadmap even if we never work together.
-            </p>
-            <div className="flex items-center justify-center space-x-4 text-sm">
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-5 h-5 text-success"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>No obligation</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-5 h-5 text-success"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>No pressure</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <svg
-                  className="w-5 h-5 text-success"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Expert insights</span>
-              </div>
-            </div>
+      {/* CTA */}
+      <Section background="navy-deepest" padding={false} glow>
+        <Container size="lg" className="py-28 md:py-36 pb-36 md:pb-44 text-center">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Ready to Start</p>
+          <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            Ready to Stop Losing Revenue?
+          </h2>
+          <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+            Book your discovery call now. You'll get a custom AI roadmap even if we never work together.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <Button href="https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM" external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+              Book Discovery Call
+            </Button>
+          </div>
+          <div className="flex items-center justify-center gap-6 text-sm text-white/30">
+            <span>No obligation</span>
+            <span className="w-px h-4 bg-white/15" />
+            <span>No pressure</span>
+            <span className="w-px h-4 bg-white/15" />
+            <span>Expert insights</span>
           </div>
         </Container>
       </Section>
+
     </main>
   );
 }

@@ -1,266 +1,204 @@
 'use client';
 
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
-import Badge from '@/components/ui/Badge';
 import { CASE_STUDIES, CALENDAR_LINK } from '@/lib/constants';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default function CaseStudyPage({ params }: Props) {
-  // Scroll to top on mount
+  const { slug } = use(params);
+
   useEffect(() => {
-    // Force scroll to top immediately and aggressively
-    const scrollToTop = () => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    };
+    window.scrollTo(0, 0);
+  }, [slug]);
 
-    // Execute immediately
-    scrollToTop();
-
-    // Continue scrolling to top for a longer period to handle any layout shifts
-    const timeouts = [
-      setTimeout(scrollToTop, 10),
-      setTimeout(scrollToTop, 50),
-      setTimeout(scrollToTop, 100),
-      setTimeout(scrollToTop, 150),
-      setTimeout(scrollToTop, 200),
-      setTimeout(scrollToTop, 300),
-      setTimeout(scrollToTop, 500),
-      setTimeout(scrollToTop, 750),
-      setTimeout(scrollToTop, 1000),
-    ];
-
-    return () => timeouts.forEach((t) => clearTimeout(t));
-  }, [params.slug]);
-
-  const study = CASE_STUDIES.find((s) => s.slug === params.slug);
-
-  if (!study) {
-    notFound();
-  }
+  const study = CASE_STUDIES.find((s) => s.slug === slug);
+  if (!study) notFound();
 
   return (
-    <main>
-      {/* Hero Section */}
-      <Section className="bg-navy-deep text-white pt-32 pb-16">
-        <Container size="md">
-          <div className="mb-6">
-            <Button
-              href="/case-studies"
-              variant="secondary"
-              size="sm"
-            >
+    <main style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 45%, #001A3A 100%)' }}>
+
+      {/* Hero */}
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(circle at 50% 0%, rgba(0,85,164,0.22) 0%, transparent 55%)' }}
+        />
+
+        <Container size="lg" className="relative z-10">
+          <div className="mb-8">
+            <Button href="/case-studies" variant="secondary" size="sm">
               ← Back to Case Studies
             </Button>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            {study.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" size="sm">
+            {study!.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-semibold px-3 py-1 rounded-full"
+                style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.5)', border: '1px solid rgba(255,255,255,0.1)' }}
+              >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            {study.client.name}
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">
+            {study!.client.industry}
+          </p>
+          <h1 className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-4">
+            {study!.client.name}
           </h1>
-
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            {study.client.industry}
+          <p className="text-white/40 text-lg mb-12">
+            {study!.client.location} · {study!.client.size} · {study!.client.yearsFounded} in business
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {study.results.map((result, index) => (
+          {/* Hero result stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {study!.results.map((result, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20"
+                className="rounded-xl p-5 text-center"
+                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
               >
-                <div className="text-sm text-gray-400 mb-1">{result.metric}</div>
-                <div className="text-3xl md:text-4xl font-black text-cyan-primary mb-1">
-                  {result.value}
+                <div className="font-header font-bold text-2xl md:text-3xl text-orange-cta mb-1">{result.value}</div>
+                <div className="text-xs text-white/40 leading-tight">{result.metric}</div>
+                <div className="text-xs text-white/20 mt-1">{result.timeframe}</div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Challenge + Solution */}
+      <Section background="navy-deepest" padding={false}>
+        <Container size="lg" className="py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            {/* Challenge */}
+            <div
+              className="card-elevated-dark rounded-2xl p-8"
+              style={{ borderTop: '2px solid rgba(255,255,255,0.08)', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
+            >
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/30 mb-4">The Challenge</p>
+              <p className="text-white/60 leading-relaxed">{study!.challenge}</p>
+            </div>
+
+            {/* Solution */}
+            <div
+              className="card-elevated-dark rounded-2xl p-8"
+              style={{ borderTop: '2px solid #CC5500', boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 4px 24px rgba(204,85,0,0.08)' }}
+            >
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Our Solution</p>
+              <p className="text-white/60 leading-relaxed mb-6">{study!.solution}</p>
+              <div className="flex flex-wrap gap-2">
+                {study!.implementation.stages.map((stage) => (
+                  <span
+                    key={stage}
+                    className="text-xs font-bold px-3 py-1 rounded-full"
+                    style={{ background: 'rgba(204,85,0,0.12)', color: '#CC5500', border: '1px solid rgba(204,85,0,0.3)' }}
+                  >
+                    Stage {stage}
+                  </span>
+                ))}
+                {study!.implementation.services.map((service, i) => (
+                  <span
+                    key={i}
+                    className="text-xs px-3 py-1 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Before / After */}
+      <Section background="navy-deepest" padding={false}>
+        <Container size="lg" className="pb-16">
+          <h2 className="font-header font-bold text-2xl md:text-3xl text-white mb-8">Before & After</h2>
+          <div className="space-y-3">
+            {study!.metrics.beforeAfter.map((item, i) => (
+              <div
+                key={i}
+                className="card-elevated-dark rounded-xl p-5 flex flex-col sm:flex-row sm:items-center gap-4"
+                style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
+              >
+                <p className="text-sm font-semibold text-white/50 sm:w-48 flex-shrink-0">{item.metric}</p>
+                <div className="flex items-center gap-4 flex-1">
+                  <span className="text-white/30 line-through text-sm">{item.before}</span>
+                  <svg className="w-4 h-4 text-orange-cta flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  <span className="font-bold text-white">{item.after}</span>
+                  <span
+                    className="ml-auto text-xs font-bold px-2.5 py-1 rounded-full"
+                    style={{ background: 'rgba(204,85,0,0.12)', color: '#CC5500', border: '1px solid rgba(204,85,0,0.25)' }}
+                  >
+                    {item.improvement}
+                  </span>
                 </div>
-                <div className="text-xs text-gray-400">{result.timeframe}</div>
               </div>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* Client Overview Section */}
-      <Section background="white">
-        <Container size="lg">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image */}
-            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-elevated">
-              {study.image ? (
-                <img
-                  src={study.image}
-                  alt={study.client.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-light/30 via-white to-cyan-primary/20 relative">
-                  {/* Decorative Pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div
-                      className="w-full h-full"
-                      style={{
-                        backgroundImage: `linear-gradient(rgba(0,85,164,0.1) 1px, transparent 1px),
-                                         linear-gradient(90deg, rgba(0,85,164,0.1) 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px',
-                      }}
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="text-center p-8 relative z-10">
-                    <div className="mb-6 relative">
-                      {/* Icon Background Glow */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-32 h-32 bg-cyan-primary/10 rounded-full blur-2xl"></div>
-                      </div>
-
-                      {/* Building Icon */}
-                      <svg
-                        className="w-28 h-28 mx-auto text-cyan-primary relative z-10"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
-                      </svg>
-                    </div>
-
-                    <p className="text-navy-deep text-xl font-bold mb-2">{study.client.name}</p>
-                    <p className="text-gray-600 text-sm">Case Study</p>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Client Info */}
-            <div>
-              <div className="flex items-baseline gap-3 mb-6">
-                <h2 className="text-4xl md:text-5xl font-black text-navy-deep">
-                  {study.client.name}
-                </h2>
-                <span className="text-gray-500">{study.client.location}</span>
-              </div>
-
-              <p className="text-lg text-gray-600 mb-6">
-                {study.client.size} • {study.client.yearsFounded}
-              </p>
-
-              <div className="mb-8">
-                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">
-                  The Challenge
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {study.challenge}
-                </p>
-              </div>
-
-              <div className="bg-cyan-50 rounded-lg p-6">
-                <h3 className="text-sm font-bold text-cyan-primary uppercase tracking-wide mb-3">
-                  Our Solution
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {study.solution}
-                </p>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-                {study.implementation.stages.map((stage) => (
-                  <Badge key={stage} variant="primary" size="sm">
-                    Stage {stage}
-                  </Badge>
-                ))}
-                {study.implementation.services.map((service, i) => (
-                  <Badge key={i} variant="secondary" size="sm">
-                    {service}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Results Section */}
-      <Section>
-        <Container size="md">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-navy-deep mb-6">
-              The Results
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {study.results.map((result, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                  <p className="text-sm text-gray-600 mb-2">{result.metric}</p>
-                  <div className="text-4xl font-black text-cyan-primary mb-2">
-                    {result.value}
-                  </div>
-                  <p className="text-sm text-gray-500">{result.timeframe}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Testimonial Section */}
-          {study.testimonial && (
-            <div className="mb-16">
-              <div className="bg-gradient-to-r from-cyan-50 to-navy-50 rounded-lg p-8">
-                <div className="text-6xl text-cyan-primary mb-4">"</div>
-                <blockquote className="text-xl text-navy-deep mb-6 italic">
-                  {study.testimonial.quote}
-                </blockquote>
-                <div className="flex items-center">
-                  <div>
-                    <p className="font-bold text-navy-deep">
-                      {study.testimonial.name}
-                    </p>
-                    <p className="text-gray-600">{study.testimonial.title}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* CTA Section */}
-          <div className="text-center bg-navy-deep text-white rounded-lg p-12">
-            <h2 className="text-3xl md:text-4xl font-black mb-4">
-              Ready to Achieve Similar Results?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Book a discovery call to learn how our 6-Stage System can
-              transform your business like it did for {study.client.name}.
-            </p>
-            <Button
-              href={CALENDAR_LINK}
-              variant="primary"
-              size="lg"
-              className="shadow-2xl shadow-cyan-primary/50"
-              external
+      {/* Testimonial */}
+      {study!.testimonial && (
+        <Section background="navy-deepest" padding={false}>
+          <Container size="md" className="pb-16">
+            <div
+              className="card-elevated-dark rounded-2xl p-8 md:p-12"
+              style={{ borderLeft: '3px solid #CC5500', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
             >
-              Book Your Discovery Call
-            </Button>
-          </div>
+              <svg className="w-10 h-10 text-orange-cta/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <blockquote className="text-white/70 text-xl leading-relaxed italic mb-6">
+                "{study!.testimonial.quote}"
+              </blockquote>
+              <p className="text-white/40 font-semibold">
+                — {study!.testimonial.name}, {study!.testimonial.title}
+              </p>
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* CTA */}
+      <Section background="navy-deepest" padding={false} glow>
+        <Container size="md" className="py-28 md:py-36 pb-36 md:pb-44 text-center">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Your Turn</p>
+          <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            Ready to Achieve Similar Results?
+          </h2>
+          <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            Book a discovery call to learn how our 6-Stage System can transform your business like it did for {study!.client.name}.
+          </p>
+          <Button href={CALENDAR_LINK} variant="primary" size="lg" external className="shadow-cta-glow-lg min-w-[240px]">
+            Book Your Discovery Call
+          </Button>
         </Container>
       </Section>
+
     </main>
   );
 }
