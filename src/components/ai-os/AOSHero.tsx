@@ -49,7 +49,7 @@ export default function AOSHero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <Link
             href="/book-a-call"
-            className="inline-flex items-center justify-center px-8 py-4 bg-orange-cta hover:bg-orange-hover text-white font-bold text-base uppercase tracking-wide rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5 min-w-[240px]"
+            className="inline-flex items-center justify-center px-8 py-4 bg-orange-cta hover:bg-orange-hover text-white font-bold text-base rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5 min-w-[240px]"
           >
             Book a Discovery Call
           </Link>

@@ -61,7 +61,7 @@ export default function AOSFinalCTA() {
             </p>
             <Link
               href="/book-a-call"
-              className="inline-flex items-center justify-center w-full px-8 py-4 bg-orange-cta hover:bg-orange-hover text-white font-bold text-base uppercase tracking-wide rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center w-full px-8 py-4 bg-orange-cta hover:bg-orange-hover text-white font-bold text-base rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               Book a Discovery Call
             </Link>

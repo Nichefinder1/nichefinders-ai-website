@@ -1,9 +1,4 @@
 import Link from 'next/link';
-import Container from '@/components/ui/Container';
-import Section from '@/components/ui/Section';
-import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
-import Badge from '@/components/ui/Badge';
 import type { Industry } from '@/lib/constants';
 import { FLORIDA_CITIES, SIX_STAGES, CALENDAR_LINK } from '@/lib/constants';
 
@@ -11,7 +6,6 @@ interface IndustryTemplateProps {
   industry: Industry;
 }
 
-// Map industries to their relevant case studies
 const industryCaseStudyMap: Record<string, string> = {
   'home-services': '/case-studies/precision-plumbing-tampa',
   'automotive': '/case-studies/sunshine-auto-jacksonville',
@@ -19,308 +13,289 @@ const industryCaseStudyMap: Record<string, string> = {
   'professional-services': '/case-studies/mitchell-law-group-orlando',
 };
 
+const industryHeadlineMap: Record<string, { line1: string; line2: string }> = {
+  'home-services': { line1: 'AI Built for Building', line2: 'Service Companies' },
+  'automotive':    { line1: 'AI Automation for Automotive', line2: 'Dealers & Services' },
+};
+
+const primaryCTA = 'inline-flex items-center justify-center px-8 py-4 bg-orange-cta hover:bg-orange-hover text-white font-bold text-base rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5 min-w-[260px]';
+const secondaryCTA = 'inline-flex items-center justify-center px-8 py-[0.9rem] text-white border border-white/35 hover:border-white hover:bg-white/5 rounded font-semibold text-base transition-all duration-200 min-w-[260px]';
+
 export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
   const caseStudyLink = industryCaseStudyMap[industry.slug] || '/case-studies';
+  const { line1: headlineLine1 = 'AI Automation for', line2: headlineLine2 = industry.name } =
+    industryHeadlineMap[industry.slug] ?? {};
 
   return (
     <main>
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden hero-gradient pt-24 pb-20">
-        {/* Animated Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-primary/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-navy-deep/30 rounded-full blur-3xl animate-pulse delay-1000" />
+      <section
+        className="relative min-h-[72vh] flex items-center justify-center overflow-hidden pt-32 pb-20"
+        style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 50%, #001A3A 100%)' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(circle at 50% 0%, rgba(0,85,164,0.22) 0%, transparent 55%)' }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px',
+          }}
+          aria-hidden="true"
+        />
 
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div
-              className="w-full h-full"
-              style={{
-                backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                                 linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                backgroundSize: '50px 50px',
-              }}
-            />
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+          <div className="text-6xl mb-6">{industry.icon}</div>
+
+          <h1 className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6">
+            {headlineLine1}<br />
+            <span
+              className="text-transparent bg-clip-text"
+              style={{ backgroundImage: 'linear-gradient(90deg, #C8D9E6 0%, #7aafd4 100%)' }}
+            >
+              {headlineLine2}
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            {industry.description}
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href={CALENDAR_LINK}
+              className={primaryCTA}
+            >
+              Book a Discovery Call
+            </Link>
+            <Link
+              href="/ai-os-partner-program"
+              className={secondaryCTA}
+            >
+              See the AI OS Partner Program
+            </Link>
           </div>
         </div>
-
-        {/* Content */}
-        <Container size="lg" className="relative z-10 text-center">
-          <div className="max-w-4xl mx-auto">
-            {/* Icon */}
-            <div className="text-7xl mb-6">{industry.icon}</div>
-
-            {/* Headline with Gradient */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              <span className="block">
-                {industry.slug === 'home-services' ? 'AI Automation for Home &' : industry.slug === 'automotive' ? 'AI Automation for Automotive' : 'AI Automation for'}
-              </span>
-              <span className="block text-gradient">
-                {industry.slug === 'home-services' ? 'Building Service Companies' : industry.slug === 'automotive' ? 'Dealers & Services' : industry.name}
-              </span>
-            </h1>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <Button
-                href={CALENDAR_LINK}
-                variant="primary"
-                size="lg"
-                className="min-w-[280px] shadow-2xl shadow-cyan-primary/50 text-lg font-bold py-4 px-8"
-                external
-              >
-                Book Your Discovery Call
-              </Button>
-              <Button
-                href="/6-stage-system"
-                variant="secondary"
-                size="lg"
-                className="min-w-[280px] text-lg font-bold py-4 px-8"
-              >
-                Explore Our 6-Stage System
-              </Button>
-            </div>
-
-            {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
-              {industry.description}
-            </p>
-          </div>
-        </Container>
       </section>
 
-      {/* Pain Points */}
-      <Section background="white" padding>
-        <Container size="lg">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-black text-navy-deep mb-4">
-              Common Challenges in {industry.name}
-            </h2>
-            <p className="text-xl text-gray-600">
-              We understand the unique pain points facing your industry
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {industry.challenges.map((pain, index) => (
-              <Card
-                key={index}
-                variant="elevated"
-                className="p-6 bg-gradient-to-br from-red-50 to-orange-50 border-l-4 border-alert"
-              >
-                <div className="flex items-start space-x-4">
-                  <svg
-                    className="w-6 h-6 text-alert flex-shrink-0 mt-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <div>
-                    <h3 className="font-bold text-navy-deep">{pain}</h3>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* AI Solutions */}
-      <Section background="gray" padding>
-        <Container size="lg">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-black text-navy-deep mb-4">
-              Our AI Solutions for {industry.name}
-            </h2>
-            <p className="text-xl text-gray-600">
-              Tailored automation that solves your specific challenges
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industry.solutions.map((solution, index) => (
-              <Card key={index} variant="elevated" className="p-6 bg-white">
-                <div className="flex items-start space-x-4 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-primary/10 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-cyan-primary"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="font-bold text-navy-deep flex-1">
-                    {solution}
-                  </h3>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Typical Results */}
-      <Section background="white" padding>
-        <Container size="lg">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-black text-navy-deep mb-4">
-              Typical Results for {industry.name}
-            </h2>
-            <p className="text-xl text-gray-600">
-              What our clients in your industry are seeing
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industry.typicalResults?.map((result, index) => (
-              <Card
-                key={index}
-                variant="elevated"
-                className="p-6 text-center bg-gradient-to-br from-success/10 to-cyan-50 border-l-4 border-success"
-              >
-                <div className="text-4xl font-black text-success mb-2">
-                  {result.improvement}
-                </div>
-                <div className="text-sm font-medium text-gray-700">
-                  {result.metric}
-                </div>
-              </Card>
-            )) || (
-              <p className="text-gray-600 col-span-full text-center">
-                Ask us about typical results for {industry.name}
-              </p>
-            )}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Use Cases */}
-      <Section background="navy" padding>
-        <Container size="lg">
-          <div className="max-w-3xl mx-auto text-center text-white mb-12">
-            <h2 className="text-4xl font-black mb-4">
-              Real-World Use Cases
-            </h2>
-            <p className="text-xl text-gray-300">
-              How {industry.name} businesses use our 6-Stage System
-            </p>
-          </div>
+      {/* Pain points */}
+      <section
+        className="py-24 px-6 border-t border-white/10 text-center"
+        style={{ background: '#001228' }}
+      >
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-red-400 mb-4">The Problem</p>
+          <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-16">
+            Sound familiar?
+          </h2>
 
           <div className="space-y-6">
-            {industry.useCases?.map((useCase, index) => (
-              <Card
-                key={index}
-                variant="glass"
-                className="p-8 border border-white/20"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-                  <div>
-                    <h3 className="text-2xl font-black text-white mb-2">
-                      {useCase.title}
-                    </h3>
-                    <p className="text-gray-300">{useCase.description}</p>
+            {industry.challenges.map((pain, index) => (
+              <div key={index} className="relative group">
+                <p className="font-header font-bold text-2xl md:text-3xl text-white/20 group-hover:text-white/30 transition-colors duration-300">
+                  {pain}
+                </p>
+                {/* red strikethrough */}
+                <div className="absolute inset-y-1/2 left-0 right-0 h-[2px] bg-red-500/50 -translate-y-1/2" />
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-16 text-white/50 text-lg">
+            Every one of these is solvable. That&apos;s why we&apos;re here.
+          </p>
+        </div>
+      </section>
+
+      {/* Solutions */}
+      <section
+        className="py-20 px-6 border-t border-white/10"
+        style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 100%)' }}
+      >
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          {/* Left: heading + CTA */}
+          <div className="lg:sticky lg:top-32">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">The Solution</p>
+            <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
+              What We Automate
+            </h2>
+            <p className="text-white/60 text-lg mb-8">Tailored automation that solves your specific challenges.</p>
+            <Link
+              href={CALENDAR_LINK}
+              className="inline-flex items-center justify-center px-6 py-3 bg-orange-cta hover:bg-orange-hover text-white font-bold text-sm rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Book a Discovery Call
+            </Link>
+          </div>
+
+          {/* Right: numbered list */}
+          <div className="lg:col-span-2 divide-y divide-white/10">
+            {industry.solutions.map((solution, index) => (
+              <div key={index} className="flex items-center gap-6 py-5">
+                <span className="font-header font-bold text-3xl text-orange-cta/30 w-10 flex-shrink-0 tabular-nums">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p className="font-header font-bold text-lg text-white/90">{solution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Typical results */}
+      {industry.typicalResults && industry.typicalResults.length > 0 && (
+        <section
+          className="py-20 px-6 border-t border-white/10"
+          style={{ background: '#001228' }}
+        >
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Results</p>
+              <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight">
+                Typical Results for {industry.name}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {industry.typicalResults.map((result, index) => (
+                <div
+                  key={index}
+                  className="p-6 rounded-xl border border-emerald-500/20 text-center"
+                  style={{ background: 'rgba(16,185,129,0.07)' }}
+                >
+                  <div className="font-header font-bold text-4xl text-emerald-400 mb-2">
+                    {result.improvement}
                   </div>
-                  <div className="lg:col-span-2">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="text-sm text-white/60">{result.metric}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Use cases */}
+      {industry.useCases && industry.useCases.length > 0 && (
+        <section
+          className="py-20 px-6 border-t border-white/10"
+          style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 100%)' }}
+        >
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Use Cases</p>
+              <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
+                Real-World Use Cases
+              </h2>
+              <p className="text-white/60 text-lg">How {industry.name} businesses use our AI OS.</p>
+            </div>
+
+            <div className="space-y-6">
+              {industry.useCases.map((useCase, index) => (
+                <div
+                  key={index}
+                  className="p-8 rounded-xl border border-white/10"
+                  style={{ background: 'rgba(0,40,85,0.4)' }}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                    <div>
+                      <h3 className="font-header font-bold text-2xl text-white mb-2">{useCase.title}</h3>
+                      <p className="text-white/60">{useCase.description}</p>
+                    </div>
+                    <div className="lg:col-span-2 flex flex-wrap gap-2">
                       {useCase.stages.map((stageNum) => {
-                        const stage = SIX_STAGES.find(
-                          (s) => s.number === stageNum
-                        );
+                        const stage = SIX_STAGES.find((s) => s.number === stageNum);
                         return stage ? (
-                          <Badge
+                          <span
                             key={stageNum}
-                            variant="primary"
-                            size="sm"
-                            className="bg-cyan-primary/20 text-cyan-primary border border-cyan-primary/30"
+                            className="text-xs px-3 py-1 rounded-full border border-[#7aafd4]/30 text-[#7aafd4]"
+                            style={{ background: 'rgba(122,175,212,0.1)' }}
                           >
                             {stage.icon} Stage {stageNum}: {stage.name.split(' ')[0]}
-                          </Badge>
+                          </span>
                         ) : null;
                       })}
                     </div>
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-12 text-center">
-            <Button
-              href="/6-stage-system"
-              variant="secondary"
-              size="lg"
-            >
-              Explore Our 6-Stage System
-            </Button>
+            <div className="mt-12 text-center">
+              <Link
+                href="/ai-os-partner-program"
+                className="inline-flex items-center justify-center px-8 py-[0.9rem] text-white border border-white/35 hover:border-white hover:bg-white/5 rounded font-semibold text-base transition-all duration-200"
+              >
+                Explore the AI OS Partner Program
+              </Link>
+            </div>
           </div>
-        </Container>
-      </Section>
+        </section>
+      )}
 
-      {/* Florida Locations */}
-      <Section background="white" padding>
-        <Container size="lg">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-black text-navy-deep mb-4">
-              Serving {industry.name} Across Florida
+      {/* Florida locations */}
+      <section
+        className="py-20 px-6 border-t border-white/10"
+        style={{ background: '#001228' }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Coverage</p>
+            <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
+              Serving Clients Across Florida
             </h2>
-            <p className="text-xl text-gray-600">
-              Local expertise in major Florida markets
-            </p>
+            <p className="text-white/60 text-lg">Local expertise in major Florida markets.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {FLORIDA_CITIES.map((city) => (
               <Link
                 key={city.slug}
                 href={`/florida/${city.slug}`}
-                className="p-4 bg-gray-50 hover:bg-cyan-50 rounded-lg text-center transition-colors group"
+                className="p-4 rounded-lg border border-white/10 hover:border-white/30 text-center transition-colors group"
+                style={{ background: 'rgba(0,40,85,0.3)' }}
               >
-                <div className="font-bold text-navy-deep group-hover:text-cyan-primary transition-colors">
+                <div className="font-bold text-white group-hover:text-[#7aafd4] transition-colors text-sm">
                   {city.name}
                 </div>
-                <div className="text-sm text-gray-600">{city.population}</div>
+                <div className="text-xs text-white/40 mt-1">{city.population}</div>
               </Link>
             ))}
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      {/* CTA */}
-      <Section background="gray" padding>
-        <Container size="lg">
-          <Card
-            variant="gradient-border"
-            className="p-12 bg-gradient-to-br from-cyan-50 to-blue-50 text-center"
-          >
-            <h2 className="text-4xl font-black text-navy-deep mb-4">
-              Ready to Transform Your {industry.name} Business?
-            </h2>
-            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Get a custom AI automation strategy tailored specifically for
-              your industry and business goals.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href={CALENDAR_LINK} external variant="primary" size="lg">
-                Book Industry-Specific Consultation
-              </Button>
-              <Button href={caseStudyLink} variant="outline" size="lg">
-                View {industry.name} Case Study
-              </Button>
-            </div>
-          </Card>
-        </Container>
-      </Section>
+      {/* Final CTA */}
+      <section
+        className="py-20 px-6 border-t border-white/10"
+        style={{ background: 'linear-gradient(180deg, #002855 0%, #001A3A 100%)' }}
+      >
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-6">Get Started</p>
+          <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            Ready to Transform<br />Your Business?
+          </h2>
+          <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            Get a custom AI strategy tailored specifically for your industry and business goals.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href={CALENDAR_LINK}
+              className={primaryCTA}
+            >
+              Book Your Discovery Call
+            </Link>
+            <Link
+              href={caseStudyLink}
+              className={secondaryCTA}
+            >
+              Read Case Study
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
