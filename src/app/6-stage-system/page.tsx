@@ -294,7 +294,7 @@ export default function SixStageSystemPage() {
             Book a discovery call and we'll show you exactly how each stage can transform your business.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href={CALENDAR_LINK} external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+            <Button href={CALENDAR_LINK} variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
               Book Your Discovery Call
             </Button>
             <Button href="/case-studies" variant="secondary" size="lg" className="min-w-[240px]">

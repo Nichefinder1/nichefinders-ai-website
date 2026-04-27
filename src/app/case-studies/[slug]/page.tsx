@@ -193,7 +193,7 @@ export default function CaseStudyPage({ params }: Props) {
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
             Book a discovery call to learn how our 6-Stage System can transform your business like it did for {study!.client.name}.
           </p>
-          <Button href={CALENDAR_LINK} variant="primary" size="lg" external className="shadow-cta-glow-lg min-w-[240px]">
+          <Button href={CALENDAR_LINK} variant="primary" size="lg" className="shadow-cta-glow-lg min-w-[240px]">
             Book Your Discovery Call
           </Button>
         </Container>

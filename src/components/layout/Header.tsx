@@ -416,7 +416,7 @@ export default function Header() {
             {/* CTA Button */}
             <div className="hidden lg:block relative z-10">
               <MagneticButton strength={0.45}>
-                <Button href={CALENDAR_LINK} variant="primary" size="md" external>
+                <Button href={CALENDAR_LINK} variant="primary" size="md">
                   Book Discovery Call
                 </Button>
               </MagneticButton>

@@ -225,7 +225,7 @@ export default function AboutPage() {
             Book a discovery call. No sales pressure, just an honest conversation about whether AI automation is right for your business.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href={CALENDAR_LINK} external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+            <Button href={CALENDAR_LINK} variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
               Book Discovery Call
             </Button>
             <Button href="/case-studies" variant="secondary" size="lg" className="min-w-[240px]">

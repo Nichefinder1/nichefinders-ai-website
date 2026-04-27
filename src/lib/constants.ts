@@ -12,7 +12,7 @@ export const SITE_AUTHOR = 'NicheFinders AI Team';
 export const CONTACT_EMAIL = 'hello@nichefinders.ai';
 export const CONTACT_PHONE = '(555) 123-4567'; // Replace with actual
 export const CONTACT_ADDRESS = 'Miami, Florida';
-export const CALENDAR_LINK = 'https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM';
+export const CALENDAR_LINK = '/book-a-call';
 
 // Social media
 export const SOCIAL_LINKS = {

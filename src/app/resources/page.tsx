@@ -241,7 +241,7 @@ export default function ResourcesPage() {
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Book a discovery call to see exactly how AI automation can transform your business. You'll get a custom roadmap even if we never work together.
           </p>
-          <Button href={CALENDAR_LINK} external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+          <Button href={CALENDAR_LINK} variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
             Book Discovery Call
           </Button>
         </Container>

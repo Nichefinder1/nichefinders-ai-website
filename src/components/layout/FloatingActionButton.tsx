@@ -32,8 +32,6 @@ export default function FloatingActionButton() {
       {/* Primary CTA - Book Call */}
       <Link
         href={CALENDAR_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
         className={cn(
           'group flex items-center gap-3 bg-gradient-to-r from-orange-cta to-orange-hover',
           'text-white px-6 py-3 rounded-full shadow-xl',

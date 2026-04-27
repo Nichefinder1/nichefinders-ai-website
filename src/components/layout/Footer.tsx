@@ -187,14 +187,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href={CALENDAR_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

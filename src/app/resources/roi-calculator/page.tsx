@@ -239,7 +239,7 @@ export default function ROICalculatorPage() {
                 >
                   <h4 className="font-header font-bold text-xl text-white mb-2">Ready to Capture This Revenue?</h4>
                   <p className="text-white/50 text-sm mb-5">Book a discovery call and we'll show you exactly how to implement these systems in your business.</p>
-                  <Button href={CALENDAR_LINK} external variant="primary" size="md" className="w-full shadow-cta-glow-lg">
+                  <Button href={CALENDAR_LINK} variant="primary" size="md" className="w-full shadow-cta-glow-lg">
                     Book Your Discovery Call
                   </Button>
                 </div>
@@ -304,7 +304,7 @@ export default function ROICalculatorPage() {
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
             Book a discovery call and get a custom ROI projection built around your specific business, industry, and market.
           </p>
-          <Button href={CALENDAR_LINK} external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+          <Button href={CALENDAR_LINK} variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
             Book Discovery Call
           </Button>
         </Container>

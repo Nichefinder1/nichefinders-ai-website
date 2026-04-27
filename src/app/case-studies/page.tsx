@@ -298,7 +298,7 @@ export default function CaseStudiesPage() {
             Book a discovery call to see how we can transform your business too.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href={CALENDAR_LINK} external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+            <Button href={CALENDAR_LINK} variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
               Book Discovery Call
             </Button>
             <Button href="/6-stage-system" variant="secondary" size="lg" className="min-w-[240px]">
