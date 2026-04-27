@@ -319,15 +319,78 @@ export default function Header() {
                 Case Studies
               </Link>
 
-              <Link
-                href="/resources"
-                className={cn(
-                  'nav-link',
-                  isScrolled ? 'text-navy-deep' : 'text-white'
-                )}
+              {/* Resources Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveMegaMenu('resources')}
+                onMouseLeave={() => setActiveMegaMenu(null)}
               >
-                Resources
-              </Link>
+                <button
+                  onClick={() => setActiveMegaMenu(activeMegaMenu === 'resources' ? null : 'resources')}
+                  className={cn(
+                    'nav-link flex items-center space-x-1',
+                    isScrolled ? 'text-navy-deep' : 'text-white'
+                  )}
+                >
+                  <span>Resources</span>
+                  <svg
+                    className={cn(
+                      'w-4 h-4 transition-transform duration-300',
+                      activeMegaMenu === 'resources' && 'rotate-180'
+                    )}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {activeMegaMenu === 'resources' && (
+                  <div className="absolute top-full left-0 mt-0 pt-2 w-64 pointer-events-auto">
+                    <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                      <div className="p-3 space-y-1">
+                        <Link
+                          href="/resources"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                        >
+                          <svg className="w-5 h-5 text-cyan-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                          </svg>
+                          <div>
+                            <p className="font-semibold text-navy-deep group-hover:text-cyan-primary transition-colors text-sm">All Resources</p>
+                            <p className="text-xs text-gray-500">Guides, tools & more</p>
+                          </div>
+                        </Link>
+                        <Link
+                          href="/resources/ai-insights"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                        >
+                          <svg className="w-5 h-5 text-cyan-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                          </svg>
+                          <div>
+                            <p className="font-semibold text-navy-deep group-hover:text-cyan-primary transition-colors text-sm">AI Insights</p>
+                            <p className="text-xs text-gray-500">Strategies & case studies</p>
+                          </div>
+                        </Link>
+                        <Link
+                          href="/resources/roi-calculator"
+                          className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                        >
+                          <svg className="w-5 h-5 text-cyan-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                          <div>
+                            <p className="font-semibold text-navy-deep group-hover:text-cyan-primary transition-colors text-sm">ROI Calculator</p>
+                            <p className="text-xs text-gray-500">Calculate your AI ROI</p>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               <Link
                 href="/about"
@@ -502,13 +565,33 @@ export default function Header() {
               >
                 Case Studies
               </Link>
-              <Link
-                href="/resources"
-                className="block font-semibold text-navy-deep"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Resources
-              </Link>
+              <div>
+                <button
+                  onClick={() => toggleMegaMenu('resources')}
+                  className="flex items-center justify-between w-full text-left font-semibold text-navy-deep"
+                >
+                  <span>Resources</span>
+                  <svg
+                    className={cn('w-5 h-5 transition-transform duration-300', activeMegaMenu === 'resources' && 'rotate-180')}
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {activeMegaMenu === 'resources' && (
+                  <div className="space-y-2 ml-4 mt-3">
+                    <Link href="/resources" className="block py-2 text-gray-600 hover:text-cyan-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      All Resources
+                    </Link>
+                    <Link href="/resources/ai-insights" className="block py-2 text-gray-600 hover:text-cyan-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      AI Insights
+                    </Link>
+                    <Link href="/resources/roi-calculator" className="block py-2 text-gray-600 hover:text-cyan-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      ROI Calculator
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link
                 href="/about"
                 className="block font-semibold text-navy-deep"

@@ -140,6 +140,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/resources/ai-insights"
+                    className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
+                  >
+                    AI Insights
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/resources/roi-calculator"
                     className="text-gray-400 hover:text-orange-cta transition-colors duration-300"
                   >
