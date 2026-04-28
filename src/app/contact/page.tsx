@@ -191,6 +191,31 @@ export default function ContactPage() {
         </Container>
       </Section>
 
+      {/* FAQ */}
+      <Section background="navy-deepest" padding={false}>
+        <Container size="lg" className="pb-20 md:pb-28">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Common Questions</p>
+            <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className="card-elevated-dark rounded-2xl p-6"
+                style={{ borderTop: '2px solid rgba(255,255,255,0.08)', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
+              >
+                <h3 className="font-header font-bold text-lg text-white mb-3">{faq.question}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* Google Maps + GBP */}
       <Section background="navy-deepest" padding={false}>
         <Container size="lg" className="pb-16">
@@ -231,31 +256,6 @@ export default function ContactPage() {
                 title="NicheFinders AI location"
               />
             </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* FAQ */}
-      <Section background="navy-deepest" padding={false}>
-        <Container size="lg" className="pb-20 md:pb-28">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Common Questions</p>
-            <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="card-elevated-dark rounded-2xl p-6"
-                style={{ borderTop: '2px solid rgba(255,255,255,0.08)', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
-              >
-                <h3 className="font-header font-bold text-lg text-white mb-3">{faq.question}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
           </div>
         </Container>
       </Section>
