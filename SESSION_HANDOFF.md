@@ -28,10 +28,11 @@
 - GBP URL: https://share.google/rcgpdActs5kj47xjC
 
 ### Google Maps Embed
-- Placed on Contact page between booking section and FAQ
+- Placed on Contact page BELOW FAQ (above final CTA)
 - Dark-mode inversion filter (matches navy theme)
 - Exact embed URL from user's Google Maps share
 - Place: Nichefinders Ai, Miami FL (25.7978971, -80.1884291)
+- Page order: Booking → FAQ → Find Us → CTA
 
 ## Commits This Session
 ```
