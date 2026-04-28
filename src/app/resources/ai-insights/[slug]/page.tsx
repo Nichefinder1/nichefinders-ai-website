@@ -33,7 +33,7 @@ function formatDate(dateStr: string): string {
 
 const mdxComponents = {
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mt-10 mb-5" {...props} />
+    <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mt-10 mb-5" {...props} />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2 className="font-header font-bold text-2xl md:text-3xl text-white leading-tight mt-10 mb-4" {...props} />

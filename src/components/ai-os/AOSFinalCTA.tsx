@@ -53,11 +53,11 @@ export default function AOSFinalCTA() {
             style={{ background: 'rgba(204,85,0,0.08)', border: '1px solid rgba(204,85,0,0.25)' }}
           >
             <h3 className="font-header font-bold text-xl text-white mb-3">
-              Ready to talk?
+              Ready to find out if you&apos;re a fit?
             </h3>
             <p className="text-white/60 text-sm mb-8 leading-relaxed">
-              Book a discovery call and we&apos;ll spend 45 minutes mapping exactly
-              where your business stands — and what it would take to make it AI-ready.
+              45 minutes. We map your operation, identify the gaps, and tell you honestly whether
+              the AI OS is the right next move — or what is. No pitch. Just clarity.
             </p>
             <Link
               href="/book-a-call"
@@ -66,7 +66,7 @@ export default function AOSFinalCTA() {
               Book a Discovery Call
             </Link>
             <p className="mt-4 text-xs text-white/40">
-              No hand-off. You speak directly with the team.
+              No hand-off. You speak directly with Corey.
             </p>
           </div>
 
@@ -76,11 +76,11 @@ export default function AOSFinalCTA() {
             style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             <h3 className="font-header font-bold text-xl text-white mb-3">
-              Not ready yet?
+              Want the full breakdown first?
             </h3>
             <p className="text-white/60 text-sm mb-8 leading-relaxed text-center">
-              Get the AI OS Program Overview sent to your inbox — one email with the
-              full breakdown of how the program works and who it&apos;s for.
+              Get the AI OS Program Overview sent to your inbox — what it is, how it works,
+              and whether it&apos;s the right fit for your stage of business.
             </p>
             <EmailOptInForm />
           </div>

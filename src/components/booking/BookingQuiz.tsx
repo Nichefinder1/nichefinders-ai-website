@@ -14,7 +14,7 @@ const STEPS = [
   { field: 'name' as const, label: 'First, your name.', placeholder: 'Your full name', type: 'text' },
   { field: 'businessName' as const, label: 'What is your business called?', placeholder: 'Business name', type: 'text' },
   { field: 'email' as const, label: 'Best email to confirm your booking.', placeholder: 'your@email.com', type: 'email' },
-  { field: 'helpText' as const, label: 'How can NicheFinders AI help you?', placeholder: "What's the challenge you're working through? Be specific.", type: 'textarea' },
+  { field: 'helpText' as const, label: "What's the biggest bottleneck in your operation right now?", placeholder: "Be specific — the more context you give, the more useful the call will be.", type: 'textarea' },
 ];
 
 export default function BookingQuiz({ slot, onComplete, onBack, containerRef }: Props) {

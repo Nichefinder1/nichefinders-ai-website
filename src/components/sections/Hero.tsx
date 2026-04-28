@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24"
       style={{ background: 'linear-gradient(180deg, #001A3A 0%, #002855 45%, #001A3A 100%)' }}
     >
       {/* Parallax background layer */}
@@ -77,21 +77,21 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6 whitespace-pre-line"
+          className="font-header font-bold text-2xl md:text-4xl lg:text-[3rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6 whitespace-pre-line"
         >
-          {'Your Business Is Manual.\n'}
+          {'Your Processes Are Already There.\n'}
           <span
             className="text-transparent bg-clip-text"
             style={{ backgroundImage: 'linear-gradient(90deg, #C8D9E6 0%, #7aafd4 100%)' }}
           >
-            AI Changes That.
+            Ours Make Them Intelligent.
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-          We architect, install, and operate a custom AI Operating System built around your business
-          so you stop losing revenue to missed leads and manual work.
+          We architect, install, and operate a custom AI Operating System built around your business.
+          Your SOPs become intelligent. Your processes start improving themselves.
         </p>
 
         {/* CTAs */}

@@ -23,8 +23,8 @@ export default function FinalCTA() {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Every day without AI automation is another day of missed leads,
-            delayed follow-ups, and lost revenue. Let's change that.
+            Every day without AI is another day your processes run the same way they did yesterday.
+            Your SOPs can be smarter. Let&apos;s build that.
           </p>
 
           {/* CTAs */}

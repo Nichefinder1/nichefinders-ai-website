@@ -238,7 +238,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
             Turn {service.name} Into Revenue This Month
           </h2>
           <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Book a 30-minute discovery call. We&apos;ll map your current workflow, identify automation
+            Book a 45-minute discovery call. We&apos;ll map your current workflow, identify automation
             opportunities, and show you exactly how {service.name} drives measurable ROI for businesses like yours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">

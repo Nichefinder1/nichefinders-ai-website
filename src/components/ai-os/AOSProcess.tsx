@@ -16,7 +16,7 @@ export default function AOSProcess() {
     },
     {
       step: '3',
-      title: 'Blueprint Delivery',
+      title: 'Roadmap Delivery',
       description:
         'You receive a custom 12-month AI OS roadmap — phased by priority, with each system mapped to a business outcome. This is the plan we execute together.',
       timeframe: 'Week 2',
@@ -39,7 +39,7 @@ export default function AOSProcess() {
       step: '6',
       title: 'Team Training & Handoff',
       description:
-        'Your team gets trained on every system we build. By month 6, you own a fully documented, AI-enabled operation — not a dependency on our agency.',
+        'Your team gets trained on every system we build. Six months builds the foundation. What comes next is up to you.',
       timeframe: 'Month 6',
     },
   ];

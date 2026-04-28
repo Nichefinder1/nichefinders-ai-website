@@ -113,11 +113,11 @@ export default function AOSWhatsIncluded() {
           style={{ background: 'rgba(204,85,0,0.06)', border: '1px solid rgba(204,85,0,0.2)' }}
         >
           <p className="font-header text-xl text-white font-semibold mb-2">
-            Limited spots available each quarter.
+            We only take on a few partners at a time.
           </p>
           <p className="text-white/60 text-sm">
-            The AI OS Partner Program is a high-touch engagement. We only accept a small number of new
-            partners at a time to maintain quality. Discovery calls are by application only.
+            This is a high-touch engagement — not a product you purchase. We work directly inside your
+            business, which means capacity is limited. If you&apos;re serious about it, book the call before the next cohort closes.
           </p>
         </div>
       </div>

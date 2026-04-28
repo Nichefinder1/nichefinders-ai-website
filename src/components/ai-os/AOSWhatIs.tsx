@@ -27,6 +27,9 @@ export default function AOSWhatIs() {
                 You&apos;re not hiring consultants to reorganize you. You&apos;re installing intelligence
                 that makes your business self-aware — and then acts on what it knows.
               </p>
+              <p className="font-semibold text-white/90">
+                Your SOPs become intelligent. Your processes start improving themselves.
+              </p>
             </div>
 
             {/* Phases summary */}

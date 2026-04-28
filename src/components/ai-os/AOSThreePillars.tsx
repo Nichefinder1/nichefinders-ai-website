@@ -40,7 +40,7 @@ export default function AOSThreePillars() {
         'Staff proficient with AI tools in their role',
         'Ongoing optimization as the business evolves',
       ],
-      outcome: 'A business that runs smarter — with AI handling the work, not creating more of it.',
+      outcome: 'Your SOPs become intelligent. Your processes start improving themselves.',
     },
   ];
 

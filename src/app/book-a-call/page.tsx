@@ -3,7 +3,7 @@ import BookingClient from './BookingClient';
 
 export const metadata: Metadata = {
   title: 'Book a Discovery Call | NicheFinders AI',
-  description: 'Schedule a free 30-minute discovery call with NicheFinders AI. We\'ll map your workflow and show you exactly where AI drives the most ROI for your business.',
+  description: 'Schedule a 45-minute discovery call with NicheFinders AI. We\'ll map your workflow and show you exactly where AI drives the most ROI for your business.',
 };
 
 export default function BookACallPage() {

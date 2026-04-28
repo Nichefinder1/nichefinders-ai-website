@@ -48,14 +48,14 @@ export default function ThankYouClient() {
 
             {/* Subhead */}
             <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Here&apos;s your AI OS overview. Take your time — and when you&apos;re ready to talk
-              about what this looks like for your business, we&apos;re one click away.
+              The full AI OS program breakdown is on its way to your inbox. Read through it —
+              then book a call when you&apos;re ready to see if it&apos;s the right fit for your business.
             </p>
 
             {/* Primary CTA — above the fold */}
             <div className="pt-4">
               <Button href="/book-a-call" variant="primary" size="lg">
-                Ready to Talk Numbers? Book a Call.
+                Book a Discovery Call
               </Button>
             </div>
           </div>
@@ -76,31 +76,17 @@ export default function ThankYouClient() {
           <div className="py-16 text-center space-y-8">
             <div className="space-y-4">
               <h2 className="font-header text-3xl md:text-4xl font-bold text-white">
-                Ready to move forward?
+                Ready to see if you&apos;re a fit?
               </h2>
               <p className="text-white/60 text-lg max-w-lg mx-auto">
-                A 30-minute discovery call is all it takes to see if AI OS is the right fit for
-                your business.
+                One 45-minute call. We map your operation, identify the gaps, and give you
+                an honest read on whether the AI OS is the right next step.
               </p>
             </div>
 
             <Button href="/book-a-call" variant="primary" size="lg">
               Book Your Discovery Call
             </Button>
-
-            <div className="border-t border-white/10 pt-8">
-              {!requested && (
-                <p className="text-white/40 text-sm">
-                  Want to see the full package details including investment?{' '}
-                  <a
-                    href="/api/request-pricing-access"
-                    className="text-white/40 hover:text-white/60 underline underline-offset-2 transition-colors duration-200"
-                  >
-                    Request access &rarr;
-                  </a>
-                </p>
-              )}
-            </div>
           </div>
         </Container>
       </Section>
