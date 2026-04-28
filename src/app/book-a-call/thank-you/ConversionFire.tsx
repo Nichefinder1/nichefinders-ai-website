@@ -11,14 +11,10 @@ declare global {
 export default function ConversionFire() {
   useEffect(() => {
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
+      window.gtag('event', 'Website_Call_Booked_From_Website', {
         event_category: 'booking',
-        event_label: 'discovery_call_booked',
+        event_label: 'discovery_call_thank_you_page',
         value: 1,
-      });
-      window.gtag('event', 'discovery_call_booked', {
-        event_category: 'lead',
-        event_label: 'book_a_call_thank_you',
       });
     }
   }, []);

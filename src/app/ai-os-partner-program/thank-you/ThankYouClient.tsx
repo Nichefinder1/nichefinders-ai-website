@@ -28,14 +28,10 @@ export default function ThankYouClient() {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
+      window.gtag('event', 'book_a_call_button', {
         event_category: 'lead',
-        event_label: 'ai_os_opt_in',
+        event_label: 'ai_os_opt_in_confirmed',
         value: 1,
-      });
-      window.gtag('event', 'ai_os_opt_in', {
-        event_category: 'lead',
-        event_label: 'ai_os_partner_program',
       });
     }
   }, []);
