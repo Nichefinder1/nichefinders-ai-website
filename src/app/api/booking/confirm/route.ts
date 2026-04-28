@@ -7,6 +7,24 @@ export const maxDuration = 30;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const OWNER_EMAIL = process.env.OWNER_EMAIL ?? 'hello@nichefinders.ai';
+const AIRTABLE_PAT = process.env.AIRTABLE_PAT!;
+const AIRTABLE_BASE = 'appgNChM14muzXCR2';
+
+async function saveToAirtable(fields: Record<string, unknown>) {
+  const res = await fetch(
+    `https://api.airtable.com/v0/${AIRTABLE_BASE}/Discovery%20Calls`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_PAT}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fields }),
+    }
+  );
+  if (!res.ok) throw new Error(`Airtable error: ${res.status}`);
+  return res.json();
+}
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
@@ -32,6 +50,17 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       quiz.businessName,
       quiz.helpText ?? ''
     );
+
+    saveToAirtable({
+      Name: quiz.name,
+      'Business Name': quiz.businessName,
+      Email: quiz.email,
+      'How We Can Help': quiz.helpText ?? '',
+      'Call Time': slot.start,
+      'AI Insight': insight ?? '',
+      'Google Event ID': eventId,
+      Source: 'Book a Call Page',
+    }).catch((e: unknown) => console.error('[confirm] Airtable save failed:', e));
 
     resend.emails.send({
       from: 'NicheFinders AI <hello@nichefinders.ai>',
