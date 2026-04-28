@@ -1,6 +1,13 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 import Section from '@/components/ui/Section';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
@@ -18,6 +25,20 @@ import AOSTrustBar from '@/components/ai-os/AOSTrustBar';
 export default function ThankYouClient() {
   const searchParams = useSearchParams();
   const requested = searchParams.get('requested') === 'true';
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        event_category: 'lead',
+        event_label: 'ai_os_opt_in',
+        value: 1,
+      });
+      window.gtag('event', 'ai_os_opt_in', {
+        event_category: 'lead',
+        event_label: 'ai_os_partner_program',
+      });
+    }
+  }, []);
 
   return (
     <>

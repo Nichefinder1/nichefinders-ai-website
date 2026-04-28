@@ -1,6 +1,13 @@
 'use client';
 
+import { useEffect } from 'react';
 import type { BookingSlot } from '@/lib/booking-types';
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 interface Props {
   slot: BookingSlot;
@@ -22,6 +29,20 @@ function formatSlotFull(startIso: string): string {
 }
 
 export default function ConfirmationPanel({ slot, name, calendarLink }: Props) {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        event_category: 'booking',
+        event_label: 'discovery_call_booked',
+        value: 1,
+      });
+      window.gtag('event', 'discovery_call_booked', {
+        event_category: 'lead',
+        event_label: 'book_a_call',
+      });
+    }
+  }, []);
+
   return (
     <div className="w-full text-center">
       <div className="flex items-center justify-center mb-8">
@@ -41,7 +62,7 @@ export default function ConfirmationPanel({ slot, name, calendarLink }: Props) {
       <div className="border border-white/10 bg-white/5 px-6 py-5 mb-8 text-left rounded-lg">
         <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-1">Your Call</p>
         <p className="font-header font-bold text-lg text-white">{formatSlotFull(slot.start)}</p>
-        <p className="text-xs text-white/30 mt-1">30 min · Discovery Call</p>
+        <p className="text-xs text-white/30 mt-1">45 min · Discovery Call</p>
       </div>
 
       <a
