@@ -91,7 +91,8 @@ export default function AIInsightsPage() {
                     <img
                       src={featured.coverImage}
                       alt={`${featured.title} — NicheFinders AI`}
-                      className="w-full h-64 object-cover"
+                      className="w-full object-cover object-top"
+                      style={{ aspectRatio: '1200/630', maxHeight: '420px' }}
                       width={1200}
                       height={630}
                     />
@@ -160,7 +161,8 @@ export default function AIInsightsPage() {
                         <img
                           src={post.coverImage}
                           alt={post.title}
-                          className="w-full h-40 object-cover"
+                          className="w-full object-cover object-top"
+                          style={{ aspectRatio: '1200/630' }}
                           width={600}
                           height={200}
                         />
