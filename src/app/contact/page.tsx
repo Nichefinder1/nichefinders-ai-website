@@ -1,4 +1,4 @@
-import Script from 'next/script';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
@@ -69,7 +69,7 @@ export default function ContactPage() {
             </p>
 
             <div className="flex items-center justify-center gap-3 flex-wrap">
-              {['30-Minute Call', 'Custom Strategy', 'Expert Consultation'].map((label, i, arr) => (
+              {['45-Minute Call', 'Custom Strategy', 'Expert Consultation'].map((label, i, arr) => (
                 <span key={i} className="flex items-center gap-3">
                   <span className="text-sm font-semibold px-4 py-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)' }}>
                     {label}
@@ -130,22 +130,36 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right — Calendar */}
+            {/* Right — Booking CTA */}
             <div>
               <div
                 className="card-elevated-dark rounded-2xl p-8 mb-6"
                 style={{ borderTop: '2px solid #CC5500', boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px rgba(204,85,0,0.1)' }}
               >
-                <h3 className="font-header font-bold text-xl text-white mb-6">Schedule Your Call</h3>
-                <div className="calendar-embed-container">
-                  <iframe
-                    src="https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM"
-                    style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
-                    scrolling="no"
-                    id="kkK9pI9aOnuMejTcRnfw_1766896299539"
-                    title="Book Your Discovery Call"
-                  />
-                  <Script src="https://nichefinder.coreyreeder.com/js/form_embed.js" strategy="lazyOnload" />
+                <h3 className="font-header font-bold text-xl text-white mb-2">Schedule Your Call</h3>
+                <p className="text-white/50 text-sm mb-8">Pick a time that works for you. 45 minutes — no pitch, just strategy.</p>
+
+                <Link
+                  href="/book-a-call"
+                  className="block w-full text-center bg-orange-cta hover:bg-orange-hover text-white font-bold text-base py-4 px-6 rounded-xl transition-all duration-200 shadow-cta-glow hover:-translate-y-0.5 mb-8"
+                >
+                  Pick a Time →
+                </Link>
+
+                <div className="space-y-4">
+                  {[
+                    { icon: '🗓', label: 'Pick your slot', desc: 'Choose from available Tue–Thu windows' },
+                    { icon: '🤖', label: 'AI prepares your roadmap', desc: 'Answer 3 questions, get a personalized insight' },
+                    { icon: '✅', label: 'Instantly confirmed', desc: 'Calendar invite sent to your inbox' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <span className="text-xl mt-0.5">{item.icon}</span>
+                      <div>
+                        <p className="text-white text-sm font-semibold">{item.label}</p>
+                        <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="mt-8 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
@@ -213,7 +227,7 @@ export default function ContactPage() {
             Book your discovery call now. You'll get a custom AI roadmap even if we never work together.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Button href="https://nichefinder.coreyreeder.com/widget/booking/3SsTl1rDYbbKP6kHXeRM" external variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
+            <Button href="/book-a-call" variant="primary" size="lg" className="min-w-[240px] shadow-cta-glow-lg">
               Book Discovery Call
             </Button>
           </div>
