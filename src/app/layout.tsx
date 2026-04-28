@@ -147,9 +147,7 @@ export default function RootLayout({
                 addressCountry: 'US',
               },
               sameAs: [
-                'https://www.linkedin.com/company/nichefinders-ai',
-                'https://twitter.com/nichefinders',
-                'https://www.facebook.com/nichefinders',
+                'https://share.google/rcgpdActs5kj47xjC',
               ],
               contactPoint: {
                 '@type': 'ContactPoint',

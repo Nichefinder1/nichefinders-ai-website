@@ -14,13 +14,8 @@ export const CONTACT_PHONE = '(555) 123-4567'; // Replace with actual
 export const CONTACT_ADDRESS = 'Miami, Florida';
 export const CALENDAR_LINK = '/book-a-call';
 
-// Social media
-export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/nichefinders-ai',
-  facebook: 'https://facebook.com/nichefindersai',
-  twitter: 'https://twitter.com/nichefindersai',
-  instagram: 'https://instagram.com/nichefindersai',
-};
+// Google Business Profile
+export const GOOGLE_BUSINESS_URL = 'https://share.google/rcgpdActs5kj47xjC';
 
 // TypeScript types
 export interface LocalBusinessExample {
