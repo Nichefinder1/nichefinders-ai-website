@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function AOSWhatIs() {
   return (
     <section className="py-20 md:py-28 bg-navy-medium" id="aos-what-is">
@@ -29,6 +31,15 @@ export default function AOSWhatIs() {
               </p>
               <p className="font-semibold text-white/90">
                 Your SOPs become intelligent. Your processes start improving themselves.
+              </p>
+              <p className="text-white/50 text-sm mt-2">
+                Platforms we build on:{' '}
+                <a href="https://www.servicetitan.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">ServiceTitan</a>,{' '}
+                <a href="https://getjobber.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Jobber</a>,{' '}
+                <a href="https://www.housecallpro.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Housecall Pro</a>,{' '}
+                and <a href="https://business.google.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Google Business Profile</a>.
+                See how it all connects in our{' '}
+                <Link href="/resources/ai-insights/what-is-an-ai-operating-system-for-business" className="text-[#7aafd4] hover:text-white transition-colors underline underline-offset-2">AI OS deep dive</Link>.
               </p>
             </div>
 

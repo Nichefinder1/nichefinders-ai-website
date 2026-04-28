@@ -107,9 +107,16 @@ export default function AOSProblem() {
               <br />
               <span className="text-red-400">in the average contracting company.</span>
             </p>
-            <p className="text-white/60 text-base">
+            <p className="text-white/60 text-base mb-4">
               Click through the visualization below to see which ones apply to your business —
               and what they look like when they&apos;re actually structured.
+            </p>
+            <p className="text-white/35 text-sm">
+              Research from{' '}
+              <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-top-trends-in-tech" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors underline underline-offset-2">McKinsey Digital</a>
+              {' '}shows businesses that systematically automate operations outgrow competitors by 3–5x.{' '}
+              <a href="https://www.bls.gov/productivity/" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors underline underline-offset-2">BLS productivity data</a>
+              {' '}confirms the gap between structured and unstructured operations widens every year.
             </p>
           </div>
         </div>

@@ -248,7 +248,7 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
           <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
             Turn {service.name} Into Revenue This Month
           </h2>
-          <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/70 text-lg mb-6 max-w-xl mx-auto leading-relaxed">
             Book a 45-minute discovery call. We&apos;ll map your current workflow, identify automation
             opportunities, and show you exactly how {service.name} drives measurable ROI for businesses like yours.
             Not ready to call? Browse{' '}
@@ -256,6 +256,13 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
               real client results
             </Link>{' '}
             first.
+          </p>
+          <p className="text-white/40 text-sm mb-8 max-w-lg mx-auto">
+            Trusted platforms we integrate with:{' '}
+            <a href="https://www.servicetitan.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">ServiceTitan</a>,{' '}
+            <a href="https://getjobber.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Jobber</a>,{' '}
+            <a href="https://www.housecallpro.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Housecall Pro</a>, and{' '}
+            <a href="https://business.google.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Google Business Profile</a>.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link

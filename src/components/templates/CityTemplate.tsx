@@ -223,6 +223,12 @@ export default function CityTemplate({ city }: CityTemplateProps) {
                 ))}
               </div>
             </div>
+            <div className="mt-4 pt-4 border-t border-white/10 space-y-1">
+              <p className="text-xs text-white/40 mb-2 uppercase tracking-wide">Industry Resources</p>
+              <a href="https://www.floridajobs.org" target="_blank" rel="noopener noreferrer" className="block text-xs text-[#7aafd4] hover:text-white transition-colors">Florida Department of Economic Opportunity ↗</a>
+              <a href="https://www.flchamber.com" target="_blank" rel="noopener noreferrer" className="block text-xs text-[#7aafd4] hover:text-white transition-colors">Florida Chamber of Commerce ↗</a>
+              <a href="https://www.bls.gov/regions/southeast/florida.htm" target="_blank" rel="noopener noreferrer" className="block text-xs text-[#7aafd4] hover:text-white transition-colors">BLS Florida Labor Market Data ↗</a>
+            </div>
           </div>
         </div>
       </section>
