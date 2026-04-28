@@ -257,13 +257,6 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
             </Link>{' '}
             first.
           </p>
-          <p className="text-white/40 text-sm mb-8 max-w-lg mx-auto">
-            Trusted platforms we integrate with:{' '}
-            <a href="https://www.servicetitan.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">ServiceTitan</a>,{' '}
-            <a href="https://getjobber.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Jobber</a>,{' '}
-            <a href="https://www.housecallpro.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Housecall Pro</a>, and{' '}
-            <a href="https://business.google.com" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white transition-colors">Google Business Profile</a>.
-          </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link
               href={CALENDAR_LINK}

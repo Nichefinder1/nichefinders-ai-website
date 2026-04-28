@@ -13,12 +13,6 @@ const industryCaseStudyMap: Record<string, string> = {
   'professional-services': '/case-studies/mitchell-law-group-orlando',
 };
 
-const industryExternalLinkMap: Record<string, { href: string; label: string }> = {
-  'home-services': { href: 'https://www.servicetitan.com', label: 'ServiceTitan' },
-  'automotive': { href: 'https://getjobber.com', label: 'Jobber' },
-  'nonprofits': { href: 'https://www.flchamber.com', label: 'Florida Chamber of Commerce' },
-  'professional-services': { href: 'https://www.bls.gov', label: 'Bureau of Labor Statistics' },
-};
 
 const industryHeadlineMap: Record<string, { line1: string; line2: string }> = {
   'home-services': { line1: 'AI Built for Building', line2: 'Service Companies' },
@@ -30,7 +24,6 @@ const secondaryCTA = 'inline-flex items-center justify-center px-8 py-[0.9rem] t
 
 export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
   const caseStudyLink = industryCaseStudyMap[industry.slug] || '/case-studies';
-  const externalLink = industryExternalLinkMap[industry.slug];
   const { line1: headlineLine1 = 'AI Automation for', line2: headlineLine2 = industry.name } =
     industryHeadlineMap[industry.slug] ?? {};
 
@@ -136,15 +129,9 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
               <Link href="/6-stage-system" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
                 proven 6-Stage AI System
               </Link>
-              {externalLink && (
-                <>
-                  {' '}and integrated with leading platforms like{' '}
-                  <a href={externalLink.href} target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
-                    {externalLink.label}
-                  </a>
-                </>
-              )}
-              .
+              . According to{' '}
+              <a href="https://www.bls.gov/productivity/" target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">BLS productivity research</a>
+              , structured operations outperform manual ones by a measurable margin every year.
             </p>
             <Link
               href={CALENDAR_LINK}
