@@ -15,6 +15,7 @@ export interface PostMeta {
   tags: string[];
   readingTime: string;
   featured?: boolean;
+  coverImage?: string;
 }
 
 export interface Post extends PostMeta {
@@ -43,6 +44,7 @@ export function getAllPosts(): PostMeta[] {
         tags: data.tags ?? [],
         readingTime: rt.text,
         featured: data.featured ?? false,
+        coverImage: data.coverImage ?? undefined,
       } satisfies PostMeta;
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -64,6 +66,7 @@ export function getPostBySlug(slug: string): Post | null {
     tags: data.tags ?? [],
     readingTime: rt.text,
     featured: data.featured ?? false,
+    coverImage: data.coverImage ?? undefined,
     content,
   };
 }

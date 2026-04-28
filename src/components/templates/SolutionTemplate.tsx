@@ -133,8 +133,19 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
             <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
               How We Deliver {service.name} Results
             </h2>
-            <p className="text-white/60 text-lg mb-8">
-              A proven process from strategy to revenue-generating AI.
+            <p className="text-white/60 text-lg mb-4">
+              A proven process from strategy to revenue-generating AI — built on our{' '}
+              <Link href="/6-stage-system" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                6-Stage AI Automation System
+              </Link>
+              .
+            </p>
+            <p className="text-white/40 text-sm mb-8">
+              Wondering what to expect in ROI?{' '}
+              <Link href="/resources/roi-calculator" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                Run our free ROI calculator
+              </Link>{' '}
+              before your discovery call.
             </p>
             <Link
               href="/ai-os-partner-program"
@@ -240,6 +251,11 @@ export default function SolutionTemplate({ service }: SolutionTemplateProps) {
           <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
             Book a 45-minute discovery call. We&apos;ll map your current workflow, identify automation
             opportunities, and show you exactly how {service.name} drives measurable ROI for businesses like yours.
+            Not ready to call? Browse{' '}
+            <Link href="/case-studies" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+              real client results
+            </Link>{' '}
+            first.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link

@@ -65,9 +65,24 @@ export default function CaseStudiesClient() {
             <h1 className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6">
               Real Businesses,<br />Real Results
             </h1>
-            <p className="text-white/60 text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-white/60 text-xl leading-relaxed max-w-3xl mx-auto mb-6">
               See how businesses across industries are transforming with our AI automation solutions.
               Every case study shows real metrics, real timelines, and real ROI.
+            </p>
+            <p className="text-white/40 text-sm max-w-2xl mx-auto mb-12">
+              Serving{' '}
+              <Link href="/industries/home-services" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                home services
+              </Link>
+              , automotive, nonprofits, and professional services — all through the{' '}
+              <Link href="/ai-os-partner-program" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                AI OS Partner Program
+              </Link>
+              . Want to learn the strategies?{' '}
+              <Link href="/resources/ai-insights" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                Read our AI insights
+              </Link>
+              .
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

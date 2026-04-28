@@ -9,8 +9,15 @@ interface IndustryTemplateProps {
 const industryCaseStudyMap: Record<string, string> = {
   'home-services': '/case-studies/precision-plumbing-tampa',
   'automotive': '/case-studies/sunshine-auto-jacksonville',
-  'nonprofits': '/case-studies/florida-community-foundation',
+  'nonprofits': '/case-studies',
   'professional-services': '/case-studies/mitchell-law-group-orlando',
+};
+
+const industryExternalLinkMap: Record<string, { href: string; label: string }> = {
+  'home-services': { href: 'https://www.servicetitan.com', label: 'ServiceTitan' },
+  'automotive': { href: 'https://getjobber.com', label: 'Jobber' },
+  'nonprofits': { href: 'https://www.flchamber.com', label: 'Florida Chamber of Commerce' },
+  'professional-services': { href: 'https://www.bls.gov', label: 'Bureau of Labor Statistics' },
 };
 
 const industryHeadlineMap: Record<string, { line1: string; line2: string }> = {
@@ -23,6 +30,7 @@ const secondaryCTA = 'inline-flex items-center justify-center px-8 py-[0.9rem] t
 
 export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
   const caseStudyLink = industryCaseStudyMap[industry.slug] || '/case-studies';
+  const externalLink = industryExternalLinkMap[industry.slug];
   const { line1: headlineLine1 = 'AI Automation for', line2: headlineLine2 = industry.name } =
     industryHeadlineMap[industry.slug] ?? {};
 
@@ -122,7 +130,22 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
             <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
               What We Automate
             </h2>
-            <p className="text-white/60 text-lg mb-8">Tailored automation that solves your specific challenges.</p>
+            <p className="text-white/60 text-lg mb-4">Tailored automation that solves your specific challenges.</p>
+            <p className="text-white/40 text-sm mb-8">
+              Delivered through our{' '}
+              <Link href="/6-stage-system" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                proven 6-Stage AI System
+              </Link>
+              {externalLink && (
+                <>
+                  {' '}and integrated with leading platforms like{' '}
+                  <a href={externalLink.href} target="_blank" rel="noopener noreferrer" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                    {externalLink.label}
+                  </a>
+                </>
+              )}
+              .
+            </p>
             <Link
               href={CALENDAR_LINK}
               className="inline-flex items-center justify-center px-6 py-3 bg-orange-cta hover:bg-orange-hover text-white font-bold text-sm rounded shadow-cta-glow-lg transition-all duration-300 hover:-translate-y-0.5"
@@ -154,9 +177,20 @@ export default function IndustryTemplate({ industry }: IndustryTemplateProps) {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Results</p>
-              <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight">
+              <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
                 Typical Results for {industry.name}
               </h2>
+              <p className="text-white/50 text-base max-w-xl mx-auto">
+                Use our{' '}
+                <Link href="/resources/roi-calculator" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                  ROI Calculator
+                </Link>{' '}
+                to estimate what these results could mean for your business, or{' '}
+                <Link href="/resources/ai-insights" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                  read our AI insights
+                </Link>{' '}
+                for strategies you can apply today.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

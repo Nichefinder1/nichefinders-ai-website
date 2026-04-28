@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
@@ -65,10 +66,21 @@ export default function SixStageClient() {
             <h1 className="font-header font-bold text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight text-[#E8EDF2] mb-6">
               The 6-Stage AI<br />Automation System
             </h1>
-            <p className="text-white/60 text-xl leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-white/60 text-xl leading-relaxed max-w-3xl mx-auto mb-6">
               Most agencies throw AI at your business and hope it works. We follow a proven
               framework that covers every touchpoint in your customer journey. From first
               contact to repeat business.
+            </p>
+            <p className="text-white/40 text-base max-w-2xl mx-auto mb-12">
+              This system is the foundation of our{' '}
+              <Link href="/ai-os-partner-program" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                AI OS Partner Program
+              </Link>
+              . Want to see it in action?{' '}
+              <Link href="/case-studies" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                Read our client case studies
+              </Link>
+              .
             </p>
 
             <Button href="#stages" variant="primary" size="lg" className="shadow-cta-glow-lg">
@@ -253,9 +265,20 @@ export default function SixStageClient() {
             <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
               How It All Works Together
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed">
+            <p className="text-white/60 text-lg leading-relaxed mb-4">
               Each stage builds on the previous one, creating a seamless customer journey
               that converts more leads with less manual work.
+            </p>
+            <p className="text-white/40 text-sm">
+              Estimate your potential gains with our{' '}
+              <Link href="/resources/roi-calculator" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                free ROI calculator
+              </Link>
+              , or{' '}
+              <Link href="/resources/ai-insights" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                explore our AI insights blog
+              </Link>{' '}
+              for implementation guides.
             </p>
           </div>
 

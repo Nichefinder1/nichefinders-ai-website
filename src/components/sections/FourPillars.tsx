@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
@@ -55,9 +56,16 @@ export default function FourPillars() {
           <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
             The 4 Pillars of AI Transformation
           </h2>
-          <p className="text-white/70 text-lg leading-relaxed">
+          <p className="text-white/70 text-lg leading-relaxed mb-3">
             Every business is unique, but success follows a proven path. Our
             4-pillar approach ensures you get results, not just technology.
+          </p>
+          <p className="text-white/40 text-sm">
+            Delivered through our{' '}
+            <Link href="/6-stage-system" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+              6-Stage AI Automation System
+            </Link>
+            .
           </p>
         </div>
 

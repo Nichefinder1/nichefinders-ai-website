@@ -155,10 +155,16 @@ export default function SixStageTeaser() {
               <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
                 The 6-Stage<br />AI Automation System
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed">
+              <p className="text-white/60 text-lg leading-relaxed mb-4">
                 Most agencies throw AI at your business and hope it works. We follow a proven
                 framework that covers every touchpoint from first contact to repeat business.
               </p>
+              <a
+                href="/ai-os-partner-program"
+                className="text-sm text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors"
+              >
+                Learn about the AI OS Partner Program →
+              </a>
             </div>
           </div>
 

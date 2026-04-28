@@ -130,6 +130,18 @@ export default async function PostPage({ params }: Props) {
             <span>·</span>
             <span>{formatDate(post.date)}</span>
           </div>
+
+          {post.coverImage && (
+            <div className="mt-10 rounded-xl overflow-hidden border border-white/10">
+              <img
+                src={post.coverImage}
+                alt={`${post.title} — NicheFinders AI`}
+                className="w-full h-auto object-cover"
+                width={1200}
+                height={630}
+              />
+            </div>
+          )}
         </div>
       </section>
 

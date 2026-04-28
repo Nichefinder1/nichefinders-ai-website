@@ -164,7 +164,7 @@ export default function CityTemplate({ city }: CityTemplateProps) {
                   title: 'Industry Specialists',
                   desc: `Deep experience in ${city.industries.join(', ')} across ${city.name}.`,
                 },
-              ].map(({ title, desc }) => (
+              ].map(({ title, desc }, idx) => (
                 <div
                   key={title}
                   className="flex items-start gap-4 p-4 rounded-lg border border-white/10"
@@ -177,6 +177,17 @@ export default function CityTemplate({ city }: CityTemplateProps) {
                   </div>
                 </div>
               ))}
+              <p className="text-white/50 text-sm mt-4">
+                Read our{' '}
+                <Link href="/resources/ai-insights" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                  AI automation guides
+                </Link>{' '}
+                or explore{' '}
+                <Link href="/case-studies" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                  real client results
+                </Link>{' '}
+                from businesses like yours.
+              </p>
             </div>
           </div>
 
@@ -224,9 +235,16 @@ export default function CityTemplate({ city }: CityTemplateProps) {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Industries</p>
-            <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight">
+            <h2 className="font-header font-bold text-3xl md:text-4xl text-white leading-tight mb-4">
               Industries We Serve in {city.name}
             </h2>
+            <p className="text-white/50 text-base max-w-xl mx-auto">
+              From{' '}
+              <Link href="/industries/home-services" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                home services
+              </Link>{' '}
+              to professional services — every industry gets a system built for its specific workflow.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

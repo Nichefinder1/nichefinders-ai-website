@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
@@ -13,6 +14,7 @@ const differentiators = [
   {
     title: 'Florida-First Focus',
     description: 'We live here. We work here. We understand Florida markets, seasonality, and customer behavior. Not some outsourced team halfway around the world.',
+    externalLink: { href: 'https://www.flchamber.com', label: 'Florida Chamber of Commerce member' },
     color: { border: '#CC5500', glow: 'rgba(204,85,0,0.12)', icon: '#CC5500', iconBg: 'rgba(204,85,0,0.1)', iconBorder: 'rgba(204,85,0,0.3)' },
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>,
   },
@@ -49,10 +51,10 @@ const differentiators = [
 ];
 
 const industries = [
-  { name: 'Home & Building Services', description: 'Plumbing, HVAC, Roofing, Electrical, Contractors, Painting' },
-  { name: 'Automotive', description: 'Dealerships, Repair Shops, Detailing' },
-  { name: 'Nonprofits', description: 'Foundations, Community Organizations' },
-  { name: 'Professional Services', description: 'Law Firms, Accounting, Consulting' },
+  { name: 'Home & Building Services', description: 'Plumbing, HVAC, Roofing, Electrical, Contractors, Painting', slug: 'home-services' },
+  { name: 'Automotive', description: 'Dealerships, Repair Shops, Detailing', slug: 'automotive' },
+  { name: 'Nonprofits', description: 'Foundations, Community Organizations', slug: 'nonprofits' },
+  { name: 'Professional Services', description: 'Law Firms, Accounting, Consulting', slug: 'professional-services' },
 ];
 
 const values = [
@@ -107,7 +109,15 @@ export default function AboutPage() {
                 Too many hardworking business owners lose revenue to slow response times, manual processes, and missed opportunities. We fix that.
               </p>
               <p className="text-white/60 text-lg leading-relaxed">
-                Our proprietary 6-Stage System automates every touchpoint in the customer journey. From lead capture to retention, so you can focus on growth while AI handles the rest.
+                Our proprietary{' '}
+                <Link href="/6-stage-system" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                  6-Stage System
+                </Link>{' '}
+                automates every touchpoint in the customer journey. From lead capture to retention, so you can focus on growth while AI handles the rest. Delivered through our{' '}
+                <Link href="/ai-os-partner-program" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                  AI OS Partner Program
+                </Link>
+                .
               </p>
             </div>
 
@@ -137,9 +147,20 @@ export default function AboutPage() {
         <Container size="lg" className="pb-36 md:pb-48">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-4">Our Edge</p>
-            <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
+            <h2 className="font-header font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-4">
               Why We're Different
             </h2>
+            <p className="text-white/50 text-base">
+              Curious about our results?{' '}
+              <Link href="/case-studies" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                See our client case studies
+              </Link>{' '}
+              or{' '}
+              <Link href="/resources/ai-insights" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+                explore our AI insights
+              </Link>
+              .
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -157,6 +178,16 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-header font-bold text-lg text-white mb-3">{item.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
+                {'externalLink' in item && item.externalLink && (
+                  <a
+                    href={(item.externalLink as { href: string; label: string }).href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-xs text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors"
+                  >
+                    {(item.externalLink as { href: string; label: string }).label} ↗
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -176,14 +207,15 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {industries.map((industry, index) => (
-              <div
+              <Link
                 key={index}
-                className="card-elevated-dark rounded-2xl p-6 text-center"
+                href={`/industries/${industry.slug}`}
+                className="group card-elevated-dark rounded-2xl p-6 text-center block transition-all duration-300 hover:-translate-y-1"
                 style={{ borderTop: '2px solid rgba(255,255,255,0.08)', boxShadow: '0 0 0 1px rgba(255,255,255,0.06)' }}
               >
-                <h3 className="font-header font-bold text-lg text-white mb-3">{industry.name}</h3>
+                <h3 className="font-header font-bold text-lg text-white mb-3 group-hover:text-[#7aafd4] transition-colors">{industry.name}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{industry.description}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </Container>

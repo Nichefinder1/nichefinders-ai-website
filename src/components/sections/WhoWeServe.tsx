@@ -61,7 +61,7 @@ export default function WhoWeServe() {
         </div>
 
         {/* Industry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {INDUSTRIES.map((industry, index) => {
             const color = accentColors[index];
             return (
@@ -148,6 +148,17 @@ export default function WhoWeServe() {
               </Link>
             );
           })}
+        </div>
+
+        {/* Proof point link */}
+        <div className="text-center mt-4">
+          <p className="text-white/40 text-sm">
+            See real results from businesses in these industries —{' '}
+            <Link href="/case-studies" className="text-[#7aafd4] hover:text-white underline underline-offset-2 transition-colors">
+              browse our case studies
+            </Link>
+            .
+          </p>
         </div>
 
       </Container>

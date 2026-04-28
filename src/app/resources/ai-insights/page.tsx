@@ -83,10 +83,21 @@ export default function AIInsightsPage() {
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-orange-cta mb-10">Featured</p>
             <Link href={`/resources/ai-insights/${featured.slug}`} className="group block">
               <div
-                className="p-8 md:p-12 rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300"
+                className="rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
                 style={{ background: 'rgba(0,40,85,0.4)' }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                {featured.coverImage && (
+                  <div className="w-full">
+                    <img
+                      src={featured.coverImage}
+                      alt={`${featured.title} — NicheFinders AI`}
+                      className="w-full h-64 object-cover"
+                      width={1200}
+                      height={630}
+                    />
+                  </div>
+                )}
+                <div className="p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <div className="flex items-center gap-3 mb-6">
                       <span
@@ -141,9 +152,21 @@ export default function AIInsightsPage() {
               {rest.map((post) => (
                 <Link key={post.slug} href={`/resources/ai-insights/${post.slug}`} className="group block h-full">
                   <div
-                    className="h-full p-6 rounded-xl border border-white/10 hover:border-white/25 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                    className="h-full rounded-xl border border-white/10 hover:border-white/25 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
                     style={{ background: 'rgba(0,40,85,0.3)' }}
                   >
+                    {post.coverImage && (
+                      <div className="rounded-t-xl overflow-hidden">
+                        <img
+                          src={post.coverImage}
+                          alt={post.title}
+                          className="w-full h-40 object-cover"
+                          width={600}
+                          height={200}
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-col flex-1 p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <span
                         className="text-xs font-bold px-2.5 py-1 rounded-full"
@@ -165,6 +188,7 @@ export default function AIInsightsPage() {
                       <span>{post.author}</span>
                       <span>·</span>
                       <span>{formatDate(post.date)}</span>
+                    </div>
                     </div>
                   </div>
                 </Link>
