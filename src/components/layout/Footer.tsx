@@ -9,11 +9,11 @@ export default function Footer() {
     <footer className="bg-navy-deep text-white">
       {/* Main Footer Content */}
       <div className="container-custom max-w-screen-xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 items-start">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-6 group">
-              <div className="relative w-16 h-16 transition-all duration-300 group-hover:scale-110">
+            <Link href="/" className="inline-block mb-1 group">
+              <div className="relative w-40 h-40 transition-all duration-300 group-hover:scale-110">
                 <Image
                   src="/logo.svg"
                   alt="NicheFinders AI"
@@ -21,7 +21,6 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-2xl font-black">NicheFinders AI</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Transforming businesses with AI automation. From lead
@@ -193,7 +192,7 @@ export default function Footer() {
                 Terms of Service
               </Link>
               <Link
-                href="/sitemap.xml"
+                href="/sitemap"
                 className="text-gray-400 hover:text-orange-cta text-sm transition-colors duration-300"
               >
                 Sitemap

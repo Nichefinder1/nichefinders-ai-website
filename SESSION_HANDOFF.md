@@ -45,6 +45,8 @@ bf874f4 Use exact Google Maps embed URL for NicheFinders AI location
 1. **3-email post-opt-in sequence** — content for n8n wiring (not started)
 2. **og-image.png** — replace with professionally designed graphic (carried over)
 3. **Imagen 4 images** — enable Pay As You Go billing at aistudio.google.com/plan (~$0.24 for 8 images)
+4. **Resubmit sitemap to Google Search Console** — go to search.google.com/search-console → Sitemaps → resubmit `https://nichefinders.ai/sitemap.xml` (triggered by contact page + social link changes this session)
+5. **Add privacy-policy + terms-of-service to sitemap.ts** — both pages exist (footer links them) but missing from sitemap; Claude can do this next session
 
 ## Key Files
 - Footer: `src/components/layout/Footer.tsx`
